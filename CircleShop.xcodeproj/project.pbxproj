@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0D5583E919B426CA001AF800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583E819B426CA001AF800 /* AppDelegate.swift */; };
-		0D5583EB19B426CA001AF800 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583EA19B426CA001AF800 /* FirstViewController.swift */; };
+		0D5583EB19B426CA001AF800 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583EA19B426CA001AF800 /* CircleViewController.swift */; };
 		0D5583ED19B426CA001AF800 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583EC19B426CA001AF800 /* SecondViewController.swift */; };
 		0D5583F019B426CA001AF800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5583EE19B426CA001AF800 /* Main.storyboard */; };
 		0D5583F219B426CA001AF800 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D5583F119B426CA001AF800 /* Images.xcassets */; };
 		0D5583FE19B426CA001AF800 /* CircleShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583FD19B426CA001AF800 /* CircleShopTests.swift */; };
+		45EAF2C5431743E8BE6B798C /* libPods-CircleShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +27,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D2D7DFB19B51818007CCCED /* CircleShop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CircleShop-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D5583E319B426CA001AF800 /* CircleShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5583E719B426CA001AF800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D5583E819B426CA001AF800 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D5583EA19B426CA001AF800 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		0D5583EA19B426CA001AF800 /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
 		0D5583EC19B426CA001AF800 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		0D5583EF19B426CA001AF800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D5583F119B426CA001AF800 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0D5583F719B426CA001AF800 /* CircleShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircleShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5583FC19B426CA001AF800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D5583FD19B426CA001AF800 /* CircleShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleShopTests.swift; sourceTree = "<group>"; };
+		69E2BD15657948809908DAE4 /* Pods-CircleShop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleShop.xcconfig"; path = "Pods/Pods-CircleShop.xcconfig"; sourceTree = "<group>"; };
+		9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CircleShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45EAF2C5431743E8BE6B798C /* libPods-CircleShop.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 				0D5583E519B426CA001AF800 /* CircleShop */,
 				0D5583FA19B426CA001AF800 /* CircleShopTests */,
 				0D5583E419B426CA001AF800 /* Products */,
+				69E2BD15657948809908DAE4 /* Pods-CircleShop.xcconfig */,
+				0F272AD862C14797B95FE702 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,11 +85,12 @@
 			isa = PBXGroup;
 			children = (
 				0D5583E819B426CA001AF800 /* AppDelegate.swift */,
-				0D5583EA19B426CA001AF800 /* FirstViewController.swift */,
+				0D5583EA19B426CA001AF800 /* CircleViewController.swift */,
 				0D5583EC19B426CA001AF800 /* SecondViewController.swift */,
 				0D5583EE19B426CA001AF800 /* Main.storyboard */,
 				0D5583F119B426CA001AF800 /* Images.xcassets */,
 				0D5583E619B426CA001AF800 /* Supporting Files */,
+				0D2D7DFB19B51818007CCCED /* CircleShop-Bridging-Header.h */,
 			);
 			path = CircleShop;
 			sourceTree = "<group>";
@@ -112,6 +120,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0F272AD862C14797B95FE702 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D55840119B426CA001AF800 /* Build configuration list for PBXNativeTarget "CircleShop" */;
 			buildPhases = (
+				051CB40764C148F2A7C6BDC5 /* Check Pods Manifest.lock */,
 				0D5583DF19B426CA001AF800 /* Sources */,
 				0D5583E019B426CA001AF800 /* Frameworks */,
 				0D5583E119B426CA001AF800 /* Resources */,
+				2CFF2404CC3E4BF29F05DAB0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +224,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		051CB40764C148F2A7C6BDC5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2CFF2404CC3E4BF29F05DAB0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-CircleShop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D5583DF19B426CA001AF800 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -213,7 +264,7 @@
 			files = (
 				0D5583ED19B426CA001AF800 /* SecondViewController.swift in Sources */,
 				0D5583E919B426CA001AF800 /* AppDelegate.swift in Sources */,
-				0D5583EB19B426CA001AF800 /* FirstViewController.swift in Sources */,
+				0D5583EB19B426CA001AF800 /* CircleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,23 +379,27 @@
 		};
 		0D55840219B426CA001AF800 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69E2BD15657948809908DAE4 /* Pods-CircleShop.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = CircleShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CircleShop/CircleShop-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		0D55840319B426CA001AF800 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69E2BD15657948809908DAE4 /* Pods-CircleShop.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = CircleShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CircleShop/CircleShop-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -401,6 +456,7 @@
 				0D55840319B426CA001AF800 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D55840419B426CA001AF800 /* Build configuration list for PBXNativeTarget "CircleShopTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +465,7 @@
 				0D55840619B426CA001AF800 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
