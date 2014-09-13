@@ -8,10 +8,58 @@
 
 import UIKit
 
-let reuseIdentifier = "Cell"
 
-class CircleViewController: UIViewController {
+class CircleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
                             
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+//        if(segue.identifier == "show_album") {
+//            let destViewController = segue.destinationViewController as PhotoCollectionViewController
+//            destViewController.group = self.groups[self.tableView.indexPathForSelectedRow().row]
+//        }
+    }
+    
+    
+    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+        
+        return 10
+//        return self.groups.count
+    }
+    
+    
+    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+        
+        var cell = self.tableView.dequeueReusableCellWithIdentifier("CircleCell") as CircleViewCell
+        
+        let url = "http://d3lncrho1w0yzl.cloudfront.net/photo1.100x133.2642bytes.webp?1"
+        cell.itemImageView.sd_setImageWithURL(NSURL(string: url))
+//        cell.applyData(self.groups[indexPath.row])
+        
+        return cell
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 //    @IBOutlet weak var collectionView: UICollectionView!
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
