@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		0D5583E919B426CA001AF800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583E819B426CA001AF800 /* AppDelegate.swift */; };
 		0D5583EB19B426CA001AF800 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583EA19B426CA001AF800 /* CircleViewController.swift */; };
-		0D5583ED19B426CA001AF800 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583EC19B426CA001AF800 /* SecondViewController.swift */; };
 		0D5583F019B426CA001AF800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5583EE19B426CA001AF800 /* Main.storyboard */; };
 		0D5583F219B426CA001AF800 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D5583F119B426CA001AF800 /* Images.xcassets */; };
 		0D5583FE19B426CA001AF800 /* CircleShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583FD19B426CA001AF800 /* CircleShopTests.swift */; };
+		0D601DAF19C4337C00BA9E17 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D601DAE19C4337C00BA9E17 /* PostViewController.swift */; };
+		0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */; };
 		45EAF2C5431743E8BE6B798C /* libPods-CircleShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */; };
 /* End PBXBuildFile section */
 
@@ -32,12 +33,13 @@
 		0D5583E719B426CA001AF800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D5583E819B426CA001AF800 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D5583EA19B426CA001AF800 /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
-		0D5583EC19B426CA001AF800 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		0D5583EF19B426CA001AF800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D5583F119B426CA001AF800 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0D5583F719B426CA001AF800 /* CircleShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircleShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5583FC19B426CA001AF800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D5583FD19B426CA001AF800 /* CircleShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleShopTests.swift; sourceTree = "<group>"; };
+		0D601DAE19C4337C00BA9E17 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		69E2BD15657948809908DAE4 /* Pods-CircleShop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleShop.xcconfig"; path = "Pods/Pods-CircleShop.xcconfig"; sourceTree = "<group>"; };
 		9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CircleShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,9 +86,8 @@
 		0D5583E519B426CA001AF800 /* CircleShop */ = {
 			isa = PBXGroup;
 			children = (
+				0D601DB219C433F900BA9E17 /* ViewController */,
 				0D5583E819B426CA001AF800 /* AppDelegate.swift */,
-				0D5583EA19B426CA001AF800 /* CircleViewController.swift */,
-				0D5583EC19B426CA001AF800 /* SecondViewController.swift */,
 				0D5583EE19B426CA001AF800 /* Main.storyboard */,
 				0D5583F119B426CA001AF800 /* Images.xcassets */,
 				0D5583E619B426CA001AF800 /* Supporting Files */,
@@ -118,6 +119,16 @@
 				0D5583FC19B426CA001AF800 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D601DB219C433F900BA9E17 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0D5583EA19B426CA001AF800 /* CircleViewController.swift */,
+				0D601DAE19C4337C00BA9E17 /* PostViewController.swift */,
+				0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		0F272AD862C14797B95FE702 /* Frameworks */ = {
@@ -262,7 +273,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D5583ED19B426CA001AF800 /* SecondViewController.swift in Sources */,
+				0D601DAF19C4337C00BA9E17 /* PostViewController.swift in Sources */,
+				0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */,
 				0D5583E919B426CA001AF800 /* AppDelegate.swift in Sources */,
 				0D5583EB19B426CA001AF800 /* CircleViewController.swift in Sources */,
 			);

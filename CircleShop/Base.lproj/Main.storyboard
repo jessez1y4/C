@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2062" y="950"/>
+            <point key="canvasLocation" x="2874" y="950"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -46,10 +46,110 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="JW1-g9-yqx" kind="relationship" relationship="viewControllers" id="Fbo-9C-mBF"/>
+                        <segue destination="qq0-TL-D2Q" kind="relationship" relationship="viewControllers" id="shL-na-KJA"/>
+                        <segue destination="U9I-E9-luw" kind="relationship" relationship="viewControllers" id="tea-xu-Kd4"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-12" y="0.0"/>
+        </scene>
+        <!--Circle View Controller-->
+        <scene sceneID="bwT-qb-9ku">
+            <objects>
+                <viewController id="q9y-Qm-JyT" customClass="CircleViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pL0-rM-5cP"/>
+                        <viewControllerLayoutGuide type="bottom" id="gpt-3E-ikX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6zI-nK-ww6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hgV-FT-NPY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pe4-ys-xjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1575" y="0.0"/>
+        </scene>
+        <!--Post-->
+        <scene sceneID="nIh-SP-KaN">
+            <objects>
+                <viewController title="Post" id="fRH-YM-si6" customClass="PostViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EyM-bo-UJG"/>
+                        <viewControllerLayoutGuide type="bottom" id="OW9-QC-DwE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iOe-01-ekp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YZA-kI-voK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bb7-83-nbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1575" y="759"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="DhC-tK-Gg3">
+            <objects>
+                <viewController title="Profile" id="U9I-E9-luw" customClass="ProfileViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9ib-bs-hYa"/>
+                        <viewControllerLayoutGuide type="bottom" id="63q-hz-il2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3a9-M4-bzm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="vck-uu-p1k"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lj4-N0-sFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763" y="1526"/>
+        </scene>
+        <!--Circle-->
+        <scene sceneID="yZQ-ki-D1V">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JW1-g9-yqx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Circle" id="bj5-S5-b6Y"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rxt-DC-BAT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="q9y-Qm-JyT" kind="relationship" relationship="rootViewController" id="mgl-yu-43a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZq-et-6oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763" y="0.0"/>
+        </scene>
+        <!--Post-->
+        <scene sceneID="wym-fH-qWs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qq0-TL-D2Q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Post" id="MiL-bj-cRo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cm0-qd-2qL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fRH-YM-si6" kind="relationship" relationship="rootViewController" id="D2p-pr-AF4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TgX-Ch-GQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763" y="759"/>
         </scene>
     </scenes>
 </document>
