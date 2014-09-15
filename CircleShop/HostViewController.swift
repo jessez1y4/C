@@ -15,8 +15,10 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dataSource = self;
-        self.delegate = self;
+        self.dataSource = self
+        self.delegate = self
+        self.title = "View Pager"
+        
     }
     
     
@@ -29,66 +31,77 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
     
     
     func viewPager(viewPager: ViewPagerController!, contentViewControllerForTabAtIndex index: UInt) -> UIViewController! {
+        
+        // change the dataSrouce here
+        
         var cvc: AnyObject! = self.storyboard.instantiateViewControllerWithIdentifier("CircleViewControllerId")
         
         return cvc as UIViewController
     }
     
     
+    
     func viewPager(viewPager: ViewPagerController!, viewForTabAtIndex index: UInt) -> UIView! {
-        //        UILabel *label = [UILabel new];
-        //        label.backgroundColor = [UIColor clearColor];
-        //        label.font = [UIFont systemFontOfSize:12.0];
-        //        label.text = [NSString stringWithFormat:@"Tab #%i", index];
-        //        label.textAlignment = NSTextAlignmentCenter;
-        //        label.textColor = [UIColor blackColor];
-        //        [label sizeToFit];
         var label = UILabel()
         label.backgroundColor = UIColor.clearColor()
-        label.text = "Tabe \(index)"
+        label.font = UIFont.systemFontOfSize(12.0)
+        label.text = "Tab \(index)"
+        label.textAlignment = NSTextAlignment.Center;
+        label.textColor = UIColor.blackColor()
         label.sizeToFit()
-        return UILabel()
+        return label
     }
+    
     
     
     func viewPager(viewPager: ViewPagerController!, valueForOption option: ViewPagerOption, withDefault value: CGFloat) -> CGFloat {
-        //        switch (option) {
-        //        case ViewPagerOptionStartFromSecondTab:
-        //            return 0.0;
-        //        case ViewPagerOptionCenterCurrentTab:
-        //            return 1.0;
-        //        case ViewPagerOptionTabLocation:
-        //            return 0.0;
-        //        case ViewPagerOptionTabHeight:
-        //            return 49.0;
-        //        case ViewPagerOptionTabOffset:
-        //            return 36.0;
-        //        case ViewPagerOptionTabWidth:
-        //            return UIInterfaceOrientationIsLandscape(self.interfaceOrientation) ? 128.0 : 96.0;
-        //        case ViewPagerOptionFixFormerTabsPositions:
-        //            return 1.0;
-        //        case ViewPagerOptionFixLatterTabsPositions:
-        //            return 1.0;
-        //        default:
-        //            return value;
-        return 1.0
+                switch (option) {
+                case ViewPagerOption.StartFromSecondTab:
+                    return 0.0
+                case ViewPagerOption.CenterCurrentTab:
+                    return 1.0
+                case ViewPagerOption.TabLocation:
+                    return 1.0
+                case ViewPagerOption.TabHeight:
+                    return 49.0
+                case ViewPagerOption.TabOffset:
+                    return 36.0
+                case ViewPagerOption.TabWidth:
+                    return UIInterfaceOrientationIsLandscape(self.interfaceOrientation) ? 128.0 : 96.0
+                case ViewPagerOption.FixFormerTabsPositions:
+                    return 1.0
+                case ViewPagerOption.FixLatterTabsPositions:
+                    return 1.0
+                default:
+                    return value
+        }
     }
+    
     
     
     func viewPager(viewPager: ViewPagerController!, colorForComponent component: ViewPagerComponent, withDefault color: UIColor!) -> UIColor! {
-        //        switch (component) {
-        //        case ViewPagerIndicator:
-        //            return [[UIColor redColor] colorWithAlphaComponent:0.64];
-        //        case ViewPagerTabsView:
-        //            return [[UIColor lightGrayColor] colorWithAlphaComponent:0.32];
-        //        case ViewPagerContent:
-        //            return [[UIColor darkGrayColor] colorWithAlphaComponent:0.32];
-        //        default:
-        //            return color;
-        return UIColor.redColor()
+                switch (component) {
+                case ViewPagerComponent.Indicator:
+                    return UIColor.redColor().colorWithAlphaComponent(0.64)
+                case ViewPagerComponent.TabsView:
+                    return UIColor.lightGrayColor().colorWithAlphaComponent(0.32)
+                case ViewPagerComponent.Content:
+                    return UIColor.darkGrayColor().colorWithAlphaComponent(0.32)
+                default:
+                    return color;
+        }
     }
     
+    
+    
+    
+    
+    
+    
+    // ViewPagerDelegate
     func viewPager(viewPager: ViewPagerController!, didChangeTabToIndex index: UInt) {
+        println(viewPager.description)
+        println(index)
         
     }
 
