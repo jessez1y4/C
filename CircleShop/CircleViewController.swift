@@ -12,7 +12,7 @@ import UIKit
 class CircleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
                             
     @IBOutlet weak var tableView: UITableView!
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +20,13 @@ class CircleViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-//        if(segue.identifier == "show_album") {
-//            let destViewController = segue.destinationViewController as PhotoCollectionViewController
-//            destViewController.group = self.groups[self.tableView.indexPathForSelectedRow().row]
-//        }
+        if(segue.identifier == "show_detail") {
+            let destViewController = segue.destinationViewController as DetailViewController
+            
+            println(self.tableView.indexPathForSelectedRow().row)
+            // datasource[row]
+            //destViewController.image = self.tableView.indexPathForSelectedRow().row
+        }
     }
     
     
