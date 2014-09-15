@@ -125,7 +125,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sZU-ao-d1B"/>
+                    <navigationItem key="navigationItem" id="sZU-ao-d1B">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="uX3-fJ-sgq">
+                            <connections>
+                                <action selector="click:" destination="Gkv-xw-wfU" id="hMo-p6-9rj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M5e-Gf-k3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

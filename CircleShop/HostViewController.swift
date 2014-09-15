@@ -8,6 +8,10 @@
 
 import UIKit
 
+var tabNumber: UInt!
+var currentTabNumber: UInt!
+var newCircleNameArray: [String] = []
+
 class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDelegate {
     
     var numberOfTab: Int!
@@ -15,17 +19,18 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        tabNumber = 2
+        currentTabNumber = tabNumber
         self.dataSource = self
         self.delegate = self
         self.title = "View Pager"
-        
     }
-    
     
     
     //pragma mark - ViewPagerDataSource
     func numberOfTabsForViewPager(viewPager: ViewPagerController!) -> UInt {
-        return 5
+        return tabNumber
     }
     
     
@@ -34,7 +39,7 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
         
         // change the dataSrouce here
         
-        var cvc: AnyObject! = self.storyboard.instantiateViewControllerWithIdentifier("CircleViewControllerId")
+        var cvc: AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("CircleViewControllerId")
         
         return cvc as UIViewController
     }
@@ -45,10 +50,16 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
         var label = UILabel()
         label.backgroundColor = UIColor.clearColor()
         label.font = UIFont.systemFontOfSize(12.0)
-        label.text = "Tab \(index)"
+        if(currentTabNumber < tabNumber){
+            label.text = newCircleNameArray[tabNumber-currentTabNumber-1]
+            currentTabNumber = tabNumber
+        }else{
+            label.text = "Tab \(index)"
+        }
         label.textAlignment = NSTextAlignment.Center;
         label.textColor = UIColor.blackColor()
         label.sizeToFit()
+
         return label
     }
     
@@ -104,5 +115,13 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
         println(index)
         
     }
+    
+    
+    @IBAction func click(sender: AnyObject) {
+        tabNumber = tabNumber + 1
+        newCircleNameArray.append("newadded")
+        self.reloadData()
+    }
+    
 
 }

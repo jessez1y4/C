@@ -37,7 +37,7 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDataSourc
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
 //        if(segue.identifier == "show_post") {
 //            let destViewController = segue.destinationViewController as PostViewController
 //            
@@ -53,11 +53,12 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDataSourc
     }
     
     
-    func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.assets.count
     }
     
-    func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PhotoCollectionCell", forIndexPath: indexPath) as PhotoCollectionViewCell
         // Configure the cell

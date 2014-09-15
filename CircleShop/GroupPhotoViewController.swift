@@ -47,24 +47,28 @@ class GroupPhotoViewController: UIViewController, UITableViewDataSource, UITable
         })
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "show_album") {
             let destViewController = segue.destinationViewController as PhotoCollectionViewController
-            destViewController.group = self.groups[self.tableView.indexPathForSelectedRow().row]
+            destViewController.group = self.groups[self.tableView.indexPathForSelectedRow()!.row]
         }
     }
     
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.groups.count
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.tableView.dequeueReusableCellWithIdentifier("GroupPhotoCell") as GroupPhotoViewCell
         cell.applyData(self.groups[indexPath.row])
         
         return cell
     }
+    
+
+
     
     //    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
     //        println("You selected cell #\(indexPath.row)!")
