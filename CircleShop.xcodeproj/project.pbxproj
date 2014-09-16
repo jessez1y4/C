@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D00771719C80C6D006EEAE7 /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00771619C80C6D006EEAE7 /* CropViewController.swift */; };
+		0D00771919C820C5006EEAE7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00771819C820C5006EEAE7 /* PostViewController.swift */; };
 		0D5583E919B426CA001AF800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583E819B426CA001AF800 /* AppDelegate.swift */; };
 		0D5583EB19B426CA001AF800 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583EA19B426CA001AF800 /* CircleViewController.swift */; };
 		0D5583F019B426CA001AF800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5583EE19B426CA001AF800 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D00771619C80C6D006EEAE7 /* CropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropViewController.swift; sourceTree = "<group>"; };
+		0D00771819C820C5006EEAE7 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		0D2D7DFB19B51818007CCCED /* CircleShop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CircleShop-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D5583E319B426CA001AF800 /* CircleShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5583E719B426CA001AF800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				0D63043F19C68F890058AB44 /* GroupPhotoViewCell.swift */,
 				0D5638E619C69469008BBF75 /* PhotoCollectionViewController.swift */,
 				0D5638E819C69486008BBF75 /* PhotoCollectionViewCell.swift */,
+				0D00771619C80C6D006EEAE7 /* CropViewController.swift */,
+				0D00771819C820C5006EEAE7 /* PostViewController.swift */,
 				0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */,
 			);
 			name = ViewController;
@@ -295,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D00771919C820C5006EEAE7 /* PostViewController.swift in Sources */,
 				0D601DAF19C4337C00BA9E17 /* GroupPhotoViewController.swift in Sources */,
 				0D5638E919C69486008BBF75 /* PhotoCollectionViewCell.swift in Sources */,
 				0DED5ABB19C4380300DCBA9A /* CircleViewCell.swift in Sources */,
@@ -305,6 +312,7 @@
 				0D5583EB19B426CA001AF800 /* CircleViewController.swift in Sources */,
 				0D63044019C68F890058AB44 /* GroupPhotoViewCell.swift in Sources */,
 				0D55DC5119C68B9B005C86BE /* DetailViewController.swift in Sources */,
+				0D00771719C80C6D006EEAE7 /* CropViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

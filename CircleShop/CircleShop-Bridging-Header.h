@@ -12,5 +12,6 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <AFNetworking/AFNetworking.h>
 #import <ICViewPager/ViewPagerController.h>
+#import <BASSquareCropperViewController.h>
 
 #endif

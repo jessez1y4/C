@@ -27,9 +27,6 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDataSourc
                 self.assets.append(asset)
             }
         })
-        
-        println("viewdidload")
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,13 +35,13 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDataSourc
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-//        if(segue.identifier == "show_post") {
-//            let destViewController = segue.destinationViewController as PostViewController
-//            
-//            let indexPath = self.collectionView.indexPathForCell(sender as PhotoCollectionViewCell)
-//            
-//            destViewController.image = UIImage(CGImage: (self.assets[indexPath.row] as ALAsset).defaultRepresentation().fullResolutionImage().takeUnretainedValue())
-//        }
+        if(segue.identifier == "show_crop") {
+            let destViewController = segue.destinationViewController as CropViewController
+            
+            let indexPath = self.collectionView.indexPathForCell(sender as PhotoCollectionViewCell)
+            
+            destViewController.image = UIImage(CGImage: (self.assets[indexPath!.row] as ALAsset).defaultRepresentation().fullResolutionImage().takeUnretainedValue())
+        }
     }
     
     
