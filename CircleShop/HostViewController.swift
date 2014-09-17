@@ -19,13 +19,16 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         tabNumber = 2
         currentTabNumber = tabNumber
         self.dataSource = self
         self.delegate = self
-        self.title = "View Pager"
     }
+    
+//    override func viewWillAppear(animated: Bool) {
+//        self.tabBarController!.tabBar.backgroundColor = UIColor.blueColor()
+//    }
+    
     
     
     //pragma mark - ViewPagerDataSource
@@ -74,7 +77,7 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
                 case ViewPagerOption.TabLocation:
                     return 1.0
                 case ViewPagerOption.TabHeight:
-                    return 49.0
+                    return 39.0
                 case ViewPagerOption.TabOffset:
                     return 36.0
                 case ViewPagerOption.TabWidth:
