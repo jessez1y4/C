@@ -27,6 +27,7 @@
 		0D601DAF19C4337C00BA9E17 /* GroupPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D601DAE19C4337C00BA9E17 /* GroupPhotoViewController.swift */; };
 		0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */; };
 		0D63044019C68F890058AB44 /* GroupPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63043F19C68F890058AB44 /* GroupPhotoViewCell.swift */; };
+		0DCD94F819D14F5900F5A498 /* ManagingCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD94F719D14F5900F5A498 /* ManagingCircleViewController.swift */; };
 		0DED5ABB19C4380300DCBA9A /* CircleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DED5ABA19C4380300DCBA9A /* CircleViewCell.swift */; };
 		45EAF2C5431743E8BE6B798C /* libPods-CircleShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		0D601DAE19C4337C00BA9E17 /* GroupPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPhotoViewController.swift; sourceTree = "<group>"; };
 		0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0D63043F19C68F890058AB44 /* GroupPhotoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPhotoViewCell.swift; sourceTree = "<group>"; };
+		0DCD94F719D14F5900F5A498 /* ManagingCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingCircleViewController.swift; sourceTree = "<group>"; };
 		0DED5ABA19C4380300DCBA9A /* CircleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewCell.swift; sourceTree = "<group>"; };
 		69E2BD15657948809908DAE4 /* Pods-CircleShop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleShop.xcconfig"; path = "Pods/Pods-CircleShop.xcconfig"; sourceTree = "<group>"; };
 		9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CircleShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 				0D00771619C80C6D006EEAE7 /* CropViewController.swift */,
 				0D00771819C820C5006EEAE7 /* PostViewController.swift */,
 				0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */,
+				0DCD94F719D14F5900F5A498 /* ManagingCircleViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DCD94F819D14F5900F5A498 /* ManagingCircleViewController.swift in Sources */,
 				0D00771919C820C5006EEAE7 /* PostViewController.swift in Sources */,
 				0D601DAF19C4337C00BA9E17 /* GroupPhotoViewController.swift in Sources */,
 				0D5638E919C69486008BBF75 /* PhotoCollectionViewCell.swift in Sources */,

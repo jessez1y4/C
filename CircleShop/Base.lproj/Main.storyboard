@@ -259,9 +259,15 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="sZU-ao-d1B">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="uX3-fJ-sgq">
+                        <barButtonItem key="leftBarButtonItem" title="Add" id="uX3-fJ-sgq">
                             <connections>
                                 <action selector="click:" destination="Gkv-xw-wfU" id="hMo-p6-9rj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="awG-w4-9RS">
+                            <connections>
+                                <action selector="addCircle:" destination="Gkv-xw-wfU" id="oge-rx-LqG"/>
+                                <segue destination="qPJ-Df-deQ" kind="show" identifier="show_managing" id="UA0-uO-NA6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -346,6 +352,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qj0-Gf-fiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2239" y="-812"/>
+        </scene>
+        <!--Managing Circle View Controller-->
+        <scene sceneID="3EL-0x-qf4">
+            <objects>
+                <tableViewController id="qPJ-Df-deQ" customClass="ManagingCircleViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="urS-hg-wCU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ManagingCircleViewCell" id="bYr-uG-kbU">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bYr-uG-kbU" id="Bie-Vk-0Yh">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qPJ-Df-deQ" id="LJV-sS-eap"/>
+                            <outlet property="delegate" destination="qPJ-Df-deQ" id="CZI-gB-Mgd"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZRm-di-sGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2225" y="0.0"/>
         </scene>
         <!--Post-->
         <scene sceneID="nIh-SP-KaN">

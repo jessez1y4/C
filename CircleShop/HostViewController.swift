@@ -16,6 +16,8 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
     
     var numberOfTab: Int!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -117,6 +119,10 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
         println(viewPager.description)
         println(index)
         
+    }
+    
+    
+    @IBAction func addCircle(sender: AnyObject) {
     }
     
     
