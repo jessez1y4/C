@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6246" systemVersion="14A329r" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rhr-mO-Ggw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rhr-mO-Ggw">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6239"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Photo Collection View Controller-->
@@ -267,7 +268,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Create" id="awG-w4-9RS">
                             <connections>
                                 <action selector="addCircle:" destination="Gkv-xw-wfU" id="oge-rx-LqG"/>
-                                <segue destination="qPJ-Df-deQ" kind="show" identifier="show_managing" id="UA0-uO-NA6"/>
+                                <segue destination="mmF-Yl-p1L" kind="show" id="eAa-Gw-g7Y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -353,31 +354,51 @@
             </objects>
             <point key="canvasLocation" x="2239" y="-812"/>
         </scene>
-        <!--Managing Circle View Controller-->
-        <scene sceneID="3EL-0x-qf4">
+        <!--Manage Circle View Controller-->
+        <scene sceneID="N8u-fm-0ni">
             <objects>
-                <tableViewController id="qPJ-Df-deQ" customClass="ManagingCircleViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="urS-hg-wCU">
+                <viewController id="mmF-Yl-p1L" customClass="ManageCircleViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="by2-zX-mR1"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Za-TA-3Kz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UWz-V2-Wed">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-K9-uk5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ManageCircleViewCell" rowHeight="52" id="FbC-U1-UL9" customClass="manageCircleViewCellTableViewCell" customModule="CircleShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FbC-U1-UL9" id="hZb-dO-VZm">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="150" width="400" height="450"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="mmF-Yl-p1L" id="oWA-60-lDZ"/>
+                                    <outlet property="delegate" destination="mmF-Yl-p1L" id="tfq-Hy-pkG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ManagingCircleViewCell" id="bYr-uG-kbU">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bYr-uG-kbU" id="Bie-Vk-0Yh">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="qPJ-Df-deQ" id="LJV-sS-eap"/>
-                            <outlet property="delegate" destination="qPJ-Df-deQ" id="CZI-gB-Mgd"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZRm-di-sGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="zPc-K9-uk5" firstAttribute="leading" secondItem="UWz-V2-Wed" secondAttribute="leadingMargin" id="eSi-Y2-lXT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="zPc-K9-uk5" id="zYz-Z8-Q9C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H4R-Dw-1vq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2225" y="0.0"/>
+            <point key="canvasLocation" x="2238" y="0.0"/>
         </scene>
         <!--Post-->
         <scene sceneID="nIh-SP-KaN">
