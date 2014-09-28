@@ -15,12 +15,13 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
 
     @IBOutlet weak var tableView: UITableView!
     
-    var snapshot: UIView? = nil
-    var sourceIndexPath: NSIndexPath? = nil
-    
+    var snapshot: UIView?
+    var sourceIndexPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "Manage"
         
         for (var i = 1; i <= 10; i++) {
             circles.append(String("item \(i)"))
@@ -31,28 +32,27 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     @IBAction func longPressGestureRecognized(sender: AnyObject) {
-    
         var longPress = sender as UILongPressGestureRecognizer
         var state = longPress.state;
 
         var location = longPress.locationInView(self.tableView)
         var indexPath = self.tableView.indexPathForRowAtPoint(location)
         
-        
-
         switch (state) {
             case UIGestureRecognizerState.Began:
-                if let index = indexPath {
-                    sourceIndexPath = index;
+                // if indexPath exist
+                if let _indexPath = indexPath {
                     
-                    var cell = self.tableView.cellForRowAtIndexPath(index)
+                    self.sourceIndexPath = _indexPath
+                    
+                    var cell = self.tableView.cellForRowAtIndexPath(_indexPath)
                     
                     // Take a snapshot of the selected row using helper method.
-                    snapshot = self.customSnapshotFromView(cell!)
+                    self.snapshot = self.customSnapshotFromView(cell!)
                     
                     // Add the snapshot as subview, centered at cell's center...
-                    var center = cell!.center;
-                    self.snapshot!.center = center;
+                    var center = cell!.center
+                    self.snapshot!.center = center
                     self.snapshot!.alpha = 0.0;
                     self.tableView.addSubview(self.snapshot!)
                     
@@ -67,10 +67,9 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
                     })
                 }
             case UIGestureRecognizerState.Changed:
-                if let existSnapshot = self.snapshot {
-                    var center = existSnapshot.center;
-                    center.y = location.y;
-                    existSnapshot.center = center;
+                    var center = self.snapshot!.center
+                    center.y = location.y
+                    self.snapshot!.center = center
                     
                     // Is destination valid and is it different from source?
                     if (indexPath != nil && indexPath!.isEqual(sourceIndexPath) == false) {
@@ -82,27 +81,27 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
                         self.tableView.moveRowAtIndexPath(sourceIndexPath!, toIndexPath: indexPath!)
                         
                         // ... and update source so it is in sync with UI changes.
-                        sourceIndexPath = indexPath;
-                    }
+                        sourceIndexPath = indexPath
                 }
         default:
             // Clean up.
-            if let existSourceIndexPath = sourceIndexPath{
-                var cell = self.tableView.cellForRowAtIndexPath(sourceIndexPath!)
-            
-                if let existCell = cell{
-                    existCell.hidden = false
-                    existCell.alpha = 0.0
+            if let _sourceIndexPath = sourceIndexPath {
                 
+                var cell = self.tableView.cellForRowAtIndexPath(_sourceIndexPath)
+            
+                if let _cell = cell{
+                    
+                    _cell.hidden = false
+                    _cell.alpha = 0.0
                 
                     UIView.animateWithDuration(0.25, animations: { () -> Void in
                         if let existSnapshot = self.snapshot{
-                            existSnapshot.center = existCell.center;
+                            existSnapshot.center = _cell.center;
                             existSnapshot.transform = CGAffineTransformIdentity;
                             existSnapshot.alpha = 0.0;
                             
                             // Undo fade out.
-                            existCell.alpha = 1.0
+                            _cell.alpha = 1.0
                         }
 
                     }, completion: { (Bool) -> Void in
@@ -146,7 +145,6 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        println("inside")
         return true
     }
 
@@ -155,7 +153,6 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             circles.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            println("123")
         } else {
             println("Unhandled editing style!")
         }

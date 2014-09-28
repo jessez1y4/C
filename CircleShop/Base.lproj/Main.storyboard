@@ -354,10 +354,10 @@
             </objects>
             <point key="canvasLocation" x="2239" y="-812"/>
         </scene>
-        <!--Manage Circle View Controller-->
+        <!--Title-->
         <scene sceneID="N8u-fm-0ni">
             <objects>
-                <viewController id="mmF-Yl-p1L" customClass="ManageCircleViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="mmF-Yl-p1L" customClass="ManageCircleViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="by2-zX-mR1"/>
                         <viewControllerLayoutGuide type="bottom" id="9Za-TA-3Kz"/>
@@ -379,7 +379,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="150" width="400" height="450"/>
+                                    <rect key="frame" x="0.0" y="64" width="400" height="492"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="mmF-Yl-p1L" id="oWA-60-lDZ"/>
@@ -392,13 +392,133 @@
                             <constraint firstItem="zPc-K9-uk5" firstAttribute="leading" secondItem="UWz-V2-Wed" secondAttribute="leadingMargin" id="eSi-Y2-lXT"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="fkx-UH-Nbw">
+                        <barButtonItem key="rightBarButtonItem" title="create" id="HDM-sg-J5h">
+                            <connections>
+                                <segue destination="XUj-3y-PRZ" kind="show" id="Uog-Rc-oVP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="navigationItem" destination="fkx-UH-Nbw" id="xzN-O7-aLC"/>
                         <outlet property="tableView" destination="zPc-K9-uk5" id="zYz-Z8-Q9C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4R-Dw-1vq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2238" y="0.0"/>
+        </scene>
+        <!--Create Circle View Controller-->
+        <scene sceneID="Wfp-i7-QkJ">
+            <objects>
+                <viewController id="XUj-3y-PRZ" customClass="CreateCircleViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bfF-F3-cH9"/>
+                        <viewControllerLayoutGuide type="bottom" id="fG4-Fh-fHH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Fx-S8-Jat">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sNL-XS-WME">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="38" y="359" width="284" height="31"/>
+                                </variation>
+                            </slider>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ynb-wX-b2U">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="371" height="269"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="XUj-3y-PRZ" id="5r2-8x-Cs3"/>
+                                </connections>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqH-s6-Qtr">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="98" y="391" width="296" height="51"/>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBO-Qs-TSD">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="11" y="526" width="389" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="doneCreation:" destination="XUj-3y-PRZ" eventType="touchUpInside" id="ikT-Og-1Fl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWt-i9-gux">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="11" y="411" width="53" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Circle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U57-Hq-dKv">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="470" width="48" height="21"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="04o-ug-JJY">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="98" y="461" width="296" height="30"/>
+                                </variation>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="sNL-XS-WME"/>
+                                <exclude reference="ynb-wX-b2U"/>
+                                <exclude reference="kqH-s6-Qtr"/>
+                                <exclude reference="EBO-Qs-TSD"/>
+                                <exclude reference="MWt-i9-gux"/>
+                                <exclude reference="U57-Hq-dKv"/>
+                                <exclude reference="04o-ug-JJY"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="sNL-XS-WME"/>
+                                <include reference="ynb-wX-b2U"/>
+                                <include reference="kqH-s6-Qtr"/>
+                                <include reference="EBO-Qs-TSD"/>
+                                <include reference="MWt-i9-gux"/>
+                                <include reference="U57-Hq-dKv"/>
+                                <include reference="04o-ug-JJY"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="circleNameTextField" destination="04o-ug-JJY" id="FRb-NQ-4fs"/>
+                        <outlet property="mapView" destination="ynb-wX-b2U" id="UQD-WM-h2u"/>
+                        <outlet property="slider" destination="sNL-XS-WME" id="3pG-y3-61V"/>
+                        <outlet property="textView" destination="kqH-s6-Qtr" id="2I5-15-ez2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7i-QK-Nl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2991" y="-1"/>
         </scene>
         <!--Post-->
         <scene sceneID="nIh-SP-KaN">

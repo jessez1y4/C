@@ -29,6 +29,9 @@
 		0D63044019C68F890058AB44 /* GroupPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63043F19C68F890058AB44 /* GroupPhotoViewCell.swift */; };
 		0D89514919D324CC007A8081 /* ManageCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89514819D324CC007A8081 /* ManageCircleViewController.swift */; };
 		0D89514B19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89514A19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift */; };
+		0DC817DE19D762DE00FA8151 /* CreateCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC817DD19D762DE00FA8151 /* CreateCircleViewController.swift */; };
+		0DC817E019D76A6A00FA8151 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC817DF19D76A6A00FA8151 /* MapKit.framework */; };
+		0DC817E219D76F5400FA8151 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC817E119D76F5400FA8151 /* CoreLocation.framework */; };
 		0DED5ABB19C4380300DCBA9A /* CircleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DED5ABA19C4380300DCBA9A /* CircleViewCell.swift */; };
 		45EAF2C5431743E8BE6B798C /* libPods-CircleShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */; };
 /* End PBXBuildFile section */
@@ -71,6 +74,9 @@
 		0D63043F19C68F890058AB44 /* GroupPhotoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPhotoViewCell.swift; sourceTree = "<group>"; };
 		0D89514819D324CC007A8081 /* ManageCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageCircleViewController.swift; sourceTree = "<group>"; };
 		0D89514A19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = manageCircleViewCellTableViewCell.swift; sourceTree = "<group>"; };
+		0DC817DD19D762DE00FA8151 /* CreateCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCircleViewController.swift; sourceTree = "<group>"; };
+		0DC817DF19D76A6A00FA8151 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0DC817E119D76F5400FA8151 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0DED5ABA19C4380300DCBA9A /* CircleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewCell.swift; sourceTree = "<group>"; };
 		69E2BD15657948809908DAE4 /* Pods-CircleShop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleShop.xcconfig"; path = "Pods/Pods-CircleShop.xcconfig"; sourceTree = "<group>"; };
 		9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CircleShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DC817E219D76F5400FA8151 /* CoreLocation.framework in Frameworks */,
+				0DC817E019D76A6A00FA8151 /* MapKit.framework in Frameworks */,
 				45EAF2C5431743E8BE6B798C /* libPods-CircleShop.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +199,7 @@
 				0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */,
 				0D89514819D324CC007A8081 /* ManageCircleViewController.swift */,
 				0D89514A19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift */,
+				0DC817DD19D762DE00FA8151 /* CreateCircleViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -198,6 +207,8 @@
 		0F272AD862C14797B95FE702 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DC817E119D76F5400FA8151 /* CoreLocation.framework */,
+				0DC817DF19D76A6A00FA8151 /* MapKit.framework */,
 				9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */,
 			);
 			name = Frameworks;
@@ -254,6 +265,11 @@
 				TargetAttributes = {
 					0D5583E219B426CA001AF800 = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0D5583F619B426CA001AF800 = {
 						CreatedOnToolsVersion = 6.0;
@@ -342,6 +358,7 @@
 				0D601DAF19C4337C00BA9E17 /* GroupPhotoViewController.swift in Sources */,
 				0D5638E919C69486008BBF75 /* PhotoCollectionViewCell.swift in Sources */,
 				0DED5ABB19C4380300DCBA9A /* CircleViewCell.swift in Sources */,
+				0DC817DE19D762DE00FA8151 /* CreateCircleViewController.swift in Sources */,
 				0D55DC4D19C44F68005C86BE /* HostViewController.swift in Sources */,
 				0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */,
 				0D5638E719C69469008BBF75 /* PhotoCollectionViewController.swift in Sources */,
