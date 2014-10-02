@@ -9,6 +9,8 @@
 import UIKit
 import AssetsLibrary
 
+var whichImage: UInt = 1
+
 class GroupPhotoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
@@ -25,21 +27,14 @@ class GroupPhotoViewController: UIViewController, UITableViewDataSource, UITable
         
         assetsLibrary.enumerateGroupsWithTypes(0xFFFFFFFF,
             usingBlock: {(group: ALAssetsGroup!, stop: UnsafeMutablePointer<ObjCBool>) in
-                //                if(group != nil && group.valueForProperty(ALAssetPropertyType) as NSString == "ALAssetTypePhoto"){
                 if(group != nil){
-                    //                    group.enumerateAssetsUsingBlock({ (asset: ALAsset!, index: Int, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
-                    //                        if(asset != nil){
-                    //                            println()
-                    //                        }
-                    //                    })
+                    println(group)
                     self.groups.append(group)
                 }
                 else
                 {
                     // reload data
-                    
                     self.tableView.reloadData()
-                    
                 }
                 
             }, failureBlock: { (error:NSError!) in

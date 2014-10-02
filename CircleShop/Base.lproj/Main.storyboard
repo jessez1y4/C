@@ -109,19 +109,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCX-Mm-ISb">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCX-Mm-ISb">
                                 <rect key="frame" x="0.0" y="64" width="400" height="400"/>
+                                <gestureRecognizers/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="87" width="161" height="155"/>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="m74-ve-HIT" appends="YES" id="gdj-iW-bSZ"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-zN-Kht">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <gestureRecognizers/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="208" y="87" width="168" height="155"/>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="UYj-2k-AtV" appends="YES" id="fJu-CQ-xrR"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kEQ-Q2-xph">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <gestureRecognizers/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="288" width="161" height="143"/>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="S8e-Ac-1v5" appends="YES" id="fJr-YV-ymt"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4a7-gX-MyI">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <gestureRecognizers/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="208" y="288" width="168" height="143"/>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tGY-bl-9UO" appends="YES" id="USr-4f-gHd"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Vql-zN-Kht"/>
+                                <exclude reference="kEQ-Q2-xph"/>
+                                <exclude reference="4a7-gX-MyI"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Vql-zN-Kht"/>
+                                <include reference="kEQ-Q2-xph"/>
+                                <include reference="4a7-gX-MyI"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="dCX-Mm-ISb" id="34m-XI-h7E"/>
+                        <outlet property="imageView1" destination="dCX-Mm-ISb" id="Okq-Qk-Faj"/>
+                        <outlet property="imageView2" destination="Vql-zN-Kht" id="xK5-iw-X7V"/>
+                        <outlet property="imageView3" destination="kEQ-Q2-xph" id="v5k-Ca-bxi"/>
+                        <outlet property="imageView4" destination="4a7-gX-MyI" id="Icg-0N-K7l"/>
+                        <segue destination="fRH-YM-si6" kind="show" id="JQX-et-FPL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqb-3I-2fj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UYj-2k-AtV">
+                    <connections>
+                        <action selector="tapImageGestureRecognized:" destination="NgY-P5-gka" id="3RF-d1-wSB"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="m74-ve-HIT">
+                    <connections>
+                        <action selector="tapImageGestureRecognized:" destination="NgY-P5-gka" id="YtZ-B8-ab9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="S8e-Ac-1v5">
+                    <connections>
+                        <action selector="tapImageGestureRecognized:" destination="NgY-P5-gka" id="4X8-TO-lAf"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="tGY-bl-9UO">
+                    <connections>
+                        <action selector="tapImageGestureRecognized:" destination="NgY-P5-gka" id="uYl-Hh-Zwt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3729" y="870"/>
+            <point key="canvasLocation" x="3709.5" y="870"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="98D-FS-rHc">
@@ -600,6 +675,7 @@
         <!--Circle-->
         <scene sceneID="yZQ-ki-D1V">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZq-et-6oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JW1-g9-yqx" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Circle" id="bj5-S5-b6Y"/>
                     <toolbarItems/>
@@ -612,7 +688,6 @@
                         <segue destination="Gkv-xw-wfU" kind="relationship" relationship="rootViewController" id="PL3-yD-IXS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tZq-et-6oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="763" y="0.0"/>
         </scene>
@@ -655,4 +730,7 @@
             <point key="canvasLocation" x="763" y="1790"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="D2p-pr-AF4"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,7 @@
 		0D00772319C9537B006EEAE7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00772019C9537B006EEAE7 /* Constants.swift */; };
 		0D00772419C9537B006EEAE7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00772119C9537B006EEAE7 /* Helpers.swift */; };
 		0D00772519C9537B006EEAE7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00772219C9537B006EEAE7 /* User.swift */; };
+		0D1E2F7C19DD266100478F46 /* CircleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1E2F7B19DD266100478F46 /* CircleTabBarController.swift */; };
 		0D5583E919B426CA001AF800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583E819B426CA001AF800 /* AppDelegate.swift */; };
 		0D5583EB19B426CA001AF800 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583EA19B426CA001AF800 /* CircleViewController.swift */; };
 		0D5583F019B426CA001AF800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5583EE19B426CA001AF800 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		0D00772019C9537B006EEAE7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0D00772119C9537B006EEAE7 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		0D00772219C9537B006EEAE7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0D1E2F7B19DD266100478F46 /* CircleTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTabBarController.swift; sourceTree = "<group>"; };
 		0D2D7DFB19B51818007CCCED /* CircleShop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CircleShop-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D5583E319B426CA001AF800 /* CircleShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5583E719B426CA001AF800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				0D00771A19C94B3A006EEAE7 /* LoginViewController.swift */,
 				0D00771C19C94B50006EEAE7 /* SignUpViewController.swift */,
+				0D1E2F7B19DD266100478F46 /* CircleTabBarController.swift */,
 				0D55DC4C19C44F68005C86BE /* HostViewController.swift */,
 				0D5583EA19B426CA001AF800 /* CircleViewController.swift */,
 				0DED5ABA19C4380300DCBA9A /* CircleViewCell.swift */,
@@ -370,6 +373,7 @@
 				0D5583EB19B426CA001AF800 /* CircleViewController.swift in Sources */,
 				0D63044019C68F890058AB44 /* GroupPhotoViewCell.swift in Sources */,
 				0D89514B19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift in Sources */,
+				0D1E2F7C19DD266100478F46 /* CircleTabBarController.swift in Sources */,
 				0D00772519C9537B006EEAE7 /* User.swift in Sources */,
 				0D55DC5119C68B9B005C86BE /* DetailViewController.swift in Sources */,
 				0D00771B19C94B3A006EEAE7 /* LoginViewController.swift in Sources */,

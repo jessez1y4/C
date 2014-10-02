@@ -20,7 +20,7 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         group.enumerateAssetsWithOptions(NSEnumerationOptions.Reverse, usingBlock: { (asset: ALAsset!, index: Int, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
             if(asset != nil && asset.valueForProperty(ALAssetPropertyType) as NSString == "ALAssetTypePhoto"){
                 //            if(asset != nil){
