@@ -14,4 +14,7 @@
 #import <ICViewPager/ViewPagerController.h>
 #import <BASSquareCropperViewController.h>
 
+#import <DBCameraViewController.h>
+#import <DBCameraContainerViewController.h>
+
 #endif

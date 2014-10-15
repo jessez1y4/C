@@ -27,7 +27,9 @@ class LoginViewController: UIViewController {
         // create current user
         
         // show homepage
-        self.performSegueWithIdentifier("loginSuccess", sender: self)
+//        self.performSegueWithIdentifier("loginSuccess", sender: self)
+        self.dismissViewControllerAnimated(true, completion: nil)
+
     }
     
     func onLoginFailure(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) {

@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D00771719C80C6D006EEAE7 /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00771619C80C6D006EEAE7 /* CropViewController.swift */; };
 		0D00771919C820C5006EEAE7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00771819C820C5006EEAE7 /* PostViewController.swift */; };
 		0D00771B19C94B3A006EEAE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00771A19C94B3A006EEAE7 /* LoginViewController.swift */; };
 		0D00771D19C94B50006EEAE7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00771C19C94B50006EEAE7 /* SignUpViewController.swift */; };
 		0D00772319C9537B006EEAE7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00772019C9537B006EEAE7 /* Constants.swift */; };
 		0D00772419C9537B006EEAE7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00772119C9537B006EEAE7 /* Helpers.swift */; };
 		0D00772519C9537B006EEAE7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D00772219C9537B006EEAE7 /* User.swift */; };
-		0D1E2F7C19DD266100478F46 /* CircleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1E2F7B19DD266100478F46 /* CircleTabBarController.swift */; };
 		0D5583E919B426CA001AF800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583E819B426CA001AF800 /* AppDelegate.swift */; };
 		0D5583EB19B426CA001AF800 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583EA19B426CA001AF800 /* CircleViewController.swift */; };
 		0D5583F019B426CA001AF800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5583EE19B426CA001AF800 /* Main.storyboard */; };
@@ -23,11 +21,7 @@
 		0D55DC4D19C44F68005C86BE /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55DC4C19C44F68005C86BE /* HostViewController.swift */; };
 		0D55DC4F19C68A08005C86BE /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D55DC4E19C68A08005C86BE /* 1.jpg */; };
 		0D55DC5119C68B9B005C86BE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55DC5019C68B9B005C86BE /* DetailViewController.swift */; };
-		0D5638E719C69469008BBF75 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5638E619C69469008BBF75 /* PhotoCollectionViewController.swift */; };
-		0D5638E919C69486008BBF75 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5638E819C69486008BBF75 /* PhotoCollectionViewCell.swift */; };
-		0D601DAF19C4337C00BA9E17 /* GroupPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D601DAE19C4337C00BA9E17 /* GroupPhotoViewController.swift */; };
 		0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */; };
-		0D63044019C68F890058AB44 /* GroupPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63043F19C68F890058AB44 /* GroupPhotoViewCell.swift */; };
 		0D89514919D324CC007A8081 /* ManageCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89514819D324CC007A8081 /* ManageCircleViewController.swift */; };
 		0D89514B19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89514A19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift */; };
 		0DC817DE19D762DE00FA8151 /* CreateCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC817DD19D762DE00FA8151 /* CreateCircleViewController.swift */; };
@@ -48,14 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D00771619C80C6D006EEAE7 /* CropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropViewController.swift; sourceTree = "<group>"; };
 		0D00771819C820C5006EEAE7 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		0D00771A19C94B3A006EEAE7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0D00771C19C94B50006EEAE7 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0D00772019C9537B006EEAE7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0D00772119C9537B006EEAE7 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		0D00772219C9537B006EEAE7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		0D1E2F7B19DD266100478F46 /* CircleTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTabBarController.swift; sourceTree = "<group>"; };
 		0D2D7DFB19B51818007CCCED /* CircleShop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CircleShop-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D5583E319B426CA001AF800 /* CircleShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5583E719B426CA001AF800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,11 +61,7 @@
 		0D55DC4C19C44F68005C86BE /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		0D55DC4E19C68A08005C86BE /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		0D55DC5019C68B9B005C86BE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		0D5638E619C69469008BBF75 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
-		0D5638E819C69486008BBF75 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
-		0D601DAE19C4337C00BA9E17 /* GroupPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPhotoViewController.swift; sourceTree = "<group>"; };
 		0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		0D63043F19C68F890058AB44 /* GroupPhotoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPhotoViewCell.swift; sourceTree = "<group>"; };
 		0D89514819D324CC007A8081 /* ManageCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageCircleViewController.swift; sourceTree = "<group>"; };
 		0D89514A19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = manageCircleViewCellTableViewCell.swift; sourceTree = "<group>"; };
 		0DC817DD19D762DE00FA8151 /* CreateCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCircleViewController.swift; sourceTree = "<group>"; };
@@ -188,16 +176,10 @@
 			children = (
 				0D00771A19C94B3A006EEAE7 /* LoginViewController.swift */,
 				0D00771C19C94B50006EEAE7 /* SignUpViewController.swift */,
-				0D1E2F7B19DD266100478F46 /* CircleTabBarController.swift */,
 				0D55DC4C19C44F68005C86BE /* HostViewController.swift */,
 				0D5583EA19B426CA001AF800 /* CircleViewController.swift */,
 				0DED5ABA19C4380300DCBA9A /* CircleViewCell.swift */,
 				0D55DC5019C68B9B005C86BE /* DetailViewController.swift */,
-				0D601DAE19C4337C00BA9E17 /* GroupPhotoViewController.swift */,
-				0D63043F19C68F890058AB44 /* GroupPhotoViewCell.swift */,
-				0D5638E619C69469008BBF75 /* PhotoCollectionViewController.swift */,
-				0D5638E819C69486008BBF75 /* PhotoCollectionViewCell.swift */,
-				0D00771619C80C6D006EEAE7 /* CropViewController.swift */,
 				0D00771819C820C5006EEAE7 /* PostViewController.swift */,
 				0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */,
 				0D89514819D324CC007A8081 /* ManageCircleViewController.swift */,
@@ -358,26 +340,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D00771919C820C5006EEAE7 /* PostViewController.swift in Sources */,
-				0D601DAF19C4337C00BA9E17 /* GroupPhotoViewController.swift in Sources */,
-				0D5638E919C69486008BBF75 /* PhotoCollectionViewCell.swift in Sources */,
 				0DED5ABB19C4380300DCBA9A /* CircleViewCell.swift in Sources */,
 				0DC817DE19D762DE00FA8151 /* CreateCircleViewController.swift in Sources */,
 				0D55DC4D19C44F68005C86BE /* HostViewController.swift in Sources */,
 				0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */,
-				0D5638E719C69469008BBF75 /* PhotoCollectionViewController.swift in Sources */,
 				0D00772319C9537B006EEAE7 /* Constants.swift in Sources */,
 				0D5583E919B426CA001AF800 /* AppDelegate.swift in Sources */,
 				0D00771D19C94B50006EEAE7 /* SignUpViewController.swift in Sources */,
 				0D89514919D324CC007A8081 /* ManageCircleViewController.swift in Sources */,
 				0D00772419C9537B006EEAE7 /* Helpers.swift in Sources */,
 				0D5583EB19B426CA001AF800 /* CircleViewController.swift in Sources */,
-				0D63044019C68F890058AB44 /* GroupPhotoViewCell.swift in Sources */,
 				0D89514B19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift in Sources */,
-				0D1E2F7C19DD266100478F46 /* CircleTabBarController.swift in Sources */,
 				0D00772519C9537B006EEAE7 /* User.swift in Sources */,
 				0D55DC5119C68B9B005C86BE /* DetailViewController.swift in Sources */,
 				0D00771B19C94B3A006EEAE7 /* LoginViewController.swift in Sources */,
-				0D00771719C80C6D006EEAE7 /* CropViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
