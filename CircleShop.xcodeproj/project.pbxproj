@@ -29,6 +29,10 @@
 		0DC817E219D76F5400FA8151 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC817E119D76F5400FA8151 /* CoreLocation.framework */; };
 		0DED5ABB19C4380300DCBA9A /* CircleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DED5ABA19C4380300DCBA9A /* CircleViewCell.swift */; };
 		45EAF2C5431743E8BE6B798C /* libPods-CircleShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */; };
+		9A75906C19DD1B0E00ADCAB4 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A75906B19DD1B0E00ADCAB4 /* Globals.swift */; };
+		9AC78BD319D8B6B800B294DC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC78BD219D8B6B800B294DC /* Item.swift */; };
+		9AC78BD519D8B6CA00B294DC /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC78BD419D8B6CA00B294DC /* Circle.swift */; };
+		9AE3CF1819D93399007850EC /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3CF1719D93399007850EC /* CurrentUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,11 @@
 		0DC817E119D76F5400FA8151 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0DED5ABA19C4380300DCBA9A /* CircleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleViewCell.swift; sourceTree = "<group>"; };
 		69E2BD15657948809908DAE4 /* Pods-CircleShop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleShop.xcconfig"; path = "Pods/Pods-CircleShop.xcconfig"; sourceTree = "<group>"; };
+		9A75906B19DD1B0E00ADCAB4 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		9AC78BD219D8B6B800B294DC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9AC78BD419D8B6CA00B294DC /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		9AE3CF1619D8CAA5007850EC /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		9AE3CF1719D93399007850EC /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CircleShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				0D00772219C9537B006EEAE7 /* User.swift */,
+				9AC78BD219D8B6B800B294DC /* Item.swift */,
+				9AC78BD419D8B6CA00B294DC /* Circle.swift */,
+				9AE3CF1719D93399007850EC /* CurrentUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -106,6 +118,7 @@
 			children = (
 				0D00772019C9537B006EEAE7 /* Constants.swift */,
 				0D00772119C9537B006EEAE7 /* Helpers.swift */,
+				9A75906B19DD1B0E00ADCAB4 /* Globals.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -113,6 +126,7 @@
 		0D5583DA19B426C9001AF800 = {
 			isa = PBXGroup;
 			children = (
+				9AE3CF1619D8CAA5007850EC /* MyPlayground.playground */,
 				0D5583E519B426CA001AF800 /* CircleShop */,
 				0D5583FA19B426CA001AF800 /* CircleShopTests */,
 				0D5583E419B426CA001AF800 /* Products */,
@@ -340,7 +354,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D00771919C820C5006EEAE7 /* PostViewController.swift in Sources */,
+				0D601DAF19C4337C00BA9E17 /* GroupPhotoViewController.swift in Sources */,
+				9AE3CF1819D93399007850EC /* CurrentUser.swift in Sources */,
+				0D5638E919C69486008BBF75 /* PhotoCollectionViewCell.swift in Sources */,
 				0DED5ABB19C4380300DCBA9A /* CircleViewCell.swift in Sources */,
+				9AC78BD319D8B6B800B294DC /* Item.swift in Sources */,
 				0DC817DE19D762DE00FA8151 /* CreateCircleViewController.swift in Sources */,
 				0D55DC4D19C44F68005C86BE /* HostViewController.swift in Sources */,
 				0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */,
@@ -351,7 +369,9 @@
 				0D00772419C9537B006EEAE7 /* Helpers.swift in Sources */,
 				0D5583EB19B426CA001AF800 /* CircleViewController.swift in Sources */,
 				0D89514B19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift in Sources */,
+				9AC78BD519D8B6CA00B294DC /* Circle.swift in Sources */,
 				0D00772519C9537B006EEAE7 /* User.swift in Sources */,
+				9A75906C19DD1B0E00ADCAB4 /* Globals.swift in Sources */,
 				0D55DC5119C68B9B005C86BE /* DetailViewController.swift in Sources */,
 				0D00771B19C94B3A006EEAE7 /* LoginViewController.swift in Sources */,
 			);

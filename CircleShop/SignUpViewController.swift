@@ -17,23 +17,19 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func SignUpClicked(sender: UIButton) {
-        if self.emailInput.text.isEmpty || self.passwordInput.text.isEmpty {
-            Helpers.showSimpleAlert(self, message: "Please enter Email and Password.")
-        } else {
-            User.signUp(self.emailInput.text, name: self.nameInput.text, password: self.passwordInput.text, onSignUpSuccess: onSignUpSuccess, onSignUpFailure: onSignUpFailure)
-        }
+        User.signUp(self.emailInput.text, name: self.nameInput.text, password: self.passwordInput.text, callback: signUpCallback)
     }
     
-    func onSignUpSuccess(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) {
-        // create current user
+    func signUpCallback(error: String?) {
         
-        // show homepage
-        self.performSegueWithIdentifier("signUpSuccess", sender: self)
+        if let err = error {
+            return Helpers.showSimpleAlert(self, message: err)
+        }
+        
+
+        // todo: show homepage
+        println("user signed up and logged in")
     }
     
-    func onSignUpFailure(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) {
-        // alert failure
-        Helpers.showSimpleAlert(self, message: "Fail.")
-    }
 }
 

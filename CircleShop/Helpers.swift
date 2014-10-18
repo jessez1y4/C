@@ -1,12 +1,6 @@
-//
-//  Helpers.swift
-//  CircleShop
-//
-//  Created by Jiang, Yu on 6/7/14.
-//  Copyright (c) 2014 TBD. All rights reserved.
-//
-
 import UIKit
+
+var _AFManager: AFHTTPRequestOperationManager?
 
 class Helpers {
     // Show simple alert with a close button
@@ -21,4 +15,13 @@ class Helpers {
         closure()
         objc_sync_exit(lock)
     }
+    
+    class func AFManager() -> AFHTTPRequestOperationManager {
+        if _AFManager == nil {
+            _AFManager = AFHTTPRequestOperationManager()
+        }
+        
+        return _AFManager!
+    }
+    
 }
