@@ -27,9 +27,8 @@ class LoginViewController: UIViewController {
         }
         
         // show homepage if no error message (meaning login success)
-        println("user logged in")
-        println(User.getCurrentUser())
-        self.performSegueWithIdentifier("loginSuccess", sender: self)
+        self.dismissViewControllerAnimated(true, completion: nil)
+
     }
     
 }
