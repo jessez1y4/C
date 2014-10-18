@@ -18,8 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCX-Mm-ISb">
-                                <rect key="frame" x="0.0" y="64" width="400" height="400"/>
+                                <rect key="frame" x="0.0" y="58" width="400" height="400"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <gestureRecognizers/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="36" y="58" width="118" height="86"/>
+                                </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="6" y="65" width="82" height="82"/>
                                 </variation>
@@ -27,59 +31,12 @@
                                     <outletCollection property="gestureRecognizers" destination="m74-ve-HIT" appends="YES" id="gdj-iW-bSZ"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-zN-Kht">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <gestureRecognizers/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="105" y="65" width="82" height="82"/>
-                                </variation>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="UYj-2k-AtV" appends="YES" id="fJu-CQ-xrR"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kEQ-Q2-xph">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <gestureRecognizers/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="200" y="65" width="82" height="82"/>
-                                </variation>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="S8e-Ac-1v5" appends="YES" id="fJr-YV-ymt"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4a7-gX-MyI">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <gestureRecognizers/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="295" y="65" width="82" height="82"/>
-                                </variation>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="tGY-bl-9UO" appends="YES" id="USr-4f-gHd"/>
-                                </connections>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Vql-zN-Kht"/>
-                                <exclude reference="kEQ-Q2-xph"/>
-                                <exclude reference="4a7-gX-MyI"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Vql-zN-Kht"/>
-                                <include reference="kEQ-Q2-xph"/>
-                                <include reference="4a7-gX-MyI"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Post" id="Pbb-lI-ffr"/>
                     <connections>
                         <outlet property="imageView1" destination="dCX-Mm-ISb" id="Okq-Qk-Faj"/>
-                        <outlet property="imageView2" destination="Vql-zN-Kht" id="xK5-iw-X7V"/>
-                        <outlet property="imageView3" destination="kEQ-Q2-xph" id="v5k-Ca-bxi"/>
-                        <outlet property="imageView4" destination="4a7-gX-MyI" id="Icg-0N-K7l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqb-3I-2fj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -104,7 +61,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="762" y="760"/>
+            <point key="canvasLocation" x="762" y="759.75"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="98D-FS-rHc">
