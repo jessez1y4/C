@@ -16,23 +16,20 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginClicked(sender: UIButton) {
-        if self.emailInput.text.isEmpty || self.passwordInput.text.isEmpty {
-            Helpers.showSimpleAlert(self, message: "Please enter Email and Password.")
-        } else {
-            User.login(self.emailInput.text, password: self.passwordInput.text, onLoginSuccess: onLoginSuccess, onLoginFailure: onLoginFailure)
-        }
+        User.login(self.emailInput.text, password: self.passwordInput.text, callback: loginCallback)
     }
     
-    func onLoginSuccess(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) {
-        // create current user
+    func loginCallback(error: String?) {
         
-        // show homepage
+        // alert error message if any
+        if let err = error {
+            return Helpers.showSimpleAlert(self, message: err)
+        }
+        
+        // show homepage if no error message (meaning login success)
+        println("user logged in")
+        println(User.getCurrentUser())
         self.performSegueWithIdentifier("loginSuccess", sender: self)
-    }
-    
-    func onLoginFailure(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) {
-        // alert failure
-        Helpers.showSimpleAlert(self, message: "Fail.")
     }
     
 }
