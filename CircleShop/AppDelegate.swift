@@ -9,13 +9,17 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate, DBCameraViewControllerDelegate {
                             
     var window: UIWindow?
 
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
+        
+        let tabController = self.window!.rootViewController as UITabBarController
+        tabController.delegate = self
+        
         return true
     }
 
@@ -40,7 +44,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication!) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    
+    func camera(cameraViewController: AnyObject!, didFinishWithImage image: UIImage!, withMetadata metadata: [NSObject : AnyObject]!) {
+        
+        let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostId") as PostViewController
+        
+        postViewController.image = image
+        
+        cameraViewController.restoreFullScreenMode
+        cameraViewController.navigationController!?.pushViewController(postViewController, animated: true)
+    }
+    
+    func dismissCamera(cameraViewController: AnyObject!) {
+        self.window!.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
 
-
+    
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        
+        var LoginedIn = true
+        
+        if(LoginedIn) {
+            
+            if(viewController.title == "Post"){
+                
+                let cameraController = DBCameraViewController.initWithDelegate(self)
+                cameraController.setForceQuadCrop(true)
+                
+                let container = DBCameraContainerViewController(delegate: self)
+                container.setDBCameraViewController(cameraController)
+                
+                let nav = UINavigationController(rootViewController: container)
+                nav.setNavigationBarHidden(true, animated: true)
+                
+                self.window!.rootViewController?.presentViewController(nav, animated: true, completion: nil)
+                
+                return false
+            }
+            else
+            {
+                return true
+            }
+        }
+        else
+        {
+            // login ...
+        }
+        
+    }
 }
 

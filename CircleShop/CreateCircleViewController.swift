@@ -28,6 +28,7 @@ class CreateCircleViewController: UIViewController, CLLocationManagerDelegate, M
         if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined {
             manager.requestWhenInUseAuthorization()
             
+            
         } else {
             manager.desiredAccuracy = kCLLocationAccuracyBest
             manager.startUpdatingLocation()
