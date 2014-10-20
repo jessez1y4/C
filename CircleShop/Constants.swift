@@ -13,6 +13,7 @@ let UPDATE_CIRCLES_URL = "\(BASE_URL)/circle/update"
 // item urls
 let ITEMS_URL = "\(BASE_URL)/items"
 let ITEM_BASE_URL = "\(BASE_URL)/item/"
+let UPDATE_ITEM_URL = "\(BASE_URL)/item/update"
 
 // cloudinary stuff
 let CL_NAME = "dyxezhdxp"

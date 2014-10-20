@@ -1,6 +1,22 @@
 import Foundation
 
 class User {
+    var id: String
+    var name: String
+    var avatar: String
+    
+    /**
+    Init with dictionary
+    
+    :param: dict a dictionary afnetworking gets from server
+    
+    :returns: User instance
+    */
+    init(dict: [String: String]) {
+        self.id = dict["_id"]!
+        self.name = dict["name"]!
+        self.avatar = dict["avatar"]!
+    }
     
     class func login(email: String, password: String, callback: (error: String?) -> Void) {
         
@@ -88,10 +104,13 @@ class User {
     
     
     private class func setCurrentUser(user: [String: AnyObject]) {
-        let standardUserDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
         
-        standardUserDefaults.setObject(user["email"], forKey: "email")
-        standardUserDefaults.setObject(user["circles"], forKey: "circles")
+        userDefaults.setObject(user["email"], forKey: "email")
+        userDefaults.setObject(user["circles"], forKey: "circles")
+        userDefaults.setObject(user["_id"], forKey: "id")
+        userDefaults.setObject(user["name"], forKey: "name")
+        userDefaults.setObject(user["avatar"], forKey: "avatar")
     }
     
     
