@@ -18,9 +18,10 @@ class CreateCircleViewController: UIViewController, CLLocationManagerDelegate, M
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var circleNameTextField: UITextField!
     
-    
+
     let manager = CLLocationManager()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

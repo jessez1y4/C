@@ -18,79 +18,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCX-Mm-ISb">
-                                <rect key="frame" x="0.0" y="64" width="400" height="400"/>
+                                <rect key="frame" x="34" y="28" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="36" y="58" width="118" height="86"/>
+                                </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="6" y="65" width="82" height="82"/>
                                 </variation>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="m74-ve-HIT" appends="YES" id="gdj-iW-bSZ"/>
+                                    <outletCollection property="gestureRecognizers" destination="tGY-bl-9UO" appends="YES" id="8K8-kL-4dF"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-zN-Kht">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <gestureRecognizers/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="105" y="65" width="82" height="82"/>
-                                </variation>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pqm-lT-q9z">
+                                <rect key="frame" x="324" y="28" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="UYj-2k-AtV" appends="YES" id="fJu-CQ-xrR"/>
+                                    <outletCollection property="gestureRecognizers" destination="S8e-Ac-1v5" appends="YES" id="eYy-0r-jk5"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kEQ-Q2-xph">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <gestureRecognizers/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="200" y="65" width="82" height="82"/>
-                                </variation>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9PH-IY-gyF">
+                                <rect key="frame" x="470" y="28" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="S8e-Ac-1v5" appends="YES" id="fJr-YV-ymt"/>
+                                    <outletCollection property="gestureRecognizers" destination="m74-ve-HIT" appends="YES" id="ZP0-L7-sy1"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4a7-gX-MyI">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <gestureRecognizers/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="295" y="65" width="82" height="82"/>
-                                </variation>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcp-lj-VCB">
+                                <rect key="frame" x="174" y="28" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="tGY-bl-9UO" appends="YES" id="USr-4f-gHd"/>
+                                    <outletCollection property="gestureRecognizers" destination="UYj-2k-AtV" appends="YES" id="aJ0-Bt-y54"/>
                                 </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Vql-zN-Kht"/>
-                                <exclude reference="kEQ-Q2-xph"/>
-                                <exclude reference="4a7-gX-MyI"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Vql-zN-Kht"/>
-                                <include reference="kEQ-Q2-xph"/>
-                                <include reference="4a7-gX-MyI"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Post" id="Pbb-lI-ffr"/>
                     <connections>
                         <outlet property="imageView1" destination="dCX-Mm-ISb" id="Okq-Qk-Faj"/>
-                        <outlet property="imageView2" destination="Vql-zN-Kht" id="xK5-iw-X7V"/>
-                        <outlet property="imageView3" destination="kEQ-Q2-xph" id="v5k-Ca-bxi"/>
-                        <outlet property="imageView4" destination="4a7-gX-MyI" id="Icg-0N-K7l"/>
+                        <outlet property="imageView2" destination="zcp-lj-VCB" id="17B-aG-HEQ"/>
+                        <outlet property="imageView3" destination="pqm-lT-q9z" id="7DS-jv-ju6"/>
+                        <outlet property="imageView4" destination="9PH-IY-gyF" id="oG9-Nn-Ugl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqb-3I-2fj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="tGY-bl-9UO">
+                    <connections>
+                        <action selector="tapImageGestureRecognized:" destination="NgY-P5-gka" id="uYl-Hh-Zwt"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <tapGestureRecognizer id="UYj-2k-AtV">
                     <connections>
                         <action selector="tapImageGestureRecognized:" destination="NgY-P5-gka" id="3RF-d1-wSB"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="m74-ve-HIT">
-                    <connections>
-                        <action selector="tapImageGestureRecognized:" destination="NgY-P5-gka" id="YtZ-B8-ab9"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="S8e-Ac-1v5">
@@ -98,13 +79,13 @@
                         <action selector="tapImageGestureRecognized:" destination="NgY-P5-gka" id="4X8-TO-lAf"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="tGY-bl-9UO">
+                <tapGestureRecognizer id="m74-ve-HIT">
                     <connections>
-                        <action selector="tapImageGestureRecognized:" destination="NgY-P5-gka" id="uYl-Hh-Zwt"/>
+                        <action selector="tapImageGestureRecognized:" destination="NgY-P5-gka" id="YtZ-B8-ab9"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="762" y="760"/>
+            <point key="canvasLocation" x="762" y="759"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="98D-FS-rHc">
@@ -348,9 +329,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-K9-uk5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-K9-uk5">
+                                <rect key="frame" x="16" y="0.0" width="320" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="kn7-Td-z0X"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ManageCircleViewCell" rowHeight="52" id="FbC-U1-UL9" customClass="manageCircleViewCellTableViewCell" customModule="CircleShop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -371,7 +355,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zPc-K9-uk5" firstAttribute="top" secondItem="UWz-V2-Wed" secondAttribute="top" id="GhK-Bj-1JC"/>
                             <constraint firstItem="zPc-K9-uk5" firstAttribute="leading" secondItem="UWz-V2-Wed" secondAttribute="leadingMargin" id="eSi-Y2-lXT"/>
+                            <constraint firstAttribute="bottom" secondItem="zPc-K9-uk5" secondAttribute="bottom" id="hQO-HO-M8g"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
