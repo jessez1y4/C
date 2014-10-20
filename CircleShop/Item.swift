@@ -17,11 +17,14 @@ class Item {
     :returns: an instance of Item
     */
     init(dict: [String: AnyObject]) {
-        self.id = dict["_id"] as? String
-        self.name = dict["name"] as String
-        self.description = dict["description"] as String
-        self.images = dict["images"] as [String]
-        self.price = dict["price"] as Float
+        if let id: AnyObject = dict["_id"] {
+            self.id = id as? String
+        }
+        
+        self.name = dict["name"]! as String
+        self.description = dict["description"]! as String
+        self.images = dict["images"]! as [String]
+        self.price = dict["price"]! as Int
     }
     
     /**

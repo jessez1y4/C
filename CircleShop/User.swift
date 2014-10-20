@@ -3,7 +3,7 @@ import Foundation
 class User {
     var id: String
     var name: String
-    var avatar_url: String
+    var avatar: String
     
     /**
     Init with dictionary
@@ -13,9 +13,9 @@ class User {
     :returns: User instance
     */
     init(dict: [String: String]) {
-        self.id = dict["_id"]
-        self.name = dict["name"]
-        self.avatar_url = dict["avatar_url"]
+        self.id = dict["_id"]!
+        self.name = dict["name"]!
+        self.avatar = dict["avatar"]!
     }
     
     class func login(email: String, password: String, callback: (error: String?) -> Void) {
