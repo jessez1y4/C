@@ -12,7 +12,6 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <AFNetworking/AFNetworking.h>
 #import <ICViewPager/ViewPagerController.h>
-#import <BASSquareCropperViewController.h>
 #import <SSKeychain.h>
 
 #import <DBCameraViewController.h>
