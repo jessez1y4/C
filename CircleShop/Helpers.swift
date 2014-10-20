@@ -24,4 +24,17 @@ class Helpers {
         return _AFManager!
     }
     
+    /**
+    Generate image url on cloudinary
+    
+    :param: id     image id on cloudinary
+    :param: width  width
+    :param: height height
+    
+    :returns: image url
+    */
+    class func generateImageURL(id: String, width: Int, height: Int) -> String {
+        return "edit me please"
+    }
+    
 }

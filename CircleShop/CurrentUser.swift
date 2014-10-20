@@ -11,13 +11,20 @@ class CurrentUser {
         }
     }
     
-    
     class func getEmail() -> String? {
         return NSUserDefaults.standardUserDefaults().objectForKey("email") as? String
     }
     
-    class func getUserId() -> String? {
-        return NSUserDefaults.standardUserDefaults().objectForKey("email") as? String
+    class func getId() -> String? {
+        return NSUserDefaults.standardUserDefaults().objectForKey("id") as? String
+    }
+    
+    class func getName() -> String? {
+        return NSUserDefaults.standardUserDefaults().objectForKey("name") as? String
+    }
+    
+    class func getAvatar() -> String? {
+        return NSUserDefaults.standardUserDefaults().objectForKey("avatar") as? String
     }
     
     
@@ -51,19 +58,25 @@ class CurrentUser {
         Helpers.AFManager().POST(UPDATE_CIRCLES_URL, parameters: params, success: nil, failure: nil)
     }
     
-    class func updateItem(item: Item) {
+    class func updateItem(item: Item, callback: (updated: Bool) -> Void) {
         var params = self.getBaseParams()
         params["item"] = item.toDict()
         
-//        Helpers.AFManager().POST(<#URLString: String!#>, parameters: <#AnyObject!#>, success: <#((AFHTTPRequestOperation!, AnyObject!) -> Void)!##(AFHTTPRequestOperation!, AnyObject!) -> Void#>, failure: <#((AFHTTPRequestOperation!, NSError!) -> Void)!##(AFHTTPRequestOperation!, NSError!) -> Void#>)
+        Helpers.AFManager().POST(UPDATE_ITEM_URL, parameters: params, success: {(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
+            
+            callback(updated: true)
+            
+            }, failure: {(operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                
+                callback(updated: false)
+                
+        })
     }
-
-//    class func getItems() -> [Item]? {
-////        var condition =
-//        
-//        
-//    }
     
+    
+    class func sendMessage(receiver: User) {
+        
+    }
     
     
     private class func getBaseParams() -> [String: AnyObject] {
