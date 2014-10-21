@@ -16,9 +16,18 @@ class Helpers {
         objc_sync_exit(lock)
     }
     
-    class func AFManager() -> AFHTTPRequestOperationManager {
+    class func AFManager(withAuthHeader: Bool) -> AFHTTPRequestOperationManager {
         if _AFManager == nil {
             _AFManager = AFHTTPRequestOperationManager()
+        }
+        
+        if withAuthHeader {
+            if let email = NSUserDefaults.standardUserDefaults().objectForKey("email") as? NSString {
+                let password = SSKeychain.passwordForService(KEYCHAIN_SERVICE, account: email)
+                
+                _AFManager!.requestSerializer.setValue(email, forHTTPHeaderField: "email")
+                _AFManager!.requestSerializer.setValue(password, forHTTPHeaderField: "password")
+            }
         }
         
         return _AFManager!

@@ -28,10 +28,12 @@ class User {
             return callback(error: "Password cannot be empty")
         }
         
+        let AFManager = Helpers.AFManager(false)
         
-        let parameters = ["email": email, "password": password]
+        AFManager.requestSerializer.setValue(email, forHTTPHeaderField: "email")
+        AFManager.requestSerializer.setValue(password, forHTTPHeaderField: "password")
         
-        Helpers.AFManager().POST(LOGIN_URL, parameters: parameters, success: makeOnLoginSuccess(callback, parameters: parameters), failure: makeOnLoginFailure(callback))
+        AFManager.GET(LOGIN_URL, parameters: nil, success: makeOnLoginSuccess(callback, parameters: ["email": email, "password": password]), failure: makeOnLoginFailure(callback))
     }
     
     
@@ -57,13 +59,13 @@ class User {
         
         let parameters = ["email": email, "name": name, "password": password]
         
-        Helpers.AFManager().POST(SIGNUP_URL, parameters: parameters, success: makeOnSignUpSuccess(callback), failure: makeOnSignUpFailure(callback))
+        Helpers.AFManager(false).POST(SIGNUP_URL, parameters: parameters, success: makeOnSignUpSuccess(callback), failure: makeOnSignUpFailure(callback))
         
     }
     
     
     class func isLoggedIn() -> Bool {
-        return NSUserDefaults.standardUserDefaults().objectForKey("email") == nil
+        return NSUserDefaults.standardUserDefaults().objectForKey("email") != nil
     }
     
     

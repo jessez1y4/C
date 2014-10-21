@@ -48,21 +48,19 @@ class CurrentUser {
         
         NSUserDefaults.standardUserDefaults().setObject(circleArr, forKey: "circles")
         
-        var params = self.getBaseParams()
-        params["circles"] = circles.map {
+        let params = ["circles": circles.map {
             (var circle) -> [String: String] in
             return circle.toDict()
-        }
+        }]
         
         // sync with server
-        Helpers.AFManager().POST(UPDATE_CIRCLES_URL, parameters: params, success: nil, failure: nil)
+        Helpers.AFManager(true).POST(CIRCLES_URL, parameters: params, success: nil, failure: nil)
     }
     
     class func updateItem(item: Item, callback: (updated: Bool) -> Void) {
-        var params = self.getBaseParams()
-        params["item"] = item.toDict()
+        let params = ["item": item.toDict()]
         
-        Helpers.AFManager().POST(UPDATE_ITEM_URL, parameters: params, success: {(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
+        Helpers.AFManager(true).PUT("\(ITEM_BASE_URL)\(item.id)", parameters: params, success: {(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
             
             callback(updated: true)
             
@@ -76,15 +74,5 @@ class CurrentUser {
     
     class func sendMessage(receiver: User) {
         
-    }
-    
-    
-    private class func getBaseParams() -> [String: AnyObject] {
-        let email = NSUserDefaults.standardUserDefaults().objectForKey("email")! as String
-        
-        return [
-            "email": email,
-            "password": SSKeychain.passwordForService(KEYCHAIN_SERVICE, account: email)
-        ]
     }
 }
