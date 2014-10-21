@@ -63,9 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         
-        var LoginedIn = true
-        
-        if(LoginedIn) {
+        if(User.isLoggedIn()) {
             
             if(viewController.title == "Post"){
                 
@@ -89,7 +87,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         }
         else
         {
-            // login ...
+            if(viewController.title != "Circle"){
+                
+                let loginController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginId") as UIViewController
+                
+                self.window!.rootViewController?.presentViewController(loginController, animated: true, completion: nil)
+                
+                return false
+            }
+            else{
+                return true
+            }
         }
         
     }

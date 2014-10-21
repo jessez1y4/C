@@ -24,6 +24,8 @@
 		0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */; };
 		0D89514919D324CC007A8081 /* ManageCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89514819D324CC007A8081 /* ManageCircleViewController.swift */; };
 		0D89514B19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89514A19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift */; };
+		0D942CAE19F614A300E230EE /* CircleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D942CAD19F614A300E230EE /* CircleCollectionViewController.swift */; };
+		0D942CB019F614D300E230EE /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */; };
 		0DC817DE19D762DE00FA8151 /* CreateCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC817DD19D762DE00FA8151 /* CreateCircleViewController.swift */; };
 		0DC817E019D76A6A00FA8151 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC817DF19D76A6A00FA8151 /* MapKit.framework */; };
 		0DC817E219D76F5400FA8151 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC817E119D76F5400FA8151 /* CoreLocation.framework */; };
@@ -68,6 +70,8 @@
 		0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0D89514819D324CC007A8081 /* ManageCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageCircleViewController.swift; sourceTree = "<group>"; };
 		0D89514A19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = manageCircleViewCellTableViewCell.swift; sourceTree = "<group>"; };
+		0D942CAD19F614A300E230EE /* CircleCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewController.swift; sourceTree = "<group>"; };
+		0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
 		0DC817DD19D762DE00FA8151 /* CreateCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCircleViewController.swift; sourceTree = "<group>"; };
 		0DC817DF19D76A6A00FA8151 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0DC817E119D76F5400FA8151 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -193,6 +197,8 @@
 				0D55DC4C19C44F68005C86BE /* HostViewController.swift */,
 				0D5583EA19B426CA001AF800 /* CircleViewController.swift */,
 				0DED5ABA19C4380300DCBA9A /* CircleViewCell.swift */,
+				0D942CAD19F614A300E230EE /* CircleCollectionViewController.swift */,
+				0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */,
 				0D55DC5019C68B9B005C86BE /* DetailViewController.swift */,
 				0D00771819C820C5006EEAE7 /* PostViewController.swift */,
 				0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */,
@@ -354,15 +360,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D00771919C820C5006EEAE7 /* PostViewController.swift in Sources */,
-				0D601DAF19C4337C00BA9E17 /* GroupPhotoViewController.swift in Sources */,
 				9AE3CF1819D93399007850EC /* CurrentUser.swift in Sources */,
-				0D5638E919C69486008BBF75 /* PhotoCollectionViewCell.swift in Sources */,
 				0DED5ABB19C4380300DCBA9A /* CircleViewCell.swift in Sources */,
 				9AC78BD319D8B6B800B294DC /* Item.swift in Sources */,
 				0DC817DE19D762DE00FA8151 /* CreateCircleViewController.swift in Sources */,
+				0D942CB019F614D300E230EE /* CircleCollectionViewCell.swift in Sources */,
 				0D55DC4D19C44F68005C86BE /* HostViewController.swift in Sources */,
 				0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */,
 				0D00772319C9537B006EEAE7 /* Constants.swift in Sources */,
+				0D942CAE19F614A300E230EE /* CircleCollectionViewController.swift in Sources */,
 				0D5583E919B426CA001AF800 /* AppDelegate.swift in Sources */,
 				0D00771D19C94B50006EEAE7 /* SignUpViewController.swift in Sources */,
 				0D89514919D324CC007A8081 /* ManageCircleViewController.swift in Sources */,

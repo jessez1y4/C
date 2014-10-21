@@ -44,7 +44,7 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
         
         // change the dataSrouce here
         
-        var cvc: AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("CircleViewControllerId")
+        var cvc: AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("CircleCollectionViewControllerId")
         
         return cvc as UIViewController
     }

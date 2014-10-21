@@ -63,7 +63,7 @@ class User {
     
     
     class func isLoggedIn() -> Bool {
-        return NSUserDefaults.standardUserDefaults().objectForKey("email") == nil
+        return NSUserDefaults.standardUserDefaults().objectForKey("email") != nil
     }
     
     
