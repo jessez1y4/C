@@ -53,7 +53,7 @@ class Item {
     :param: callback callback function when server responds
     */
     class func fetchOne(id: String, callback: (item: Item?) -> Void) {
-        Helpers.AFManager().GET("\(ITEM_BASE_URL)\(id)", parameters: nil, success: {(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
+        Helpers.AFManager(true).GET("\(ITEM_BASE_URL)\(id)", parameters: nil, success: {(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
             
             let dict = responseObject as [String: AnyObject]
             callback(item: Item(dict: dict))
@@ -74,7 +74,7 @@ class Item {
     class func fetch(condition: [String: AnyObject], callback: (items: [Item]?) -> Void) {
         let params = ["condition": condition]
         
-        Helpers.AFManager().GET(ITEMS_URL, parameters: params, success: {(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
+        Helpers.AFManager(true).GET(ITEMS_URL, parameters: params, success: {(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
             
             let dicts = responseObject as [[String: AnyObject]]
             let items = dicts.map {

@@ -4,11 +4,11 @@ import Foundation
 let BASE_URL = "http://localhost:3000/api"
 
 // user urls
-let LOGIN_URL = "\(BASE_URL)/user/login"
-let SIGNUP_URL = "\(BASE_URL)/user/signup"
+let LOGIN_URL = "\(BASE_URL)/user/auth"
+let SIGNUP_URL = "\(BASE_URL)/users"
 
 // circle urls
-let UPDATE_CIRCLES_URL = "\(BASE_URL)/circle/update"
+let CIRCLES_URL = "\(BASE_URL)/circles"
 
 // item urls
 let ITEMS_URL = "\(BASE_URL)/items"
