@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83DCE8FD90C34B8EB1F10BC1"
+               BlueprintIdentifier = "D95B7BE1ABD94C3A8BA4F74C"
                BuildableName = "libPods-CircleShop.a"
                BlueprintName = "Pods-CircleShop"
                ReferencedContainer = "container:Pods.xcodeproj">

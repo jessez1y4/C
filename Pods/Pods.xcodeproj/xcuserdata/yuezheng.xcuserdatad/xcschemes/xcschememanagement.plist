@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CircleShop-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-CircleShop-DBCamera.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -20,6 +25,11 @@
 			<false/>
 		</dict>
 		<key>Pods-CircleShop-ICViewPager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CircleShop-Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,42 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1B3CA99857094648B11656B9</key>
+		<key>2C8221C9E8F24DB58789D276</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5746B809C336411B99E7643A</key>
+		<key>4E0BAC100B57400C800FE9A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7EF862CD1C4141D891492F9E</key>
+		<key>532A8F091BE844948D8BCBA1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83DCE8FD90C34B8EB1F10BC1</key>
+		<key>95C75AC9040444C6A8781370</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89C2304219D54873880ACE08</key>
+		<key>A4825CD8D44B4D3ABDAF119F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A848227F84364663B170B285</key>
+		<key>A99324BCCF66444289DFBCC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB1E527DFDA44E46A6A8F50A</key>
+		<key>BC1C4CBC2BC84AC59BE546B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F86E6A31C8D34A61A1AA24C9</key>
+		<key>C4187A2EE6664F0B9B17EF7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D95B7BE1ABD94C3A8BA4F74C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E298A55E55114F5D9263FABB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

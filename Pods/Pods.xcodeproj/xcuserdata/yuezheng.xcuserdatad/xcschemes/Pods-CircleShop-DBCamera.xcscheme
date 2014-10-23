@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F86E6A31C8D34A61A1AA24C9"
+               BlueprintIdentifier = "C4187A2EE6664F0B9B17EF7C"
                BuildableName = "libPods-CircleShop-DBCamera.a"
                BlueprintName = "Pods-CircleShop-DBCamera"
                ReferencedContainer = "container:Pods.xcodeproj">

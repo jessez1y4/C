@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A848227F84364663B170B285"
+               BlueprintIdentifier = "4E0BAC100B57400C800FE9A4"
                BuildableName = "libPods-CircleShop-GPUImage.a"
                BlueprintName = "Pods-CircleShop-GPUImage"
                ReferencedContainer = "container:Pods.xcodeproj">
