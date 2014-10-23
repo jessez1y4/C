@@ -17,4 +17,6 @@
 #import <DBCameraViewController.h>
 #import <DBCameraContainerViewController.h>
 
+#import <Parse.h>
+
 #endif

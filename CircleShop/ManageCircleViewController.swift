@@ -146,7 +146,7 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
         
         var cell = self.tableView.dequeueReusableCellWithIdentifier("ManageCircleViewCell") as manageCircleViewCellTableViewCell
         
-        cell.textLabel!.text = circles[indexPath.row].name
+        cell.textLabel.text = circles[indexPath.row].name
         
         return cell
     }
