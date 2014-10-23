@@ -122,7 +122,7 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
  * @param viewPager The viewPager that's subject to
  * @return Number of tabs
  */
-- (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager;
+- (NSInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager;
 /**
  * Asks dataSource to give a view to display as a tab item.
  * It is suggested to return a view with a clearColor background.
@@ -133,7 +133,7 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
  *
  * @return A view that will be shown as tab at the given index
  */
-- (UIView *)viewPager:(ViewPagerController *)viewPager viewForTabAtIndex:(NSUInteger)index;
+- (UIView *)viewPager:(ViewPagerController *)viewPager viewForTabAtIndex:(NSInteger)index;
 
 @optional
 /**

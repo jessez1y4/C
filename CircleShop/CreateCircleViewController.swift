@@ -18,6 +18,8 @@ class CreateCircleViewController: UIViewController, CLLocationManagerDelegate, M
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var circleNameTextField: UITextField!
     
+//    var circles: [Circle]!
+    
 
     let manager = CLLocationManager()
     
@@ -36,6 +38,9 @@ class CreateCircleViewController: UIViewController, CLLocationManagerDelegate, M
         }
         
         slider.addTarget(self, action: Selector("sliderMoved"), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
     }
     
     func sliderMoved() {
@@ -90,7 +95,9 @@ class CreateCircleViewController: UIViewController, CLLocationManagerDelegate, M
     @IBAction func doneCreation(sender: AnyObject) {
         
         if(circleNameTextField.text != nil){
-            circles.append(circleNameTextField.text)
+            let newCircle = Circle(name: circleNameTextField.text, longitude: 0, latitude: 0)
+            circles.append(newCircle)
+            
             self.navigationController!.popViewControllerAnimated(true)
         }
     }

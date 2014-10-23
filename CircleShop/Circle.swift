@@ -39,7 +39,7 @@ class Circle {
         return [
             "name": self.name,
             "longitude": "\(self.longitude)",
-            "latitue": "\(self.latitude)"
+            "latitude": "\(self.latitude)"
         ]
     }
 }

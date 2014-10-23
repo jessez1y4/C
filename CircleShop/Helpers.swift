@@ -19,6 +19,7 @@ class Helpers {
     class func AFManager(withAuthHeader: Bool) -> AFHTTPRequestOperationManager {
         if _AFManager == nil {
             _AFManager = AFHTTPRequestOperationManager()
+            _AFManager?.requestSerializer = AFJSONRequestSerializer()
         }
         
         if withAuthHeader {

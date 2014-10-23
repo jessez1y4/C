@@ -8,34 +8,50 @@
 
 import UIKit
 
-var tabNumber: UInt!
-var currentTabNumber: UInt!
-var newCircleNameArray: [String] = []
+var circles: [Circle] = []
 
 class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDelegate {
     
     var numberOfTab: Int!
-    
+    var firstTimeEnter: Bool!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabNumber = 2
-        currentTabNumber = tabNumber
+        firstTimeEnter = true
+
         self.dataSource = self
         self.delegate = self
     }
     
-//    override func viewWillAppear(animated: Bool) {
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if User.isLoggedIn() {
+            
+            if firstTimeEnter! {
+                circles = CurrentUser.getCircles()!
+                firstTimeEnter = false
+            
+            } else {
+                
+                CurrentUser.setCircles(circles)
+            }
+            reloadData()
+
+        }
+        
 //        self.tabBarController!.tabBar.backgroundColor = UIColor.blueColor()
-//    }
+    }
     
     
     
     //pragma mark - ViewPagerDataSource
-    func numberOfTabsForViewPager(viewPager: ViewPagerController!) -> UInt {
-        return tabNumber
+    func numberOfTabsForViewPager(viewPager: ViewPagerController!) -> Int {
+        return circles.count + 1
     }
     
     
@@ -51,16 +67,18 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
     
     
     
-    func viewPager(viewPager: ViewPagerController!, viewForTabAtIndex index: UInt) -> UIView! {
+    func viewPager(viewPager: ViewPagerController!, viewForTabAtIndex index: Int) -> UIView! {
         var label = UILabel()
         label.backgroundColor = UIColor.clearColor()
         label.font = UIFont.systemFontOfSize(12.0)
-        if(currentTabNumber < tabNumber){
-            label.text = newCircleNameArray[tabNumber-currentTabNumber-1]
-            currentTabNumber = tabNumber
-        }else{
-            label.text = "Tab \(index)"
+
+        if index==0 {
+            label.text = "NearBy"
         }
+        else {
+            label.text = circles[index-1].name
+        }
+        
         label.textAlignment = NSTextAlignment.Center;
         label.textColor = UIColor.blackColor()
         label.sizeToFit()
@@ -121,15 +139,21 @@ class HostViewController: ViewPagerController, ViewPagerDataSource, ViewPagerDel
         
     }
     
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        if segue.identifier == "show_circles" {
+//            let destViewController = segue.destinationViewController as ManageCircleViewController
+//            destViewController.circles = circles
+//        }
+//    }
+    
     
     @IBAction func addCircle(sender: AnyObject) {
+        
     }
     
     
     @IBAction func click(sender: AnyObject) {
-        tabNumber = tabNumber + 1
-        newCircleNameArray.append("newadded")
-        self.reloadData()
+
     }
     
 

@@ -9,11 +9,13 @@
 
 import UIKit
 
-var circles = ["Nearby", "Explore"]
+//var circles = ["Nearby", "Explore"]
 
 class ManageCircleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+//    var circles: [Circle]!
+
     
     var snapshot: UIView?
     var sourceIndexPath: NSIndexPath?
@@ -22,11 +24,7 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         
         self.navigationItem.title = "Manage"
-        
-        for (var i = 1; i <= 10; i++) {
-            circles.append(String("item \(i)"))
-        }
-        
+                
         var longPress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
         self.tableView.addGestureRecognizer(longPress)
     }
@@ -130,6 +128,15 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
         // Dispose of any resources that can be recreated.
     }
     
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        if(segue.identifier == "show_create") {
+//            let destViewController = segue.destinationViewController as CreateCircleViewController
+//            destViewController.circles = circles
+//            
+//            //            destViewController.image = self.collectionView.indexPathsForSelectedItems()
+//        }
+//    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return circles.count
     }
@@ -139,7 +146,7 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
         
         var cell = self.tableView.dequeueReusableCellWithIdentifier("ManageCircleViewCell") as manageCircleViewCellTableViewCell
         
-        cell.textLabel!.text = circles[indexPath.row]
+        cell.textLabel!.text = circles[indexPath.row].name
         
         return cell
     }
