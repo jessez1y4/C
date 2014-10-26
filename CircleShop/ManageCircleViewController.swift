@@ -25,14 +25,19 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         
         self.navigationItem.title = "Manage"
+                
+        var longPress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
+        self.tableView.addGestureRecognizer(longPress)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         // fetch circles
         CurrentUser.getCircles { (circles, error) -> Void in
             self.circles = circles as [PFObject]
+            self.tableView.reloadData()
         }
-                
-        var longPress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
-        self.tableView.addGestureRecognizer(longPress)
     }
     
     @IBAction func longPressGestureRecognized(sender: AnyObject) {
@@ -166,7 +171,8 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            circles.removeAtIndex(indexPath.row)
+            CurrentUser.removeCircle(circles[indexPath.row])
+            self.circles.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         } else {
             println("Unhandled editing style!")

@@ -93,9 +93,12 @@ class CreateCircleViewController: UIViewController, CLLocationManagerDelegate, M
     }
 
     @IBAction func doneCreation(sender: AnyObject) {
+        let name = circleNameTextField.text
+        let location = manager.location
         
-        if let name = circleNameTextField.text {
-            CurrentUser.addCircle(name, location: manager.location, callback: { (succeeded, error) -> Void in
+        if name != nil && location != nil {
+            
+            CurrentUser.addCircle(name, location: location, callback: { (succeeded, error) -> Void in
                 if succeeded {
                     self.navigationController!.popViewControllerAnimated(true)
                 } else {

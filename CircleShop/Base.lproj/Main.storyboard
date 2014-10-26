@@ -394,7 +394,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="fkx-UH-Nbw">
-                        <barButtonItem key="rightBarButtonItem" title="create" id="HDM-sg-J5h"/>
+                        <barButtonItem key="rightBarButtonItem" title="create" id="HDM-sg-J5h">
+                            <connections>
+                                <segue destination="XUj-3y-PRZ" kind="show" id="dFE-w5-zM4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

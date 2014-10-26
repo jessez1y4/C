@@ -28,9 +28,11 @@ class CurrentUser {
     }
     
     class func addCircle(name: String, location: CLLocation, callback: PFBooleanResultBlock) {
+        let geoPoint = PFGeoPoint(location: location)
+        
         let circle = PFObject(className: "Circle", dictionary: [
             "name": name,
-            "location": location,
+            "location": geoPoint,
             "user": PFUser.currentUser()
             ])
         
