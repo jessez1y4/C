@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -85,7 +85,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="762" y="759"/>
+            <point key="canvasLocation" x="626" y="760"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="98D-FS-rHc">
@@ -208,39 +208,6 @@
             </objects>
             <point key="canvasLocation" x="-234" y="760"/>
         </scene>
-        <!--Host View Controller-->
-        <scene sceneID="9qx-ex-YOW">
-            <objects>
-                <viewController id="Gkv-xw-wfU" customClass="HostViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8tT-QM-nsu"/>
-                        <viewControllerLayoutGuide type="bottom" id="3LY-T7-qrS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KqE-8g-yaX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="sZU-ao-d1B">
-                        <barButtonItem key="leftBarButtonItem" title="Add" id="uX3-fJ-sgq">
-                            <connections>
-                                <action selector="click:" destination="Gkv-xw-wfU" id="hMo-p6-9rj"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="awG-w4-9RS">
-                            <connections>
-                                <action selector="addCircle:" destination="Gkv-xw-wfU" id="oge-rx-LqG"/>
-                                <segue destination="mmF-Yl-p1L" kind="show" identifier="show_circles" id="eAa-Gw-g7Y"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M5e-Gf-k3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1569" y="-1"/>
-        </scene>
         <!--Circle Collection View Controller-->
         <scene sceneID="KVE-gd-0An">
             <objects>
@@ -290,13 +257,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ugX-EI-ZWh">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="gKi-yb-buN">
+                            <connections>
+                                <action selector="add:" destination="cAG-14-Mhw" id="keY-ru-QNN"/>
+                                <segue destination="mmF-Yl-p1L" kind="show" id="zSu-YK-CPn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="y4M-uB-Tpz" id="joc-Gn-PQf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ja-xb-JLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="-1452"/>
+            <point key="canvasLocation" x="1461" y="-87"/>
         </scene>
         <!--Circle View Controller-->
         <scene sceneID="Po0-It-xIl">
@@ -346,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZ9-gK-JhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1569" y="-752"/>
+            <point key="canvasLocation" x="1461" y="-1672"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="KcR-Qv-7dr">
@@ -372,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qj0-Gf-fiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334" y="-776"/>
+            <point key="canvasLocation" x="2260" y="-87"/>
         </scene>
         <!--Title-->
         <scene sceneID="N8u-fm-0ni">
@@ -419,11 +394,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="fkx-UH-Nbw">
-                        <barButtonItem key="rightBarButtonItem" title="create" id="HDM-sg-J5h">
-                            <connections>
-                                <segue destination="XUj-3y-PRZ" kind="show" identifier="show_create" id="Uog-Rc-oVP"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="create" id="HDM-sg-J5h"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -433,7 +404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4R-Dw-1vq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334" y="0.0"/>
+            <point key="canvasLocation" x="1461" y="-880"/>
         </scene>
         <!--Create Circle View Controller-->
         <scene sceneID="Wfp-i7-QkJ">
@@ -543,7 +514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7i-QK-Nl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3129" y="-1"/>
+            <point key="canvasLocation" x="2255" y="-880"/>
         </scene>
         <!--Profile-->
         <scene sceneID="DhC-tK-Gg3">
@@ -562,7 +533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lj4-N0-sFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1647" y="1756"/>
+            <point key="canvasLocation" x="1483" y="1674"/>
         </scene>
         <!--Circle-->
         <scene sceneID="yZQ-ki-D1V">
@@ -576,12 +547,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Gkv-xw-wfU" kind="relationship" relationship="rootViewController" id="PL3-yD-IXS"/>
+                        <segue destination="cAG-14-Mhw" kind="relationship" relationship="rootViewController" id="cHa-oA-QAA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZq-et-6oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="763" y="0.0"/>
+            <point key="canvasLocation" x="626" y="-87"/>
         </scene>
         <!--Profile-->
         <scene sceneID="3nq-cz-T5r">
@@ -600,7 +571,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rkf-Nq-61q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="1756"/>
+            <point key="canvasLocation" x="626" y="1680"/>
         </scene>
     </scenes>
 </document>

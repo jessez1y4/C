@@ -22,6 +22,9 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func add(sender: AnyObject) {
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "show_detail") {
             let destViewController = segue.destinationViewController as DetailViewController

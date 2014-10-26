@@ -79,7 +79,7 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
                     if (indexPath != nil && indexPath!.isEqual(sourceIndexPath) == false) {
                         
                         // ... update data source.
-                        swap(&circles[indexPath!.row], &circles[sourceIndexPath!.row])
+                        //swap(&circles[indexPath!.row], &circles[sourceIndexPath!.row])
     
                         // ... move the rows.
                         self.tableView.moveRowAtIndexPath(sourceIndexPath!, toIndexPath: indexPath!)

@@ -18,7 +18,6 @@
 		0D5583F019B426CA001AF800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5583EE19B426CA001AF800 /* Main.storyboard */; };
 		0D5583F219B426CA001AF800 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D5583F119B426CA001AF800 /* Images.xcassets */; };
 		0D5583FE19B426CA001AF800 /* CircleShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583FD19B426CA001AF800 /* CircleShopTests.swift */; };
-		0D55DC4D19C44F68005C86BE /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55DC4C19C44F68005C86BE /* HostViewController.swift */; };
 		0D55DC4F19C68A08005C86BE /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D55DC4E19C68A08005C86BE /* 1.jpg */; };
 		0D55DC5119C68B9B005C86BE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55DC5019C68B9B005C86BE /* DetailViewController.swift */; };
 		0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */; };
@@ -64,7 +63,6 @@
 		0D5583F719B426CA001AF800 /* CircleShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircleShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5583FC19B426CA001AF800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D5583FD19B426CA001AF800 /* CircleShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleShopTests.swift; sourceTree = "<group>"; };
-		0D55DC4C19C44F68005C86BE /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		0D55DC4E19C68A08005C86BE /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		0D55DC5019C68B9B005C86BE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 			children = (
 				0D00771A19C94B3A006EEAE7 /* LoginViewController.swift */,
 				0D00771C19C94B50006EEAE7 /* SignUpViewController.swift */,
-				0D55DC4C19C44F68005C86BE /* HostViewController.swift */,
 				0D5583EA19B426CA001AF800 /* CircleViewController.swift */,
 				0DED5ABA19C4380300DCBA9A /* CircleViewCell.swift */,
 				0D942CAD19F614A300E230EE /* CircleCollectionViewController.swift */,
@@ -376,7 +373,6 @@
 				9AC78BD319D8B6B800B294DC /* Item.swift in Sources */,
 				0DC817DE19D762DE00FA8151 /* CreateCircleViewController.swift in Sources */,
 				0D942CB019F614D300E230EE /* CircleCollectionViewCell.swift in Sources */,
-				0D55DC4D19C44F68005C86BE /* HostViewController.swift in Sources */,
 				0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */,
 				0D00772319C9537B006EEAE7 /* Constants.swift in Sources */,
 				0D942CAE19F614A300E230EE /* CircleCollectionViewController.swift in Sources */,
