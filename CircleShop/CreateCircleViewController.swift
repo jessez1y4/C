@@ -94,11 +94,17 @@ class CreateCircleViewController: UIViewController, CLLocationManagerDelegate, M
 
     @IBAction func doneCreation(sender: AnyObject) {
         
-        if(circleNameTextField.text != nil){
-            let newCircle = Circle(name: circleNameTextField.text, longitude: 0, latitude: 0)
-            circles.append(newCircle)
-            
-            self.navigationController!.popViewControllerAnimated(true)
+        if let name = circleNameTextField.text {
+            CurrentUser.addCircle(name, location: manager.location, callback: { (succeeded, error) -> Void in
+                if succeeded {
+                    self.navigationController!.popViewControllerAnimated(true)
+                } else {
+                    Helpers.showSimpleAlert(self, title: "Fuck", message: "Failed to save!")
+                }
+
+            })
+        } else {
+            Helpers.showSimpleAlert(self, title: "Fuck", message: "Could you input the fucking name please!")
         }
     }
     

@@ -16,20 +16,26 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginClicked(sender: UIButton) {
-        User.login(self.emailInput.text, password: self.passwordInput.text, callback: loginCallback)
-    }
-    
-    func loginCallback(error: String?) {
+        let email = self.emailInput.text
+        let password = self.passwordInput.text
         
-        // alert error message if any
-        if let err = error {
-            return Helpers.showSimpleAlert(self, message: err)
+        if email.isEmpty {
+            return Helpers.showSimpleAlert(self, message: "Fill in your fucking email please!")
         }
         
-        // show homepage if no error message (meaning login success)
-        self.dismissViewControllerAnimated(true, completion: nil)
-
+        if password.isEmpty {
+            return Helpers.showSimpleAlert(self, message: "Where's the fucking password?")
+        }
+        
+        PFUser.logInWithUsernameInBackground(email, password: password) { (user: PFUser!, error: NSError!) -> Void in
+            if user != nil {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                Helpers.showSimpleAlert(self, message: "Invalid email or password.")
+                
+                // TODO also take care of senarios where no internet or parse server down?
+            }
+        }
     }
-    
 }
 

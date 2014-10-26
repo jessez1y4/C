@@ -15,6 +15,7 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
 
     @IBOutlet weak var tableView: UITableView!
 //    var circles: [Circle]!
+    var circles: [PFObject] = []
 
     
     var snapshot: UIView?
@@ -24,6 +25,11 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         
         self.navigationItem.title = "Manage"
+        
+        // fetch circles
+        CurrentUser.getCircles { (circles, error) -> Void in
+            self.circles = circles as [PFObject]
+        }
                 
         var longPress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
         self.tableView.addGestureRecognizer(longPress)
@@ -144,9 +150,11 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell = self.tableView.dequeueReusableCellWithIdentifier("ManageCircleViewCell") as manageCircleViewCellTableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("ManageCircleViewCell") as manageCircleViewCellTableViewCell
+        let circle = circles[indexPath.row]
         
-        cell.textLabel.text = circles[indexPath.row].name
+        cell.textLabel.text = circle["name"] as String!
+        cell.circle = circle
         
         return cell
     }

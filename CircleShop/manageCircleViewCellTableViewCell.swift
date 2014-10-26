@@ -9,6 +9,8 @@
 import UIKit
 
 class manageCircleViewCellTableViewCell: UITableViewCell {
+    
+    var circle: PFObject?
 
     override func awakeFromNib() {
         super.awakeFromNib()

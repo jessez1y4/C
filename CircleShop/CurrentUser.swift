@@ -27,35 +27,46 @@ class CurrentUser {
         return NSUserDefaults.standardUserDefaults().objectForKey("avatar") as? String
     }
     
-    
-    class func getCircles() -> [Circle]? {
-        if let dictArr = NSUserDefaults.standardUserDefaults().arrayForKey("circles") as? [NSMutableDictionary] {
-            return dictArr.map {
-                (var dict) -> Circle in
-                return Circle(dict: dict)
-            }
-        }
+    class func addCircle(name: String, location: CLLocation, callback: PFBooleanResultBlock) {
+        let circle = PFObject(className: "Circle", dictionary: [
+            "name": name,
+            "location": location,
+            "user": PFUser.currentUser()
+            ])
         
-        return nil
+        circle.saveInBackgroundWithBlock(callback)
     }
     
-    class func setCircles(circles: [Circle]) {
-        let circleArr = NSMutableArray()
-        
-        for circle in circles {
-            circleArr.addObject(circle.toNSMutableDict())
-        }
-        
-        NSUserDefaults.standardUserDefaults().setObject(circleArr, forKey: "circles")
-        
-        let params = ["circles": circles.map {
-            (var circle) -> [String: String] in
-            return circle.toDict()
-        }]
-        
-        // sync with server
-        Helpers.AFManager(true).POST(CIRCLES_URL, parameters: params, success: nil, failure: nil)
+    class func removeCircle(circle: PFObject) {
+        circle.deleteEventually()
     }
+    
+    
+    class func getCircles(callback: PFArrayResultBlock) {
+        let query = PFQuery(className: "Circle")
+        
+        query.cachePolicy = kPFCachePolicyNetworkElseCache;
+        query.whereKey("user", equalTo: PFUser.currentUser())
+        query.findObjectsInBackgroundWithBlock(callback)
+    }
+    
+//    class func setCircles(circles: [Circle]) {
+//        let circleArr = NSMutableArray()
+//        
+//        for circle in circles {
+//            circleArr.addObject(circle.toNSMutableDict())
+//        }
+//        
+//        NSUserDefaults.standardUserDefaults().setObject(circleArr, forKey: "circles")
+//        
+//        let params = ["circles": circles.map {
+//            (var circle) -> [String: String] in
+//            return circle.toDict()
+//        }]
+//        
+//        // sync with server
+//        Helpers.AFManager(true).POST(CIRCLES_URL, parameters: params, success: nil, failure: nil)
+//    }
     
     class func updateItem(item: Item, callback: (updated: Bool) -> Void) {
         let params = ["item": item.toDict()]

@@ -8,38 +8,37 @@
 
 import Foundation
 
-class Circle {
-    var name: String
-    var longitude: Float
-    var latitude: Float
-    
-    init(name: String, longitude: Float, latitude: Float) {
-        self.name = name
-        self.longitude = longitude
-        self.latitude = latitude
-    }
-    
-    init(dict: NSMutableDictionary) {
-        self.name = dict.objectForKey("name")! as String
-        self.longitude = dict.objectForKey("longitude")! as Float
-        self.latitude = dict.objectForKey("latitude")! as Float
-    }
-    
-    func toNSMutableDict() -> NSMutableDictionary {
-        let dict: NSMutableDictionary = NSMutableDictionary()
-        
-        dict.setValue(self.name, forKey: "name")
-        dict.setValue(self.longitude, forKey: "longitude")
-        dict.setValue(self.latitude, forKey: "latitude")
-        
-        return dict;
-    }
-    
-    func toDict() -> [String: String] {
-        return [
-            "name": self.name,
-            "longitude": "\(self.longitude)",
-            "latitude": "\(self.latitude)"
-        ]
-    }
+class Circle: PFObject {
+//    var name: String
+//    var order: Int
+//    var location: CLLocation
+//    
+//    init(name: String, location: CLLocation) {
+//        self.name = name
+//        self.location = location
+//    }
+//    
+//    init(pfObject: PFObject) {
+//        self.name = pfObject["name"]! as String
+//        self.location = PFGeoPoint().
+//    }
+//    
+//    func toNSMutableDict() -> NSMutableDictionary {
+//        let dict: NSMutableDictionary = NSMutableDictionary()
+//        
+//        dict.setValue(self.name, forKey: "name")
+//        dict.setValue(self.longitude, forKey: "longitude")
+//        dict.setValue(self.latitude, forKey: "latitude")
+//        
+//        return dict;
+//    }
+//    
+//    func toPFObject() -> PFObject {
+//        let pfObj = PFObject(className: "Circle")
+//        
+//        pfObj["name"] = self.name
+//        pfObj["location"] = PFGeoPoint(location: self.location)
+//        
+//        return pfObj
+//    }
 }
