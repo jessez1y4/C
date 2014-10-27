@@ -116,7 +116,7 @@ class Item {
         query.findObjectsInBackgroundWithBlock { (circles, error) -> Void in
             if error == nil {
                 for circle in circles {
-                    let imageFile = circle["images"][0] as PFFile
+                    let imageFile = (circle["images"] as [PFFile])[0]
                     // imageView.file = imageFile
                 }
             }

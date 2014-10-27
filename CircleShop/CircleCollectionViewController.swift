@@ -12,7 +12,7 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var objects:[PFObject]!
+    var objects:[PFObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,14 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
     
     func performQuery() {
         
-        // do some query..
-        objects = []
+        let query = PFQuery(className: "Item")
+        query.findObjectsInBackgroundWithBlock { (items, error) -> Void in
+            if error == nil {
+                self.objects = items as [PFObject]
+                self.collectionView.reloadData()
+            }
+        }
+
 
     }
     
@@ -49,7 +55,6 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return self.objects.count
     }
     
@@ -61,8 +66,9 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath, object : PFObject) -> UICollectionViewCell {
         
         var cell = self.collectionView.dequeueReusableCellWithReuseIdentifier("CircleCollectionCell", forIndexPath: indexPath) as CircleCollectionViewCell
-        
-//        cell.imageView.file = object["itemImages"][0] as PFFile
+
+        cell.imageView.file = (object["images"] as [PFFile])[0]
+        cell.imageView.loadInBackground(nil)
         
         return cell
     }
