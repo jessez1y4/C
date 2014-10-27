@@ -9,71 +9,47 @@
 import UIKit
 
 class PostViewController: UIViewController, DBCameraViewControllerDelegate {
-
+    
     @IBOutlet weak var imageView1: UIImageView!
     @IBOutlet weak var imageView2: UIImageView!
     @IBOutlet weak var imageView3: UIImageView!
     @IBOutlet weak var imageView4: UIImageView!
     
+    @IBOutlet weak var nameInput: UITextField!
+    
     var image: UIImage!
-    var processImageNumber = 1
+    var processImageNumber = 0
+    
+    var imageViews: [UIImageView]!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.imageView1.image = image
-        //self.navigationController!.setNavigationBarHidden(false, animated: true)
         
-//        switch(whichImage){
-//            case 1:
-//                self.imageView1.image = self.image
-//            case 2:
-//                self.imageView2.image = self.image
-//            case 3:
-//                self.imageView3.image = self.image
-//            case 4:
-//                self.imageView4.image = self.image
-//            default:
-//                self.imageView1.image = self.image
-//        }
-
+        self.imageViews = [imageView1, imageView2, imageView3, imageView4]
     }
- 
+    
     
     @IBAction func tapImageGestureRecognized(sender: AnyObject)
     {
-        var tapImage = sender as UITapGestureRecognizer
+        let tapImage = sender as UITapGestureRecognizer
+        let view = tapImage.view! as UIImageView
         
-        switch (tapImage.view!) {
-            case self.imageView1:
-                handleClick(self.imageView1)
-                processImageNumber = 1
-            case self.imageView2:
-                handleClick(self.imageView2)
-                processImageNumber = 2
-            case self.imageView3:
-                handleClick(self.imageView3)
-                processImageNumber = 3
-            case self.imageView4:
-                handleClick(self.imageView4)
-                processImageNumber = 4
-        default:
-            println("not image found")
-        }
-        
+        processImageNumber = find(self.imageViews, view)!;
+        handleClick(view)
     }
     
     
     func handleClick(imageView: UIImageView){
-        if(imageView.image != nil){
+        if imageView.image != nil {
             println("not empty!")
             
             // show the alert and probally delete the image
             self.dismissViewControllerAnimated(true, completion: nil)
-
-        }
-        else{
+            
+        } else {
             let cameraController = DBCameraViewController.initWithDelegate(self)
             cameraController.setForceQuadCrop(true)
             
@@ -85,27 +61,40 @@ class PostViewController: UIViewController, DBCameraViewControllerDelegate {
             self.presentViewController(nav, animated: true, completion: nil)
         }
         
+        
+    }
+    
+    @IBAction func postBtnClicked(sender: AnyObject) {
+        var itemImages: [PFFile] = []
+        
+        for imageView in self.imageViews {
+            if let image = imageView.image {
+                let imageData = UIImageJPEGRepresentation(image, 0.9)
+                let imageFile = PFFile(name:"image.jpg", data:imageData)
+                
+                itemImages.append(imageFile)
+            }
+        }
+
+        let item = PFObject(className: "Item", dictionary: [
+            "name": self.nameInput.text,
+            "images": itemImages
+            ])
+        
+        item.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+            println("item saved")
+        }
     }
     
     func camera(cameraViewController: AnyObject!, didFinishWithImage image: UIImage!, withMetadata metadata: [NSObject : AnyObject]!) {
         
-        switch (processImageNumber) {
-        case 1:
-            self.imageView1.image = image
-        case 2:
-            self.imageView2.image = image
-        case 3:
-            self.imageView3.image = image
-        case 4:
-            self.imageView4.image = image
-        default:
-            println("not image found")
-        }
+        self.imageViews[processImageNumber].image = image
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func dismissCamera(cameraViewController: AnyObject!) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
 }
