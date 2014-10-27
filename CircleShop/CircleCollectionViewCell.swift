@@ -10,7 +10,7 @@ import UIKit
 
 class CircleCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: PFImageView!
     
 //    override init(frame: CGRect) {
 //        super.init(frame: frame)

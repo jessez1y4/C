@@ -11,8 +11,13 @@ import UIKit
 class CircleCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var objects:[PFObject]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.performQuery()
 
         // Do any additional setup after loading the view.
     }
@@ -28,30 +33,38 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "show_detail") {
             let destViewController = segue.destinationViewController as DetailViewController
-            
-
-//            destViewController.image = self.collectionView.indexPathsForSelectedItems()
         }
     }
+    
+    func performQuery() {
+        
+        // do some query..
+        objects = []
+
+    }
+    
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
+        
+        return self.objects.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
+        return self.collectionView(collectionView, cellForItemAtIndexPath: indexPath, object : self.objects[indexPath.row])
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath, object : PFObject) -> UICollectionViewCell {
+        
         var cell = self.collectionView.dequeueReusableCellWithReuseIdentifier("CircleCollectionCell", forIndexPath: indexPath) as CircleCollectionViewCell
         
-        let url = "http://d3lncrho1w0yzl.cloudfront.net/photo1.100x133.2642bytes.webp?1"
-        cell.imageView.sd_setImageWithURL(NSURL(string: url))
-        //        cell.applyData(self.groups[indexPath.row])
+//        cell.imageView.file = object["itemImages"][0] as PFFile
         
         return cell
-        
     }
 
 }
