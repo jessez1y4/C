@@ -110,4 +110,16 @@ class Item {
         
         return dict
     }
+    
+    class func getall() {
+        let query = PFQuery(className: "Circle")
+        query.findObjectsInBackgroundWithBlock { (circles, error) -> Void in
+            if error == nil {
+                for circle in circles {
+                    let imageFile = circle["images"][0] as PFFile
+                    // imageView.file = imageFile
+                }
+            }
+        }
+    }
 }

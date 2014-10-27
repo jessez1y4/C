@@ -28,7 +28,6 @@ class PostViewController: UIViewController, DBCameraViewControllerDelegate {
         
         self.imageView1.image = image
         
-        
         self.imageViews = [imageView1, imageView2, imageView3, imageView4]
     }
     
@@ -66,17 +65,14 @@ class PostViewController: UIViewController, DBCameraViewControllerDelegate {
     }
     
     @IBAction func postBtnClicked(sender: AnyObject) {
-        var itemImages: [PFObject] = []
+        var itemImages: [PFFile] = []
         
         for imageView in self.imageViews {
             if let image = imageView.image {
                 let imageData = UIImageJPEGRepresentation(image, 0.9)
                 let imageFile = PFFile(name:"image.jpg", data:imageData)
-                let itemImage = PFObject(className:"ItemImage")
-                itemImage["order"] = itemImages.count
-                itemImage["image"] = imageFile
                 
-                itemImages.append(itemImage)
+                itemImages.append(imageFile)
             }
         }
 
