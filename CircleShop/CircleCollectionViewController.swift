@@ -17,6 +17,31 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var logoImage = UIImage(named: "bicon.png")
+        var backCircleImage = UIImage(named: "light_circle.png")
+        var frontCircleImage = UIImage(named: "dark_circle.png")
+        
+        var progressView = BMYCircularProgressView(frame: CGRectMake(0, 0, 25, 25), logo: logoImage, backCircleImage: backCircleImage, frontCircleImage: frontCircleImage)
+        
+        self.collectionView.setPullToRefreshWithHeight(60, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
+
+//            var delayInSeconds: Int64 = 1
+//            var popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds)
+//            
+//            dispatch_after(popTime, dispatch_get_main_queue(), { () -> Void in
+//                
+//                println("haha")
+//                pullToRefreshView.stopAnimating()
+//
+//            })
+            
+            println("haha")
+            pullToRefreshView.stopAnimating()
+        })
+        
+        self.collectionView.pullToRefreshView.setProgressView(progressView)
+        
+        
         self.performQuery()
 
         // Do any additional setup after loading the view.

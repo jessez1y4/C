@@ -32,6 +32,7 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
             self.circles = circles as [PFObject]
             self.tableView.reloadData()
         }
+        
     }
     
 

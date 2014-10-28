@@ -19,4 +19,6 @@
 
 #import <Parse.h>
 
+#import <BMYCircularProgressPullToRefresh.h>
+
 #endif
