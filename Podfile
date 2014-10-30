@@ -12,6 +12,7 @@ pod 'DBCamera', '~> 2.3'
 pod 'SSKeychain'
 pod 'Parse'
 pod 'Async'
+pod 'BMYCircularProgressPullToRefresh'
 
 end
 
