@@ -82,7 +82,6 @@
 		9A75906B19DD1B0E00ADCAB4 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		9AC78BD219D8B6B800B294DC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		9AC78BD419D8B6CA00B294DC /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
-		9AE3CF1619D8CAA5007850EC /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		9AE3CF1719D93399007850EC /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CircleShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE669AFFE229B7826875BA4D /* Pods-CircleShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CircleShop/Pods-CircleShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,7 +132,6 @@
 		0D5583DA19B426C9001AF800 = {
 			isa = PBXGroup;
 			children = (
-				9AE3CF1619D8CAA5007850EC /* MyPlayground.playground */,
 				0D5583E519B426CA001AF800 /* CircleShop */,
 				0D5583FA19B426CA001AF800 /* CircleShopTests */,
 				0D5583E419B426CA001AF800 /* Products */,
@@ -517,10 +515,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CircleShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CircleShop/CircleShop-Bridging-Header.h";
 			};
@@ -534,10 +529,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CircleShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CircleShop/CircleShop-Bridging-Header.h";
 			};

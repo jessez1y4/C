@@ -12,7 +12,11 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var objects:[PFObject] = []
+    var objects: [PFObject] = []
+    var isRefreshing = true
+    var startContentOffset: CGFloat = 0
+    var lastContentOffset: CGFloat = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,12 +68,19 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
     func performQuery() {
         
         let query = PFQuery(className: "Item")
+        
+//        if isRefreshing {
+//            query.skip = self.objects.count
+//        }
+        
         query.findObjectsInBackgroundWithBlock { (items, error) -> Void in
             if error == nil {
                 self.objects = items as [PFObject]
                 self.collectionView.reloadData()
             }
+     
         }
+
 
 
     }
@@ -88,7 +99,7 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         return self.collectionView(collectionView, cellForItemAtIndexPath: indexPath, object : self.objects[indexPath.row])
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath, object : PFObject) -> UICollectionViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath, object : PFObject!) -> UICollectionViewCell {
         
         var cell = self.collectionView.dequeueReusableCellWithReuseIdentifier("CircleCollectionCell", forIndexPath: indexPath) as CircleCollectionViewCell
 
@@ -97,5 +108,42 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         
         return cell
     }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        // down to the bottom
+        
+        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
+        
+        if bottomEdge >= scrollView.contentSize.height {
+                self.performQuery()
+        }
+
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        
+        lastContentOffset = scrollView.contentOffset.y
+        startContentOffset = scrollView.contentOffset.y
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        var currentOffset = scrollView.contentOffset.y
+        var differenceFromStart = startContentOffset - currentOffset
+        var differenceFromLast = lastContentOffset - currentOffset
+        lastContentOffset = currentOffset
+        
+        if((differenceFromStart) < 0)
+        {
+            // scroll up
+            println("scroll up")
+        }
+        else {
+            println("scroll down")
+
+        }
+    }
+
+
+
 
 }
