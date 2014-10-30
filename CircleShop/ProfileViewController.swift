@@ -10,4 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBAction func Logout(sender: AnyObject) {
+        
+    }
 }
