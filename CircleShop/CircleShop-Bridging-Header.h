@@ -18,5 +18,6 @@
 #import <DBCameraContainerViewController.h>
 
 #import <Parse.h>
+#import <Async.h>
 
 #endif

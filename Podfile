@@ -11,6 +11,7 @@ pod 'ICViewPager'
 pod 'DBCamera', '~> 2.3'
 pod 'SSKeychain'
 pod 'Parse'
+pod 'Async'
 
 end
 

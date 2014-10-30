@@ -7,4 +7,13 @@ let email = NSUserDefaults.standardUserDefaults().objectForKey("emaddil") as? NS
 var test:[AnyObject] = [
     "a","ab", 1]
 
-test as [String]
+let ob = [[["a": 1],["b":2]],[["a": 1],["b":2]]]
+
+ob.reduce([], +)
+
+
+Double.infinity > 0
+
+
+var r: Int = 1
+var t: Float = r

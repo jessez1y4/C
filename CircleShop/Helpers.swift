@@ -47,4 +47,15 @@ class Helpers {
         return "edit me please"
     }
     
+    class func shortestDistance(from: PFGeoPoint, tos: [PFGeoPoint]) -> Double {
+        var min = Double.infinity
+        
+        for to in tos {
+            let dist = from.distanceInMilesTo(to)
+            min = dist < min ? dist : min
+        }
+        
+        return min
+    }
+    
 }

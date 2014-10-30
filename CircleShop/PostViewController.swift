@@ -75,10 +75,13 @@ class PostViewController: UIViewController, DBCameraViewControllerDelegate {
                 itemImages.append(imageFile)
             }
         }
+        
+        var user = PFUser.currentUser()
 
         let item = PFObject(className: "Item", dictionary: [
             "name": self.nameInput.text,
-            "images": itemImages
+            "images": itemImages,
+            "user": user
             ])
         
         item.saveInBackgroundWithBlock { (succeeded, error) -> Void in
