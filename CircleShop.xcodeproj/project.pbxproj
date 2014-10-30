@@ -20,9 +20,9 @@
 		0D5583FE19B426CA001AF800 /* CircleShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5583FD19B426CA001AF800 /* CircleShopTests.swift */; };
 		0D55DC5119C68B9B005C86BE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55DC5019C68B9B005C86BE /* DetailViewController.swift */; };
 		0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */; };
-		0D64AECF19FF58CE00F0AEF4 /* light_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D64AECC19FF58CE00F0AEF4 /* light_circle.png */; };
-		0D64AED019FF58CE00F0AEF4 /* dark_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D64AECD19FF58CE00F0AEF4 /* dark_circle.png */; };
-		0D64AED119FF58CE00F0AEF4 /* bicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D64AECE19FF58CE00F0AEF4 /* bicon.png */; };
+		0D6CEFCC1A0212B3002E51CC /* bicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CEFC91A0212B3002E51CC /* bicon.png */; };
+		0D6CEFCD1A0212B3002E51CC /* dark_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CEFCA1A0212B3002E51CC /* dark_circle.png */; };
+		0D6CEFCE1A0212B3002E51CC /* light_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CEFCB1A0212B3002E51CC /* light_circle.png */; };
 		0D89514919D324CC007A8081 /* ManageCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89514819D324CC007A8081 /* ManageCircleViewController.swift */; };
 		0D89514B19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89514A19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift */; };
 		0D942CAE19F614A300E230EE /* CircleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D942CAD19F614A300E230EE /* CircleCollectionViewController.swift */; };
@@ -67,9 +67,9 @@
 		0D5583FD19B426CA001AF800 /* CircleShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleShopTests.swift; sourceTree = "<group>"; };
 		0D55DC5019C68B9B005C86BE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		0D64AECC19FF58CE00F0AEF4 /* light_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = light_circle.png; path = ../../../../Downloads/light_circle.png; sourceTree = "<group>"; };
-		0D64AECD19FF58CE00F0AEF4 /* dark_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dark_circle.png; path = ../../../../Downloads/dark_circle.png; sourceTree = "<group>"; };
-		0D64AECE19FF58CE00F0AEF4 /* bicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bicon.png; path = ../../../../Downloads/bicon.png; sourceTree = "<group>"; };
+		0D6CEFC91A0212B3002E51CC /* bicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bicon.png; path = image/bicon.png; sourceTree = "<group>"; };
+		0D6CEFCA1A0212B3002E51CC /* dark_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dark_circle.png; path = image/dark_circle.png; sourceTree = "<group>"; };
+		0D6CEFCB1A0212B3002E51CC /* light_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = light_circle.png; path = image/light_circle.png; sourceTree = "<group>"; };
 		0D89514819D324CC007A8081 /* ManageCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageCircleViewController.swift; sourceTree = "<group>"; };
 		0D89514A19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = manageCircleViewCellTableViewCell.swift; sourceTree = "<group>"; };
 		0D942CAD19F614A300E230EE /* CircleCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewController.swift; sourceTree = "<group>"; };
@@ -152,9 +152,7 @@
 		0D5583E519B426CA001AF800 /* CircleShop */ = {
 			isa = PBXGroup;
 			children = (
-				0D64AECC19FF58CE00F0AEF4 /* light_circle.png */,
-				0D64AECD19FF58CE00F0AEF4 /* dark_circle.png */,
-				0D64AECE19FF58CE00F0AEF4 /* bicon.png */,
+				0D6CEFC81A021292002E51CC /* image */,
 				0D00772719C95398006EEAE7 /* Helper */,
 				0D00772619C9538C006EEAE7 /* Model */,
 				0D601DB219C433F900BA9E17 /* ViewController */,
@@ -209,6 +207,16 @@
 				0DC817DD19D762DE00FA8151 /* CreateCircleViewController.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		0D6CEFC81A021292002E51CC /* image */ = {
+			isa = PBXGroup;
+			children = (
+				0D6CEFC91A0212B3002E51CC /* bicon.png */,
+				0D6CEFCA1A0212B3002E51CC /* dark_circle.png */,
+				0D6CEFCB1A0212B3002E51CC /* light_circle.png */,
+			);
+			name = image;
 			sourceTree = "<group>";
 		};
 		0F272AD862C14797B95FE702 /* Frameworks */ = {
@@ -319,10 +327,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5583F019B426CA001AF800 /* Main.storyboard in Resources */,
-				0D64AED019FF58CE00F0AEF4 /* dark_circle.png in Resources */,
-				0D64AECF19FF58CE00F0AEF4 /* light_circle.png in Resources */,
-				0D64AED119FF58CE00F0AEF4 /* bicon.png in Resources */,
+				0D6CEFCD1A0212B3002E51CC /* dark_circle.png in Resources */,
 				0D5583F219B426CA001AF800 /* Images.xcassets in Resources */,
+				0D6CEFCC1A0212B3002E51CC /* bicon.png in Resources */,
+				0D6CEFCE1A0212B3002E51CC /* light_circle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
