@@ -25,6 +25,10 @@ class SignUpViewController: UIViewController {
             return Helpers.showSimpleAlert(self, message: "Where is the fucking email?")
         }
         
+        if !email.hasSuffix(".edu") {
+            return Helpers.showSimpleAlert(self, message: ".edu please")
+        }
+        
         if password.isEmpty {
             return Helpers.showSimpleAlert(self, message: "Where is the fucking password??")
         }
@@ -41,11 +45,18 @@ class SignUpViewController: UIViewController {
         
         user.signUpInBackgroundWithBlock { (succeeded, error) -> Void in
             if succeeded {
-                // TODO go to homepage
+                PFUser.logInWithUsernameInBackground(user.email, password: user.password, block: nil)
+ 
                 let tbc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("my_tab_bar_controller") as MyTabBarController
                 
-                self.navigationController?.pushViewController(tbc, animated: true)
+                // self.navigationController?.pushViewController(tbc, animated: true)
+                
+                let window = UIApplication.sharedApplication().windows.first as UIWindow
+                UIView.transitionWithView(window, duration: 0.5, options: UIViewAnimationOptions.TransitionFlipFromLeft, animations: { () -> Void in
+                    window.rootViewController = tbc
+                    }, completion: nil)
             } else {
+                println(error)
                 Helpers.showSimpleAlert(self, title: "Attention", message: error.userInfo!["error"] as String)
             }
         }

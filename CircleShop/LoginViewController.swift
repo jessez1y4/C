@@ -37,16 +37,16 @@ class LoginViewController: UIViewController {
      
             let tbc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("my_tab_bar_controller") as MyTabBarController
             
-            self.navigationController?.pushViewController(tbc, animated: true)
+            // self.navigationController?.pushViewController(tbc, animated: true)
             
-            /* another solution with custom animation
+            ///* another solution with custom animation
             
             let window = UIApplication.sharedApplication().windows.first as UIWindow
             UIView.transitionWithView(window, duration: 0.5, options: UIViewAnimationOptions.TransitionFlipFromLeft, animations: { () -> Void in
             window.rootViewController = tbc
             }, completion: nil)
             
-            */
+            //*/
         }
     }
 }

@@ -10,6 +10,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.setApplicationId("0ypgutxWtZSQUHtGz1hnx7v9fnQO9X1MDaN0zWMt", clientKey: "nfNfRQNQXQHveTVrvblFtw607Wvpmtbb8s5bD0Ww")
         
+        User.logOut()
+        
         if User.currentUser() != nil {
             let tbc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("my_tab_bar_controller") as MyTabBarController
             

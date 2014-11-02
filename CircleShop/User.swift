@@ -3,7 +3,7 @@ import Foundation
 class User : PFUser {
     
     @NSManaged var name: String
-//    @NSManaged var circle: Circle
+    @NSManaged var circle: Circle
     
     override class func load() {
         self.registerSubclass()

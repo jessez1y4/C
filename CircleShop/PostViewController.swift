@@ -69,10 +69,12 @@ class PostViewController: UIViewController, DBCameraViewControllerDelegate {
             }
         }
         
+        let user = User.currentUser()
         let item = Item()
         item.name = self.nameInput.text
         item.images = itemImages
-        item.user = User.currentUser()
+        item.user = user
+        item.circle = user.circle
         
         item.saveInBackgroundWithBlock { (succeeded, error) -> Void in
             println("item saved")
