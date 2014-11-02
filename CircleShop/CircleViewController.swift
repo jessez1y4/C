@@ -39,10 +39,6 @@ class CircleViewController: UIViewController, UITableViewDataSource, UITableView
         
         var cell = self.tableView.dequeueReusableCellWithIdentifier("CircleCell") as CircleViewCell
         
-        let url = "http://d3lncrho1w0yzl.cloudfront.net/photo1.100x133.2642bytes.webp?1"
-        cell.itemImageView.sd_setImageWithURL(NSURL(string: url))
-//        cell.applyData(self.groups[indexPath.row])
-        
         return cell
     }
  }

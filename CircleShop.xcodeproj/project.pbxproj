@@ -36,7 +36,6 @@
 		9ABE7F821A05C29D002766E7 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE7F811A05C29D002766E7 /* MyTabBarController.swift */; };
 		9AC78BD319D8B6B800B294DC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC78BD219D8B6B800B294DC /* Item.swift */; };
 		9AC78BD519D8B6CA00B294DC /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC78BD419D8B6CA00B294DC /* Circle.swift */; };
-		9AE3CF1819D93399007850EC /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3CF1719D93399007850EC /* CurrentUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +83,6 @@
 		9ABE7F811A05C29D002766E7 /* MyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		9AC78BD219D8B6B800B294DC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		9AC78BD419D8B6CA00B294DC /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
-		9AE3CF1719D93399007850EC /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CircleShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE669AFFE229B7826875BA4D /* Pods-CircleShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CircleShop/Pods-CircleShop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,7 +114,6 @@
 				0D00772219C9537B006EEAE7 /* User.swift */,
 				9AC78BD219D8B6B800B294DC /* Item.swift */,
 				9AC78BD419D8B6CA00B294DC /* Circle.swift */,
-				9AE3CF1719D93399007850EC /* CurrentUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -157,6 +154,7 @@
 				0D6CEFC81A021292002E51CC /* image */,
 				0D00772719C95398006EEAE7 /* Helper */,
 				0D00772619C9538C006EEAE7 /* Model */,
+				0DB16E641A05FA440039ED7D /* View */,
 				0D601DB219C433F900BA9E17 /* ViewController */,
 				0D5583E819B426CA001AF800 /* AppDelegate.swift */,
 				0D5583EE19B426CA001AF800 /* Main.storyboard */,
@@ -198,14 +196,11 @@
 				0D00771A19C94B3A006EEAE7 /* LoginViewController.swift */,
 				0D00771C19C94B50006EEAE7 /* SignUpViewController.swift */,
 				0D5583EA19B426CA001AF800 /* CircleViewController.swift */,
-				0DED5ABA19C4380300DCBA9A /* CircleViewCell.swift */,
 				0D942CAD19F614A300E230EE /* CircleCollectionViewController.swift */,
-				0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */,
 				0D55DC5019C68B9B005C86BE /* DetailViewController.swift */,
 				0D00771819C820C5006EEAE7 /* PostViewController.swift */,
 				0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */,
 				0D89514819D324CC007A8081 /* ManageCircleViewController.swift */,
-				0D89514A19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift */,
 				0DC817DD19D762DE00FA8151 /* CreateCircleViewController.swift */,
 				9ABE7F811A05C29D002766E7 /* MyTabBarController.swift */,
 			);
@@ -220,6 +215,16 @@
 				0D6CEFCB1A0212B3002E51CC /* light_circle.png */,
 			);
 			name = image;
+			sourceTree = "<group>";
+		};
+		0DB16E641A05FA440039ED7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0DED5ABA19C4380300DCBA9A /* CircleViewCell.swift */,
+				0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */,
+				0D89514A19D32AEF007A8081 /* manageCircleViewCellTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		0F272AD862C14797B95FE702 /* Frameworks */ = {
@@ -385,7 +390,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D00771919C820C5006EEAE7 /* PostViewController.swift in Sources */,
-				9AE3CF1819D93399007850EC /* CurrentUser.swift in Sources */,
 				0DED5ABB19C4380300DCBA9A /* CircleViewCell.swift in Sources */,
 				9AC78BD319D8B6B800B294DC /* Item.swift in Sources */,
 				0DC817DE19D762DE00FA8151 /* CreateCircleViewController.swift in Sources */,

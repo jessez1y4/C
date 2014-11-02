@@ -27,12 +27,6 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        // fetch circles
-        CurrentUser.getCircles { (circles, error) -> Void in
-            self.circles = circles as [PFObject]
-            self.tableView.reloadData()
-        }
-        
     }
     
 
@@ -65,7 +59,7 @@ class ManageCircleViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            CurrentUser.removeCircle(circles[indexPath.row])
+//            CurrentUser.removeCircle(circles[indexPath.row])
             self.circles.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         } else {

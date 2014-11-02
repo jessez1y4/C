@@ -22,14 +22,14 @@ class Helpers {
 //            _AFManager?.requestSerializer = AFJSONRequestSerializer()
         }
         
-        if withAuthHeader {
-            if let email = NSUserDefaults.standardUserDefaults().objectForKey("email") as? NSString {
-                let password = SSKeychain.passwordForService(KEYCHAIN_SERVICE, account: email)
-                
-                _AFManager!.requestSerializer.setValue(email, forHTTPHeaderField: "email")
-                _AFManager!.requestSerializer.setValue(password, forHTTPHeaderField: "password")
-            }
-        }
+//        if withAuthHeader {
+//            if let email = NSUserDefaults.standardUserDefaults().objectForKey("email") as? NSString {
+//                let password = SSKeychain.passwordForService(KEYCHAIN_SERVICE, account: email)
+//                
+//                _AFManager!.requestSerializer.setValue(email, forHTTPHeaderField: "email")
+//                _AFManager!.requestSerializer.setValue(password, forHTTPHeaderField: "password")
+//            }
+//        }
         
         return _AFManager!
     }
