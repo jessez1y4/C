@@ -13,6 +13,7 @@ pod 'SSKeychain'
 pod 'Parse'
 pod 'Async'
 pod 'BMYCircularProgressPullToRefresh'
+pod 'JSQMessagesViewController'
 
 end
 

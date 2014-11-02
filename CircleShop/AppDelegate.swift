@@ -21,6 +21,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
 //        PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(<#launchOptions: [NSObject : AnyObject]!#>, block: <#PFBooleanResultBlock!##(Bool, NSError!) -> Void#>)
         
         
+        var i = Item()
+        i.name = "first item"
+        var c = Circle()
+        c.name = "first circle"
+        i.circle = c
+        
+        i.saveInBackgroundWithBlock { (success, error) -> Void in
+            if success {
+                var q = Item.query()
+                q.getFirstObjectInBackgroundWithBlock({ (item, error) -> Void in
+                    println((item as Item).circle)
+//                    println(item.circle)
+                })
+            }
+        }
+        
+        PFUser.
+        
         let tabController = self.window!.rootViewController as UITabBarController
         tabController.delegate = self
         

@@ -143,19 +143,19 @@ class CurrentUser {
     //        Helpers.AFManager(true).POST(CIRCLES_URL, parameters: params, success: nil, failure: nil)
     //    }
     
-    class func updateItem(item: Item, callback: (updated: Bool) -> Void) {
-        let params = ["item": item.toDict()]
-        
-        Helpers.AFManager(true).PUT("\(ITEM_BASE_URL)\(item.id)", parameters: params, success: {(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-            
-            callback(updated: true)
-            
-            }, failure: {(operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-                
-                callback(updated: false)
-                
-        })
-    }
+//    class func updateItem(item: Item, callback: (updated: Bool) -> Void) {
+//        let params = ["item": item.toDict()]
+//        
+//        Helpers.AFManager(true).PUT("\(ITEM_BASE_URL)\(item.id)", parameters: params, success: {(operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
+//            
+//            callback(updated: true)
+//            
+//            }, failure: {(operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+//                
+//                callback(updated: false)
+//                
+//        })
+//    }
     
     
     class func sendMessage(receiver: User) {

@@ -1,44 +1,24 @@
-//
-//  Circle.swift
-//  CircleShop
-//
-//  Created by Yu Jiang on 9/28/14.
-//  Copyright (c) 2014 yue zheng. All rights reserved.
-//
-
 import Foundation
 
-class Circle: PFObject {
-//    var name: String
-//    var order: Int
-//    var location: CLLocation
-//    
-//    init(name: String, location: CLLocation) {
-//        self.name = name
-//        self.location = location
-//    }
-//    
-//    init(pfObject: PFObject) {
-//        self.name = pfObject["name"]! as String
-//        self.location = PFGeoPoint().
-//    }
-//    
-//    func toNSMutableDict() -> NSMutableDictionary {
-//        let dict: NSMutableDictionary = NSMutableDictionary()
-//        
-//        dict.setValue(self.name, forKey: "name")
-//        dict.setValue(self.longitude, forKey: "longitude")
-//        dict.setValue(self.latitude, forKey: "latitude")
-//        
-//        return dict;
-//    }
-//    
-//    func toPFObject() -> PFObject {
-//        let pfObj = PFObject(className: "Circle")
-//        
-//        pfObj["name"] = self.name
-//        pfObj["location"] = PFGeoPoint(location: self.location)
-//        
-//        return pfObj
-//    }
+class Circle : PFObject, PFSubclassing {
+    
+    @NSManaged var name: String
+    
+    override class func load() {
+        self.registerSubclass()
+    }
+    
+    class func parseClassName() -> String! {
+        return "Circle"
+    }
+    
+    func getItems(page: Int, callback: PFArrayResultBlock) {
+        let q = Item.query()
+        
+        q.whereKey("circle", equalTo: self)
+        q.skip = 10 * page
+        q.limit = 10
+        
+        q.findObjectsInBackgroundWithBlock(callback)
+    }
 }

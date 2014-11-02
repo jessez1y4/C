@@ -46,7 +46,7 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         self.collectionView.pullToRefreshView.setProgressView(progressView)
         
         
-        self.performQuery()
+//        self.performQuery()
 
         // Do any additional setup after loading the view.
     }
