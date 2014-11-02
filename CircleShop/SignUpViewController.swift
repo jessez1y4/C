@@ -16,6 +16,10 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func dismissClicked(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func SignUpClicked(sender: UIButton) {
         let email = self.emailInput.text
         let name = self.nameInput.text

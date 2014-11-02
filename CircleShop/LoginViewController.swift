@@ -15,6 +15,10 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func dissmisClicked(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func loginClicked(sender: UIButton) {
         let email = self.emailInput.text
         let password = self.passwordInput.text
