@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController {
     @IBAction func SignUpClicked(sender: UIButton) {
         let email = self.emailInput.text
         let name = self.nameInput.text
-        let password = self.emailInput.text
+        let password = self.passwordInput.text
         
         if email.isEmpty {
             return Helpers.showSimpleAlert(self, message: "Where is the fucking email?")
@@ -39,9 +39,12 @@ class SignUpViewController: UIViewController {
         user.password = password
         user["name"] = name
         
-        user.signUpInBackgroundWithBlock { (succeeded: Bool, error: NSError!) -> Void in
+        user.signUpInBackgroundWithBlock { (succeeded, error) -> Void in
             if succeeded {
                 // TODO go to homepage
+                let tbc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("my_tab_bar_controller") as MyTabBarController
+                
+                self.navigationController?.pushViewController(tbc, animated: true)
             } else {
                 Helpers.showSimpleAlert(self, title: "Attention", message: error.userInfo!["error"] as String)
             }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Mf-Qj-aYt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -67,7 +67,7 @@
                                     <action selector="postBtnClicked:" destination="NgY-P5-gka" eventType="touchUpInside" id="bnE-hA-CEf"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0v-Ud-4WS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="an item" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0v-Ud-4WS">
                                 <rect key="frame" x="80" y="175" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -151,6 +151,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="VIp-g4-HBr"/>
                     <connections>
                         <outlet property="emailInput" destination="S8k-Oy-hOt" id="GRZ-Dp-LmZ"/>
                         <outlet property="passwordInput" destination="1J9-nS-abd" id="Epg-Hd-33A"/>
@@ -158,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FcV-4f-N6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1432.5" y="50"/>
+            <point key="canvasLocation" x="-621" y="50"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="zTN-SB-7Cy">
@@ -188,7 +189,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4R6-5f-XSl">
-                                <rect key="frame" x="175" y="362" width="81" height="30"/>
+                                <rect key="frame" x="68" y="194" width="81" height="30"/>
                                 <state key="normal" title="SignUp">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -212,7 +213,7 @@
         <!--Post-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController title="Post" hidesBottomBarWhenPushed="YES" id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="my_tab_bar_controller" title="Post" hidesBottomBarWhenPushed="YES" id="49e-Tb-3d3" customClass="MyTabBarController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -227,7 +228,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-234" y="760"/>
+            <point key="canvasLocation" x="170" y="572"/>
         </scene>
         <!--Circle Collection View Controller-->
         <scene sceneID="KVE-gd-0An">
@@ -292,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ja-xb-JLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461" y="-87"/>
+            <point key="canvasLocation" x="2273" y="-87"/>
         </scene>
         <!--Circle View Controller-->
         <scene sceneID="Po0-It-xIl">
@@ -368,7 +369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qj0-Gf-fiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2260" y="-87"/>
+            <point key="canvasLocation" x="3072" y="-87"/>
         </scene>
         <!--Title-->
         <scene sceneID="N8u-fm-0ni">
@@ -583,7 +584,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZq-et-6oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="626" y="-87"/>
+            <point key="canvasLocation" x="1438" y="-87"/>
         </scene>
         <!--Profile-->
         <scene sceneID="3nq-cz-T5r">
@@ -603,6 +604,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rkf-Nq-61q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="626" y="1680"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TNc-Bn-TRY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Mf-Qj-aYt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y17-TQ-MHD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Rhr-mO-Ggw" kind="relationship" relationship="rootViewController" id="qxO-qr-tsM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SUw-EE-lvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1433" y="50"/>
         </scene>
     </scenes>
 </document>

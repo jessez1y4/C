@@ -11,6 +11,11 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     @IBAction func Logout(sender: AnyObject) {
+        User.logOut()
         
+//        NSArray *array = [self.navigationController viewControllers];
+        
+//        [self.navigationController popToViewController:[array objectAtIndex:2] animated:YES];
+        self.tabBarController?.navigationController?.popToRootViewControllerAnimated(true)
     }
 }

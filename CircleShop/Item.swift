@@ -6,6 +6,7 @@ class Item : PFObject, PFSubclassing {
     @NSManaged var desc: String?
     @NSManaged var circle: Circle
     @NSManaged var user: User
+    @NSManaged var images: [PFFile]
     
     override class func load() {
         self.registerSubclass()

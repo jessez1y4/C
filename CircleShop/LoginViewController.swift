@@ -27,14 +27,26 @@ class LoginViewController: UIViewController {
             return Helpers.showSimpleAlert(self, message: "Where's the fucking password?")
         }
         
-        PFUser.logInWithUsernameInBackground(email, password: password) { (user: PFUser!, error: NSError!) -> Void in
-            if user != nil {
-                self.dismissViewControllerAnimated(true, completion: nil)
-            } else {
-                Helpers.showSimpleAlert(self, message: "Invalid email or password.")
-                
-                // TODO also take care of senarios where no internet or parse server down?
+        User.logInWithUsernameInBackground(email, password: password) { (user, error) -> Void in
+            
+            // TODO also take care of senarios where no internet or parse server down?
+
+            if error != nil {
+                return Helpers.showSimpleAlert(self, message: "Invalid email or password.")
             }
+     
+            let tbc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("my_tab_bar_controller") as MyTabBarController
+            
+            self.navigationController?.pushViewController(tbc, animated: true)
+            
+            /* another solution with custom animation
+            
+            let window = UIApplication.sharedApplication().windows.first as UIWindow
+            UIView.transitionWithView(window, duration: 0.5, options: UIViewAnimationOptions.TransitionFlipFromLeft, animations: { () -> Void in
+            window.rootViewController = tbc
+            }, completion: nil)
+            
+            */
         }
     }
 }

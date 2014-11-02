@@ -4,16 +4,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target "CircleShop" do
 
-pod 'AFNetworking'
-pod 'SDWebImage'
-pod 'SDWebImage/WebP'
-pod 'ICViewPager'
-pod 'DBCamera', '~> 2.3'
-pod 'SSKeychain'
-pod 'Parse'
-pod 'Async'
-pod 'BMYCircularProgressPullToRefresh'
-pod 'JSQMessagesViewController'
+    pod 'AFNetworking'
+    pod 'DBCamera', '~> 2.3'
+    pod 'Parse'
+    pod 'Async'
+    pod 'BMYCircularProgressPullToRefresh'
+    pod 'JSQMessagesViewController'
 
 end
 

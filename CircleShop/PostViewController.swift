@@ -1,11 +1,3 @@
-//
-//  PostViewController.swift
-//  CircleShop
-//
-//  Created by yue zheng on 9/16/14.
-//  Copyright (c) 2014 yue zheng. All rights reserved.
-//
-
 import UIKit
 
 class PostViewController: UIViewController, DBCameraViewControllerDelegate {
@@ -65,24 +57,22 @@ class PostViewController: UIViewController, DBCameraViewControllerDelegate {
     }
     
     @IBAction func postBtnClicked(sender: AnyObject) {
+        
         var itemImages: [PFFile] = []
         
         for imageView in self.imageViews {
             if let image = imageView.image {
                 let imageData = UIImageJPEGRepresentation(image, 0.9)
-                let imageFile = PFFile(name:"image.jpg", data:imageData)
+                let imageFile = PFFile(name: "image.jpg", data: imageData)
                 
                 itemImages.append(imageFile)
             }
         }
         
-        var user = PFUser.currentUser()
-
-        let item = PFObject(className: "Item", dictionary: [
-            "name": self.nameInput.text,
-            "images": itemImages,
-            "user": user
-            ])
+        let item = Item()
+        item.name = self.nameInput.text
+        item.images = itemImages
+        item.user = User.currentUser()
         
         item.saveInBackgroundWithBlock { (succeeded, error) -> Void in
             println("item saved")
