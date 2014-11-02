@@ -52,13 +52,9 @@ class SignUpViewController: UIViewController {
                 PFUser.logInWithUsernameInBackground(user.email, password: user.password, block: nil)
  
                 let tbc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("my_tab_bar_controller") as MyTabBarController
-                
-                // self.navigationController?.pushViewController(tbc, animated: true)
-                
                 let window = UIApplication.sharedApplication().windows.first as UIWindow
-                UIView.transitionWithView(window, duration: 0.5, options: UIViewAnimationOptions.TransitionFlipFromLeft, animations: { () -> Void in
-                    window.rootViewController = tbc
-                    }, completion: nil)
+                (window.rootViewController as UINavigationController).pushViewController(tbc, animated: false)
+                self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 println(error)
                 Helpers.showSimpleAlert(self, title: "Attention", message: error.userInfo!["error"] as String)
