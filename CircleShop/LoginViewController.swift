@@ -33,6 +33,8 @@ class LoginViewController: UIViewController {
         
         User.logInWithUsernameInBackground(email, password: password) { (user, error) -> Void in
             
+            self.view.endEditing(true)
+            
             // TODO also take care of senarios where no internet or parse server down?
 
             if error != nil {

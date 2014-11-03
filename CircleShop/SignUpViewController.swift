@@ -21,6 +21,8 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func SignUpClicked(sender: UIButton) {
+        self.view.endEditing(true)
+        
         let email = self.emailInput.text
         let name = self.nameInput.text
         let password = self.passwordInput.text
@@ -49,12 +51,15 @@ class SignUpViewController: UIViewController {
         
         user.signUpInBackgroundWithBlock { (succeeded, error) -> Void in
             if succeeded {
-                PFUser.logInWithUsernameInBackground(user.email, password: user.password, block: nil)
- 
-                let tbc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("my_tab_bar_controller") as MyTabBarController
-                let window = UIApplication.sharedApplication().windows.first as UIWindow
-                (window.rootViewController as UINavigationController).pushViewController(tbc, animated: false)
-                self.dismissViewControllerAnimated(true, completion: nil)
+                PFUser.logInWithUsernameInBackground(user.email, password: user.password, block: { (user, error) -> Void in
+                    if error == nil {
+                        let tbc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("my_tab_bar_controller") as MyTabBarController
+                        let window = UIApplication.sharedApplication().windows.first as UIWindow
+                        (window.rootViewController as UINavigationController).pushViewController(tbc, animated: false)
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                })
+                
             } else {
                 println(error)
                 Helpers.showSimpleAlert(self, title: "Attention", message: error.userInfo!["error"] as String)

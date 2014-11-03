@@ -25,11 +25,9 @@
 		0D6CEFCE1A0212B3002E51CC /* light_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CEFCB1A0212B3002E51CC /* light_circle.png */; };
 		0D942CAE19F614A300E230EE /* CircleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D942CAD19F614A300E230EE /* CircleCollectionViewController.swift */; };
 		0D942CB019F614D300E230EE /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */; };
-		0DC817DE19D762DE00FA8151 /* CreateCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC817DD19D762DE00FA8151 /* CreateCircleViewController.swift */; };
 		0DC817E019D76A6A00FA8151 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC817DF19D76A6A00FA8151 /* MapKit.framework */; };
 		0DC817E219D76F5400FA8151 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC817E119D76F5400FA8151 /* CoreLocation.framework */; };
 		6CA76AEB8DF5445BA0200F7B /* libPods-CircleShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */; };
-		9A75906C19DD1B0E00ADCAB4 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A75906B19DD1B0E00ADCAB4 /* Globals.swift */; };
 		9ABE7F821A05C29D002766E7 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE7F811A05C29D002766E7 /* MyTabBarController.swift */; };
 		9AC78BD319D8B6B800B294DC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC78BD219D8B6B800B294DC /* Item.swift */; };
 		9AC78BD519D8B6CA00B294DC /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC78BD419D8B6CA00B294DC /* Circle.swift */; };
@@ -69,11 +67,9 @@
 		0D6CEFCB1A0212B3002E51CC /* light_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = light_circle.png; path = image/light_circle.png; sourceTree = "<group>"; };
 		0D942CAD19F614A300E230EE /* CircleCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewController.swift; sourceTree = "<group>"; };
 		0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
-		0DC817DD19D762DE00FA8151 /* CreateCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCircleViewController.swift; sourceTree = "<group>"; };
 		0DC817DF19D76A6A00FA8151 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0DC817E119D76F5400FA8151 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2B94032BB896863497770A54 /* Pods-CircleShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-CircleShop/Pods-CircleShop.release.xcconfig"; sourceTree = "<group>"; };
-		9A75906B19DD1B0E00ADCAB4 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		9ABE7F811A05C29D002766E7 /* MyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		9AC78BD219D8B6B800B294DC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		9AC78BD419D8B6CA00B294DC /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
@@ -117,7 +113,6 @@
 			children = (
 				0D00772019C9537B006EEAE7 /* Constants.swift */,
 				0D00772119C9537B006EEAE7 /* Helpers.swift */,
-				9A75906B19DD1B0E00ADCAB4 /* Globals.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -194,7 +189,6 @@
 				0D55DC5019C68B9B005C86BE /* DetailViewController.swift */,
 				0D00771819C820C5006EEAE7 /* PostViewController.swift */,
 				0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */,
-				0DC817DD19D762DE00FA8151 /* CreateCircleViewController.swift */,
 				9ABE7F811A05C29D002766E7 /* MyTabBarController.swift */,
 			);
 			name = ViewController;
@@ -382,7 +376,6 @@
 			files = (
 				0D00771919C820C5006EEAE7 /* PostViewController.swift in Sources */,
 				9AC78BD319D8B6B800B294DC /* Item.swift in Sources */,
-				0DC817DE19D762DE00FA8151 /* CreateCircleViewController.swift in Sources */,
 				0D942CB019F614D300E230EE /* CircleCollectionViewCell.swift in Sources */,
 				0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */,
 				0D00772319C9537B006EEAE7 /* Constants.swift in Sources */,
@@ -393,7 +386,6 @@
 				0D00772419C9537B006EEAE7 /* Helpers.swift in Sources */,
 				9AC78BD519D8B6CA00B294DC /* Circle.swift in Sources */,
 				0D00772519C9537B006EEAE7 /* User.swift in Sources */,
-				9A75906C19DD1B0E00ADCAB4 /* Globals.swift in Sources */,
 				0D55DC5119C68B9B005C86BE /* DetailViewController.swift in Sources */,
 				0D00771B19C94B3A006EEAE7 /* LoginViewController.swift in Sources */,
 				9ABE7F821A05C29D002766E7 /* MyTabBarController.swift in Sources */,
