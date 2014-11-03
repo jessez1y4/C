@@ -16,7 +16,8 @@ class Circle : PFObject, PFSubclassing {
         let q = Item.query()
         
         q.whereKey("circle", equalTo: self)
-        q.limit = 6
+        q.orderByDescending("createdAt")
+        q.limit = 10
         q.skip = q.limit * page
         
         q.findObjectsInBackgroundWithBlock(callback)

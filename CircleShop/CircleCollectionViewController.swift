@@ -1,11 +1,3 @@
-//
-//  CircleCollectionViewController.swift
-//  CircleShop
-//
-//  Created by yue zheng on 10/20/14.
-//  Copyright (c) 2014 yue zheng. All rights reserved.
-//
-
 import UIKit
 
 class CircleCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -16,6 +8,7 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
     var items: [Item] = []
     var page = 0
     var placeholder = UIImage(named: "bicon.png")
+    var fetching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +19,7 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         
         var progressView = BMYCircularProgressView(frame: CGRectMake(0, 0, 25, 25), logo: logoImage, backCircleImage: backCircleImage, frontCircleImage: frontCircleImage)
         
-        self.collectionView.setPullToRefreshWithHeight(60, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
+        self.collectionView.setPullToRefreshWithHeight(10, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
 
             self.page = self.circle.getItems(0, callback: { (results, error) -> Void in
                 if error == nil {
@@ -38,6 +31,7 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
             })
         })
         
+        self.collectionView.pullToRefreshView.preserveContentInset = true
         self.collectionView.pullToRefreshView.setProgressView(progressView)
         
         self.page = self.circle.getItems(0, callback: { (results, error) -> Void in
@@ -80,14 +74,19 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        if self.fetching {
+            return
+        }
         
         for path in self.collectionView.indexPathsForVisibleItems() as [NSIndexPath] {
-            println(path.row)
             if path.row == self.items.count - 1 {
+                println("what")
+                self.fetching = true
                 self.page = self.circle.getItems(self.page, callback: { (results, error) -> Void in
                     if error == nil {
                         self.items = self.items + (results as [Item])
                         self.collectionView.reloadData()
+                        self.fetching = false
                     }
                     
                 })
