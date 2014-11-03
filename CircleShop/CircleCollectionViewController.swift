@@ -15,7 +15,7 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
     var circle = User.currentUser().circle
     var items: [Item] = []
     var page = 0
-    
+    var placeholder = UIImage(named: "bicon.png")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,6 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
 
             self.page = self.circle.getItems(0, callback: { (results, error) -> Void in
                 if error == nil {
-                    println(results)
                     self.items = results as [Item]
                     self.collectionView.reloadData()
                 }
@@ -43,7 +42,6 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         
         self.page = self.circle.getItems(0, callback: { (results, error) -> Void in
             if error == nil {
-                println(results)
                 self.items = results as [Item]
                 self.collectionView.reloadData()
             }
@@ -74,29 +72,27 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         let cell = self.collectionView.dequeueReusableCellWithReuseIdentifier("CircleCollectionCell", forIndexPath: indexPath) as CircleCollectionViewCell
         let item = self.items[indexPath.row]
 
+        cell.imageView.image = self.placeholder
         cell.imageView.file = item.images[0]
         cell.imageView.loadInBackground(nil)
         
         return cell
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        // down to the bottom
+    func scrollViewDidScroll(scrollView: UIScrollView) {
         
-//        println(scrollView.contentOffset.y)
-        
-        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
-        
-        if bottomEdge > scrollView.contentSize.height + 100 {
-            println("xx")
-                
-            self.page = self.circle.getItems(self.page, callback: { (results, error) -> Void in
-                if error == nil {
-                    self.items = self.items + (results as [Item])
-                    self.collectionView.reloadData()
-                }
-
-            })
+        for path in self.collectionView.indexPathsForVisibleItems() as [NSIndexPath] {
+            println(path.row)
+            if path.row == self.items.count - 1 {
+                self.page = self.circle.getItems(self.page, callback: { (results, error) -> Void in
+                    if error == nil {
+                        self.items = self.items + (results as [Item])
+                        self.collectionView.reloadData()
+                    }
+                    
+                })
+            }
         }
     }
+
 }
