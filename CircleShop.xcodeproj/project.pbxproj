@@ -27,6 +27,16 @@
 		0D942CB019F614D300E230EE /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */; };
 		0DC817E019D76A6A00FA8151 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC817DF19D76A6A00FA8151 /* MapKit.framework */; };
 		0DC817E219D76F5400FA8151 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC817E119D76F5400FA8151 /* CoreLocation.framework */; };
+		0DD762421A086CB200C455C0 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD762381A086CB200C455C0 /* CHTCollectionViewWaterfallLayout.swift */; };
+		0DD762431A086CB200C455C0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD762391A086CB200C455C0 /* Extension.swift */; };
+		0DD762441A086CB200C455C0 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7623A1A086CB200C455C0 /* Macro.swift */; };
+		0DD762451A086CB200C455C0 /* NTHorizontalPageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7623B1A086CB200C455C0 /* NTHorizontalPageViewCell.swift */; };
+		0DD762461A086CB200C455C0 /* NTHorizontalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7623C1A086CB200C455C0 /* NTHorizontalPageViewController.swift */; };
+		0DD762471A086CB200C455C0 /* NTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7623D1A086CB200C455C0 /* NTNavigationController.swift */; };
+		0DD762481A086CB200C455C0 /* NTTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7623E1A086CB200C455C0 /* NTTransition.swift */; };
+		0DD762491A086CB200C455C0 /* NTTransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7623F1A086CB200C455C0 /* NTTransitionProtocol.swift */; };
+		0DD7624A1A086CB200C455C0 /* NTWaterfallViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD762401A086CB200C455C0 /* NTWaterfallViewCell.swift */; };
+		0DD7624B1A086CB200C455C0 /* NTWaterfallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD762411A086CB200C455C0 /* NTWaterfallViewController.swift */; };
 		6CA76AEB8DF5445BA0200F7B /* libPods-CircleShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */; };
 		9ABE7F821A05C29D002766E7 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE7F811A05C29D002766E7 /* MyTabBarController.swift */; };
 		9AC78BD319D8B6B800B294DC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC78BD219D8B6B800B294DC /* Item.swift */; };
@@ -70,6 +80,16 @@
 		0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
 		0DC817DF19D76A6A00FA8151 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0DC817E119D76F5400FA8151 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0DD762381A086CB200C455C0 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CHTCollectionViewWaterfallLayout.swift; path = NTWaterFall/CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
+		0DD762391A086CB200C455C0 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = NTWaterFall/Extension.swift; sourceTree = "<group>"; };
+		0DD7623A1A086CB200C455C0 /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Macro.swift; path = NTWaterFall/Macro.swift; sourceTree = "<group>"; };
+		0DD7623B1A086CB200C455C0 /* NTHorizontalPageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTHorizontalPageViewCell.swift; path = NTWaterFall/NTHorizontalPageViewCell.swift; sourceTree = "<group>"; };
+		0DD7623C1A086CB200C455C0 /* NTHorizontalPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTHorizontalPageViewController.swift; path = NTWaterFall/NTHorizontalPageViewController.swift; sourceTree = "<group>"; };
+		0DD7623D1A086CB200C455C0 /* NTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTNavigationController.swift; path = NTWaterFall/NTNavigationController.swift; sourceTree = "<group>"; };
+		0DD7623E1A086CB200C455C0 /* NTTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTTransition.swift; path = NTWaterFall/NTTransition.swift; sourceTree = "<group>"; };
+		0DD7623F1A086CB200C455C0 /* NTTransitionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTTransitionProtocol.swift; path = NTWaterFall/NTTransitionProtocol.swift; sourceTree = "<group>"; };
+		0DD762401A086CB200C455C0 /* NTWaterfallViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTWaterfallViewCell.swift; path = NTWaterFall/NTWaterfallViewCell.swift; sourceTree = "<group>"; };
+		0DD762411A086CB200C455C0 /* NTWaterfallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTWaterfallViewController.swift; path = NTWaterFall/NTWaterfallViewController.swift; sourceTree = "<group>"; };
 		2B94032BB896863497770A54 /* Pods-CircleShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-CircleShop/Pods-CircleShop.release.xcconfig"; sourceTree = "<group>"; };
 		9ABE7F811A05C29D002766E7 /* MyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		9AC78BD219D8B6B800B294DC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -142,11 +162,12 @@
 		0D5583E519B426CA001AF800 /* CircleShop */ = {
 			isa = PBXGroup;
 			children = (
+				0DD762371A086C0400C455C0 /* NTWaterFallView */,
 				0D6CEFC81A021292002E51CC /* image */,
 				0D00772719C95398006EEAE7 /* Helper */,
 				0D00772619C9538C006EEAE7 /* Model */,
-				0DB16E641A05FA440039ED7D /* View */,
-				0D601DB219C433F900BA9E17 /* ViewController */,
+				0DB16E641A05FA440039ED7D /* Views */,
+				0D601DB219C433F900BA9E17 /* ViewControllers */,
 				0D5583E819B426CA001AF800 /* AppDelegate.swift */,
 				0D5583EE19B426CA001AF800 /* Main.storyboard */,
 				0D5583F119B426CA001AF800 /* Images.xcassets */,
@@ -181,7 +202,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0D601DB219C433F900BA9E17 /* ViewController */ = {
+		0D601DB219C433F900BA9E17 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				0D56D6E61A061BA100D65394 /* StartViewController.swift */,
@@ -194,7 +215,7 @@
 				9ABE7F811A05C29D002766E7 /* MyTabBarController.swift */,
 				9AD09A2A1A08B4C60071566A /* ShareViewController.swift */,
 			);
-			name = ViewController;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		0D6CEFC81A021292002E51CC /* image */ = {
@@ -207,12 +228,29 @@
 			name = image;
 			sourceTree = "<group>";
 		};
-		0DB16E641A05FA440039ED7D /* View */ = {
+		0DB16E641A05FA440039ED7D /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */,
 			);
-			name = View;
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0DD762371A086C0400C455C0 /* NTWaterFallView */ = {
+			isa = PBXGroup;
+			children = (
+				0DD762391A086CB200C455C0 /* Extension.swift */,
+				0DD7623A1A086CB200C455C0 /* Macro.swift */,
+				0DD762381A086CB200C455C0 /* CHTCollectionViewWaterfallLayout.swift */,
+				0DD7623B1A086CB200C455C0 /* NTHorizontalPageViewCell.swift */,
+				0DD7623C1A086CB200C455C0 /* NTHorizontalPageViewController.swift */,
+				0DD7623D1A086CB200C455C0 /* NTNavigationController.swift */,
+				0DD7623E1A086CB200C455C0 /* NTTransition.swift */,
+				0DD7623F1A086CB200C455C0 /* NTTransitionProtocol.swift */,
+				0DD762401A086CB200C455C0 /* NTWaterfallViewCell.swift */,
+				0DD762411A086CB200C455C0 /* NTWaterfallViewController.swift */,
+			);
+			name = NTWaterFallView;
 			sourceTree = "<group>";
 		};
 		0F272AD862C14797B95FE702 /* Frameworks */ = {
@@ -285,7 +323,7 @@
 				TargetAttributes = {
 					0D5583E219B426CA001AF800 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = W7659XWS22;
+						DevelopmentTeam = F5J82UHW78;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -294,6 +332,7 @@
 					};
 					0D5583F619B426CA001AF800 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = F5J82UHW78;
 						TestTargetID = 0D5583E219B426CA001AF800;
 					};
 				};
@@ -380,18 +419,28 @@
 				0D00771919C820C5006EEAE7 /* PostViewController.swift in Sources */,
 				9AC78BD319D8B6B800B294DC /* Item.swift in Sources */,
 				0D942CB019F614D300E230EE /* CircleCollectionViewCell.swift in Sources */,
+				0DD7624A1A086CB200C455C0 /* NTWaterfallViewCell.swift in Sources */,
+				0DD762461A086CB200C455C0 /* NTHorizontalPageViewController.swift in Sources */,
 				0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */,
 				0D00772319C9537B006EEAE7 /* Constants.swift in Sources */,
+				0DD7624B1A086CB200C455C0 /* NTWaterfallViewController.swift in Sources */,
+				0DD762451A086CB200C455C0 /* NTHorizontalPageViewCell.swift in Sources */,
 				0D942CAE19F614A300E230EE /* CircleCollectionViewController.swift in Sources */,
 				9AD09A2B1A08B4C60071566A /* ShareViewController.swift in Sources */,
 				0D56D6E71A061BA100D65394 /* StartViewController.swift in Sources */,
+				0DD762491A086CB200C455C0 /* NTTransitionProtocol.swift in Sources */,
+				0DD762421A086CB200C455C0 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				0D5583E919B426CA001AF800 /* AppDelegate.swift in Sources */,
 				0D00771D19C94B50006EEAE7 /* SignUpViewController.swift in Sources */,
+				0DD762481A086CB200C455C0 /* NTTransition.swift in Sources */,
+				0DD762431A086CB200C455C0 /* Extension.swift in Sources */,
 				0D00772419C9537B006EEAE7 /* Helpers.swift in Sources */,
+				0DD762471A086CB200C455C0 /* NTNavigationController.swift in Sources */,
 				9AC78BD519D8B6CA00B294DC /* Circle.swift in Sources */,
 				0D00772519C9537B006EEAE7 /* User.swift in Sources */,
 				0D55DC5119C68B9B005C86BE /* DetailViewController.swift in Sources */,
 				0D00771B19C94B3A006EEAE7 /* LoginViewController.swift in Sources */,
+				0DD762441A086CB200C455C0 /* Macro.swift in Sources */,
 				9ABE7F821A05C29D002766E7 /* MyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
