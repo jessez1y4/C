@@ -329,6 +329,7 @@
 					};
 					0D5583F619B426CA001AF800 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = F5J82UHW78;
 						TestTargetID = 0D5583E219B426CA001AF800;
 					};
 				};
