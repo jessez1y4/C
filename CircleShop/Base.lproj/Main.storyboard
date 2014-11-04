@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qEy-nk-4S0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qEy-nk-4S0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FcV-4f-N6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-389" y="-238"/>
+            <point key="canvasLocation" x="-1293" y="-546"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="zTN-SB-7Cy">
@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0j-s1-Sq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-389" y="668"/>
+            <point key="canvasLocation" x="-1293" y="1000"/>
         </scene>
         <!--Post-->
         <scene sceneID="yl2-sM-qoP">
@@ -274,14 +274,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="JW1-g9-yqx" kind="relationship" relationship="viewControllers" id="Fbo-9C-mBF"/>
+                        <segue destination="VSq-g3-lVw" kind="relationship" relationship="viewControllers" id="l04-gH-20t"/>
                         <segue destination="NgY-P5-gka" kind="relationship" relationship="viewControllers" id="w7g-0U-X0F"/>
                         <segue destination="0YT-L3-QNV" kind="relationship" relationship="viewControllers" id="lrn-CU-Yoc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="500" y="210"/>
+            <point key="canvasLocation" x="-380" y="202"/>
         </scene>
         <!--Circle Collection View Controller-->
         <scene sceneID="KVE-gd-0An">
@@ -400,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lj4-N0-sFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511" y="1160"/>
+            <point key="canvasLocation" x="2323" y="1160"/>
         </scene>
         <!--Circle-->
         <scene sceneID="yZQ-ki-D1V">
@@ -438,11 +438,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rkf-Nq-61q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="586" y="1160"/>
+            <point key="canvasLocation" x="1398" y="1160"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hIf-ft-NCh">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SI8-Lz-4od" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="qEy-nk-4S0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OyQ-s2-5aV">
@@ -454,9 +455,63 @@
                         <segue destination="5sO-zA-sfa" kind="relationship" relationship="rootViewController" id="PdB-XQ-wKb"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SI8-Lz-4od" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2105" y="202"/>
+        </scene>
+        <!--Circle-->
+        <scene sceneID="D8F-tT-Suu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VSq-g3-lVw" customClass="NTNavigationController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Circle" id="4ej-mD-cmL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gge-lO-rjp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="C7u-Ys-lwS" kind="relationship" relationship="rootViewController" id="fm5-g6-xcM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2BM-ta-S2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602" y="-1279"/>
+        </scene>
+        <!--Waterfall View Controller-->
+        <scene sceneID="e95-fR-bHj">
+            <objects>
+                <collectionViewController id="C7u-Ys-lwS" customClass="NTWaterfallViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TZC-fl-Ew6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bLA-rg-ajh">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6GM-Ba-mXn">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="C7u-Ys-lwS" id="GpK-4c-wfn"/>
+                            <outlet property="delegate" destination="C7u-Ys-lwS" id="jXV-pi-rzd"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="SY3-oa-F9W"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HwH-Bo-8JR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1510" y="-1279"/>
         </scene>
     </scenes>
 </document>
