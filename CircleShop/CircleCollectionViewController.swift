@@ -7,6 +7,7 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
     var circle = User.currentUser().circle
     var items: [Item] = []
     var page = 0
+    let per = 10
     var placeholder = UIImage(named: "bicon.png")
     var fetching = false
     
@@ -21,10 +22,13 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         
         self.collectionView.setPullToRefreshWithHeight(10, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
 
-            self.page = self.circle.getItems(0, callback: { (results, error) -> Void in
+            self.page = self.circle.getItems(0, per: self.per, callback: { (results, error) -> Void in
                 if error == nil {
-                    self.items = results as [Item]
+                    let items = results as [Item]
+                    if items.first?.objectId != self.items.first?.objectId {
+                        self.items = results as [Item]
                     self.collectionView.reloadData()
+                    }
                 }
                 
                 pullToRefreshView.stopAnimating()
@@ -34,7 +38,7 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         self.collectionView.pullToRefreshView.preserveContentInset = true
         self.collectionView.pullToRefreshView.setProgressView(progressView)
         
-        self.page = self.circle.getItems(0, callback: { (results, error) -> Void in
+        self.page = self.circle.getItems(0, per: self.per, callback: { (results, error) -> Void in
             if error == nil {
                 self.items = results as [Item]
                 self.collectionView.reloadData()
@@ -67,22 +71,21 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         let item = self.items[indexPath.row]
 
         cell.imageView.image = self.placeholder
-        cell.imageView.file = item.images[0]
+        cell.imageView.file = item.images.first
         cell.imageView.loadInBackground(nil)
         
         return cell
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        if self.fetching {
+        if self.items.count < self.per || self.fetching {
             return
         }
         
         for path in self.collectionView.indexPathsForVisibleItems() as [NSIndexPath] {
-            if path.row == self.items.count - 1 {
-                println("what")
+            if  path.row == self.items.count - 1 {
                 self.fetching = true
-                self.page = self.circle.getItems(self.page, callback: { (results, error) -> Void in
+                self.page = self.circle.getItems(self.page, per: self.per, callback: { (results, error) -> Void in
                     if error == nil {
                         self.items = self.items + (results as [Item])
                         self.collectionView.reloadData()

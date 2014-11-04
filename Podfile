@@ -10,7 +10,6 @@ target "CircleShop" do
     pod 'Async'
     pod 'BMYCircularProgressPullToRefresh'
     pod 'JSQMessagesViewController'
-    pod 'SVPullToRefresh'
 
 end
 
