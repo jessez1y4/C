@@ -39,8 +39,8 @@ class NTHorizontalPageViewController : UICollectionViewController, NTTransitionP
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
         var collectionCell: NTHorizontalPageViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(horizontalPageViewCellIdentify, forIndexPath: indexPath) as NTHorizontalPageViewCell
+        
         collectionCell.imageFile = self.items[indexPath.row].images.first
-//        collectionCell.imageName = self.imageNameList[indexPath.row]
         collectionCell.tappedAction = {}
         collectionCell.pullAction = { offset in
             self.pullOffset = offset

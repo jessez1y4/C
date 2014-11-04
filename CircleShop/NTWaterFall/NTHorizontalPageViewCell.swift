@@ -11,9 +11,7 @@ import UIKit
 
 let cellIdentify = "cellIdentify"
 
-class NTTableViewCell : UITableViewCell{
-    
-    var pfImageView : PFImageView = PFImageView()
+class NTTableViewCell : PFTableViewCell{
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,10 +24,8 @@ class NTTableViewCell : UITableViewCell{
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        pfImageView.frame = CGRectZero
-        if (pfImageView.image != nil) {
-            let imageHeight = pfImageView.image!.size.height*screenWidth/pfImageView.image!.size.width
-            pfImageView.frame = CGRectMake(0, 0, screenWidth, imageHeight)
+        if self.imageView.image != nil {
+            self.imageView.frame = CGRectMake(0, 0, screenWidth, screenWidth)
         }
     }
 }
@@ -67,15 +63,10 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentify) as NTTableViewCell!
-//        cell.imageView.image = nil
-//        cell.textLabel.text = nil
         if indexPath.row == 0 {
-            cell.pfImageView.image = self.placeholder
-            cell.pfImageView.file = imageFile
-            cell.pfImageView.loadInBackground(nil)
-            
-//            let image = UIImage(named: imageName!)
-//            cell.imageView.image = image
+            cell.imageView.image = self.placeholder
+            cell.imageView.file = imageFile
+            cell.imageView.loadInBackground(nil)
         }else{
             cell.textLabel.text = "try pull to pop view controller 😃"
         }
@@ -87,22 +78,7 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
         var cellHeight : CGFloat = navigationHeight
         if indexPath.row == 0{
-            
-            var creature = PFImageView()
-            creature.image = self.placeholder
-            creature.file = imageFile
-            creature.loadInBackground({ (image, error) -> Void in
-                let imageHeight = image.size.height*screenWidth/image.size.width
-                cellHeight = imageHeight
-
-            })
-//            let image:UIImage! = UIImage(named: imageName!)
-//            let imageHeight = creature.image!.size.height*screenWidth/creature.image!.size.width
-//            cellHeight = imageHeight
-            
-            
-            
-//            cellHeight = screenWidth
+            cellHeight = screenWidth
         }
         return cellHeight
     }
