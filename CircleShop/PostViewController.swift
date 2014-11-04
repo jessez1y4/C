@@ -78,6 +78,7 @@ class PostViewController: UIViewController, DBCameraViewControllerDelegate {
         
         item.saveInBackgroundWithBlock { (succeeded, error) -> Void in
             println("item saved")
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
