@@ -33,6 +33,9 @@ class PostViewController: UIViewController, DBCameraViewControllerDelegate {
         handleClick(view)
     }
     
+    @IBAction func tapToDismissKeyboard(sender: AnyObject) {
+        self.view.endEditing(false)
+    }
     
     func handleClick(imageView: UIImageView){
         if imageView.image != nil {
@@ -78,7 +81,7 @@ class PostViewController: UIViewController, DBCameraViewControllerDelegate {
         
         item.saveInBackgroundWithBlock { (succeeded, error) -> Void in
             println("item saved")
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.performSegueWithIdentifier("post_item_success", sender: self)
         }
     }
     
