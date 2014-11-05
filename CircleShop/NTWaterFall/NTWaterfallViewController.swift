@@ -29,6 +29,9 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
     let per = 10
     var placeholder = UIImage(named: "bicon.png")
     var fetching = false
+    var startContentOffset: CGFloat = 0
+    var lastContentOffset: CGFloat = 0
+    var hidden: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,7 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         collectionView.setCollectionViewLayout(CHTCollectionViewWaterfallLayout(), animated: false)
         collectionView.backgroundColor = UIColor.grayColor()
         collectionView.registerClass(NTWaterfallViewCell.self, forCellWithReuseIdentifier: waterfallViewCellIdentify)
+        hidden = false
         
         // circle
         var logoImage = UIImage(named: "bicon.png")
@@ -96,6 +100,10 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         // circle
         pageViewController.items = self.items
         collectionView.setCurrentIndexPath(indexPath)
+        
+//        // hide tabBarController before push
+//        expand()
+        pageViewController.hidesBottomBarWhenPushed = true
         navigationController!.pushViewController(pageViewController, animated: true)
     }
     
@@ -137,8 +145,57 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         // Dispose of any resources that can be recreated.
     }
     
+    override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        lastContentOffset = scrollView.contentOffset.y
+        startContentOffset = scrollView.contentOffset.y
+
+    }
+    
+    func expand() {
+        let tbc = self.tabBarController as MyTabBarController
+
+        if hidden == true {
+            return
+        }
+        
+        hidden = true
+        tbc.setTabBarHidden(true, animated: true)
+    }
+    
+    func contract() {
+        let tbc = self.tabBarController as MyTabBarController
+
+        if !hidden {
+            return
+        }
+    
+        hidden = false
+        tbc.setTabBarHidden(false, animated: true)
+    }
+
+    
     // circle
     override func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        // decide if scroll up or down
+        var currentOffset = scrollView.contentOffset.y
+        var differenceFromStart = startContentOffset - currentOffset
+        var differenceFromLast = lastContentOffset - currentOffset
+        lastContentOffset = currentOffset
+        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
+        
+        if differenceFromStart < 0 {
+            // scroll up
+            expand()
+        }
+        else {
+            contract()
+        }
+        
+        // end
+        
+        
+        
         if self.items.count < self.per || self.fetching {
             return
         }
@@ -158,6 +215,7 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
             }
         }
     }
+
 
 }
 

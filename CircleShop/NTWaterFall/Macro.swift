@@ -17,3 +17,4 @@ let gridWidth : CGFloat = 155.0
 let navigationHeight : CGFloat = 44.0
 let statubarHeight : CGFloat = 20.0
 let navigationHeaderAndStatusbarHeight : CGFloat = navigationHeight + statubarHeight
+let tabbar_height: CGFloat = 49.0

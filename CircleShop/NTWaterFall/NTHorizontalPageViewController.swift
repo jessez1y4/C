@@ -36,6 +36,10 @@ class NTHorizontalPageViewController : UICollectionViewController, NTTransitionP
     override func viewDidLoad(){
         super.viewDidLoad()
     }
+//    
+//    override func viewWillAppear(animated: Bool) {
+//        self.tabBarController!.tabBar.hidden = true
+//    }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
         var collectionCell: NTHorizontalPageViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(horizontalPageViewCellIdentify, forIndexPath: indexPath) as NTHorizontalPageViewCell
