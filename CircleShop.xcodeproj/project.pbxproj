@@ -242,13 +242,13 @@
 				0DD762391A086CB200C455C0 /* Extension.swift */,
 				0DD7623A1A086CB200C455C0 /* Macro.swift */,
 				0DD762381A086CB200C455C0 /* CHTCollectionViewWaterfallLayout.swift */,
-				0DD7623B1A086CB200C455C0 /* NTHorizontalPageViewCell.swift */,
-				0DD7623C1A086CB200C455C0 /* NTHorizontalPageViewController.swift */,
 				0DD7623D1A086CB200C455C0 /* NTNavigationController.swift */,
 				0DD7623E1A086CB200C455C0 /* NTTransition.swift */,
 				0DD7623F1A086CB200C455C0 /* NTTransitionProtocol.swift */,
 				0DD762401A086CB200C455C0 /* NTWaterfallViewCell.swift */,
 				0DD762411A086CB200C455C0 /* NTWaterfallViewController.swift */,
+				0DD7623C1A086CB200C455C0 /* NTHorizontalPageViewController.swift */,
+				0DD7623B1A086CB200C455C0 /* NTHorizontalPageViewCell.swift */,
 			);
 			name = NTWaterFallView;
 			sourceTree = "<group>";
