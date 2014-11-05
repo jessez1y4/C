@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qEy-nk-4S0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cJC-WX-Zgl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -203,7 +203,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2298" y="210"/>
+            <point key="canvasLocation" x="4134" y="210"/>
         </scene>
         <!--Share View Controller-->
         <scene sceneID="xxb-pL-7t9">
@@ -254,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qql-Ga-Hru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3018" y="210"/>
+            <point key="canvasLocation" x="4854" y="210"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="8S4-tN-eVb">
@@ -268,16 +268,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vef-Zl-zJj">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vef-Zl-zJj">
                                 <rect key="frame" x="94" y="399" width="348" height="30"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Sign In">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="loginClicked:" destination="5sO-zA-sfa" eventType="touchUpInside" id="GeR-Kx-pOx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSU-MJ-VLW">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSU-MJ-VLW">
                                 <rect key="frame" x="94" y="461" width="348" height="30"/>
                                 <state key="normal" title="Join Us">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -288,12 +288,46 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vef-Zl-zJj" firstAttribute="leading" secondItem="aqu-tz-3ey" secondAttribute="leadingMargin" constant="-76" id="WPy-fV-iDm">
+                                <variation key="widthClass=compact" constant="50"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="fSU-MJ-VLW" secondAttribute="trailing" constant="-64" id="XAl-mA-8PQ">
+                                <variation key="widthClass=compact" constant="50"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="vef-Zl-zJj" secondAttribute="trailing" constant="96" id="ahV-I8-GiM"/>
+                            <constraint firstItem="vef-Zl-zJj" firstAttribute="baseline" secondItem="fSU-MJ-VLW" secondAttribute="baseline" id="f48-Di-jGL"/>
+                            <constraint firstItem="fSU-MJ-VLW" firstAttribute="leading" secondItem="aqu-tz-3ey" secondAttribute="leadingMargin" constant="84" id="ryX-Y1-eHC"/>
+                            <constraint firstItem="lOh-ZX-DF2" firstAttribute="top" secondItem="vef-Zl-zJj" secondAttribute="bottom" constant="25" id="z5H-iE-gya"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WPy-fV-iDm"/>
+                                <exclude reference="ahV-I8-GiM"/>
+                                <exclude reference="f48-Di-jGL"/>
+                                <exclude reference="ryX-Y1-eHC"/>
+                                <exclude reference="z5H-iE-gya"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="WPy-fV-iDm"/>
+                                <exclude reference="ahV-I8-GiM"/>
+                                <include reference="f48-Di-jGL"/>
+                                <exclude reference="ryX-Y1-eHC"/>
+                                <include reference="z5H-iE-gya"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="qsV-os-qfN"/>
+                    <connections>
+                        <outlet property="loginBtn" destination="vef-Zl-zJj" id="Ahf-z1-LzR"/>
+                        <outlet property="signUpBtn" destination="fSU-MJ-VLW" id="biv-DZ-4X4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBO-gD-SaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1293" y="202"/>
+            <point key="canvasLocation" x="-1293" y="210"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="98D-FS-rHc">
@@ -354,6 +388,90 @@
             </objects>
             <point key="canvasLocation" x="-1293" y="-546"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="LNh-ov-IeS">
+            <objects>
+                <pageViewController storyboardIdentifier="intro_view_controller" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="15i-Nh-hlc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="61b-SI-ssM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2997" y="950"/>
+        </scene>
+        <!--Intro Content View Controller-->
+        <scene sceneID="An8-z1-sDj">
+            <objects>
+                <viewController storyboardIdentifier="intro_content_view_controller" id="6f1-9V-5Zg" customClass="IntroContentViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="idr-07-a48"/>
+                        <viewControllerLayoutGuide type="bottom" id="I1e-Oy-DAh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BUK-64-IKh">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scf-r8-Jvv">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="VsC-ck-Ewm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VsC-ck-Ewm"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="179" y="289" width="42" height="21"/>
+                                    <mask key="constraints">
+                                        <include reference="VsC-ck-Ewm"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Scf-r8-Jvv" firstAttribute="centerX" secondItem="BUK-64-IKh" secondAttribute="centerX" id="Mfh-iH-Ouq"/>
+                            <constraint firstAttribute="centerX" secondItem="Scf-r8-Jvv" secondAttribute="centerX" id="RFt-vl-nBT"/>
+                            <constraint firstAttribute="centerY" secondItem="Scf-r8-Jvv" secondAttribute="centerY" id="Tkp-xB-15o"/>
+                            <constraint firstItem="Scf-r8-Jvv" firstAttribute="top" secondItem="idr-07-a48" secondAttribute="bottom" constant="250" id="hd2-YX-lU0"/>
+                            <constraint firstItem="I1e-Oy-DAh" firstAttribute="top" secondItem="Scf-r8-Jvv" secondAttribute="bottom" constant="290" id="x74-er-HV7"/>
+                            <constraint firstItem="Scf-r8-Jvv" firstAttribute="top" secondItem="idr-07-a48" secondAttribute="bottom" constant="269" id="ypq-L5-XiC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Scf-r8-Jvv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Mfh-iH-Ouq"/>
+                                <exclude reference="RFt-vl-nBT"/>
+                                <exclude reference="Tkp-xB-15o"/>
+                                <exclude reference="hd2-YX-lU0"/>
+                                <exclude reference="ypq-L5-XiC"/>
+                                <exclude reference="x74-er-HV7"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Scf-r8-Jvv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Mfh-iH-Ouq"/>
+                                <include reference="RFt-vl-nBT"/>
+                                <include reference="Tkp-xB-15o"/>
+                                <exclude reference="hd2-YX-lU0"/>
+                                <exclude reference="ypq-L5-XiC"/>
+                                <exclude reference="x74-er-HV7"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="introLabel" destination="Scf-r8-Jvv" id="Ahi-Fc-Ha5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sSu-OK-IAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2146.5" y="950"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="zTN-SB-7Cy">
             <objects>
@@ -410,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0j-s1-Sq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1293" y="1000"/>
+            <point key="canvasLocation" x="-1293" y="950"/>
         </scene>
         <!--Post-->
         <scene sceneID="yl2-sM-qoP">
@@ -430,7 +548,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-380" y="202"/>
+            <point key="canvasLocation" x="909" y="210"/>
         </scene>
         <!--Circle Collection View Controller-->
         <scene sceneID="KVE-gd-0An">
@@ -500,7 +618,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ja-xb-JLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1501" y="-571"/>
+            <point key="canvasLocation" x="1827" y="-571"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="KcR-Qv-7dr">
@@ -529,7 +647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qj0-Gf-fiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2452" y="-571"/>
+            <point key="canvasLocation" x="2751" y="-571"/>
         </scene>
         <!--Profile-->
         <scene sceneID="DhC-tK-Gg3">
@@ -556,6 +674,16 @@
             </objects>
             <point key="canvasLocation" x="2323" y="1160"/>
         </scene>
+        <!--Intro View Controller-->
+        <scene sceneID="nw0-x0-a9X">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="mid" doubleSided="YES" id="5TP-zu-YfJ" customClass="IntroViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="J1M-fL-XYI"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxM-3s-kaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2997" y="210"/>
+        </scene>
         <!--Circle-->
         <scene sceneID="yZQ-ki-D1V">
             <objects>
@@ -573,7 +701,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZq-et-6oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="602" y="-571"/>
+            <point key="canvasLocation" x="955.5" y="-571"/>
         </scene>
         <!--Profile-->
         <scene sceneID="3nq-cz-T5r">
@@ -594,24 +722,6 @@
             </objects>
             <point key="canvasLocation" x="1398" y="1160"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hIf-ft-NCh">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="qEy-nk-4S0" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OyQ-s2-5aV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="5sO-zA-sfa" kind="relationship" relationship="rootViewController" id="PdB-XQ-wKb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SI8-Lz-4od" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2105" y="202"/>
-        </scene>
         <!--Circle-->
         <scene sceneID="D8F-tT-Suu">
             <objects>
@@ -629,7 +739,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2BM-ta-S2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="602" y="-1279"/>
+            <point key="canvasLocation" x="955.5" y="-1307"/>
         </scene>
         <!--Waterfall View Controller-->
         <scene sceneID="e95-fR-bHj">
@@ -665,7 +775,25 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HwH-Bo-8JR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1510" y="-1279"/>
+            <point key="canvasLocation" x="1827" y="-1307"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vab-hd-7if">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="cJC-WX-Zgl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h7z-mZ-HBf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5sO-zA-sfa" kind="relationship" relationship="rootViewController" id="bRt-7D-WUm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TnY-0Q-SH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2139" y="210"/>
         </scene>
     </scenes>
 </document>
