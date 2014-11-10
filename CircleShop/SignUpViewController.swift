@@ -53,9 +53,9 @@ class SignUpViewController: UIViewController {
             if succeeded {
                 PFUser.logInWithUsernameInBackground(user.email, password: user.password, block: { (user, error) -> Void in
                     if error == nil {
-                        let tbc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("my_tab_bar_controller") as MyTabBarController
-                        let window = UIApplication.sharedApplication().windows.first as UIWindow
-                        (window.rootViewController as UINavigationController).pushViewController(tbc, animated: false)
+//                        let tbc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("my_tab_bar_controller") as MyTabBarController
+//                        let window = UIApplication.sharedApplication().windows.first as UIWindow
+//                        (window.rootViewController as UINavigationController).pushViewController(tbc, animated: false)
                         self.dismissViewControllerAnimated(true, completion: nil)
                     }
                 })

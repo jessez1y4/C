@@ -18,6 +18,7 @@
 #import <Async.h>
 
 #import <BMYCircularProgressPullToRefresh.h>
+#import <UIViewController+ECSlidingViewController.h>
 
 
 #endif

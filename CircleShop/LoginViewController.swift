@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
                 return Helpers.showSimpleAlert(self, message: "Invalid email or password.")
             }
      
-            let tbc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("my_tab_bar_controller") as MyTabBarController
+//            let tbc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("my_tab_bar_controller") as MyTabBarController
             
             /* another solution with custom animation
             
@@ -53,8 +53,8 @@ class LoginViewController: UIViewController {
 
             */
             
-            let window = UIApplication.sharedApplication().windows.first as UIWindow
-            (window.rootViewController as UINavigationController).pushViewController(tbc, animated: false)
+//            let window = UIApplication.sharedApplication().windows.first as UIWindow
+//            (window.rootViewController as UINavigationController).pushViewController(tbc, animated: false)
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }

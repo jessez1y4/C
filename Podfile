@@ -10,6 +10,7 @@ target "CircleShop" do
     pod 'Async'
     pod 'BMYCircularProgressPullToRefresh'
     pod 'JSQMessagesViewController'
+    pod 'ECSlidingViewController', '~> 2.0.3'
 
 end
 

@@ -23,7 +23,7 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
     let delegateHolder = NavigationControllerDelegate()
     
     // circle
-    var circle = User.currentUser().circle
+    var circle: Circle!
     var items: [Item] = []
     var page = 0
     let per = 10
@@ -46,6 +46,7 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         hidden = false
         
         // circle
+        self.circle = User.currentUser().circle
         var logoImage = UIImage(named: "bicon.png")
         var backCircleImage = UIImage(named: "light_circle.png")
         var frontCircleImage = UIImage(named: "dark_circle.png")
@@ -76,6 +77,12 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         })
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController!.view.addGestureRecognizer(self.slidingViewController().panGesture)
+    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize{
         return CGSizeMake(gridWidth, gridWidth)
     }
@@ -101,9 +108,6 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         pageViewController.items = self.items
         collectionView.setCurrentIndexPath(indexPath)
         
-//        // hide tabBarController before push
-//        expand()
-        pageViewController.hidesBottomBarWhenPushed = true
         navigationController!.pushViewController(pageViewController, animated: true)
     }
     
@@ -151,71 +155,10 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
 
     }
     
-    func expand() {
-        let tbc = self.tabBarController as MyTabBarController
 
-        if hidden == true {
-            return
-        }
-        
-        hidden = true
-        tbc.setTabBarHidden(true, animated: true)
+    @IBAction func menuClicked(sender: AnyObject) {
+        self.slidingViewController().anchorTopViewToRightAnimated(true)
     }
-    
-    func contract() {
-        let tbc = self.tabBarController as MyTabBarController
-
-        if !hidden {
-            return
-        }
-    
-        hidden = false
-        tbc.setTabBarHidden(false, animated: true)
-    }
-
-    
-    // circle
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-        // decide if scroll up or down
-        var currentOffset = scrollView.contentOffset.y
-        var differenceFromStart = startContentOffset - currentOffset
-        var differenceFromLast = lastContentOffset - currentOffset
-        lastContentOffset = currentOffset
-        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
-        
-        if differenceFromStart < 0 {
-            // scroll up
-            expand()
-        }
-        else {
-            contract()
-        }
-        
-        // end
-        
-        
-        
-        if self.items.count < self.per || self.fetching {
-            return
-        }
-        
-        for path in self.collectionView.indexPathsForVisibleItems() as [NSIndexPath] {
-            if  path.row == self.items.count - 1 {
-                self.fetching = true
-                self.page = self.circle.getItems(self.page, per: self.per, callback: { (results, error) -> Void in
-                    if error == nil {
-                        self.items = self.items + (results as [Item])
-                        self.collectionView.reloadData()
-                        self.fetching = false
-                    }
-                    
-                })
-                
-            }
-        }
-    }
-
 
 }
 
