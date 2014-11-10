@@ -12,11 +12,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     var transitionsNavigationController: UINavigationController!
-    var menuItems: [String] = ["Yue","Setting"]
+    var menuItems: [String] = ["Yue","Setting", "Logout"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // topViewController is the transitions navigation controller at this point.
         // It is initially set as a User Defined Runtime Attributes in storyboards.
@@ -30,6 +31,11 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.view.endEditing(true)
     }
     
+    func tableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.menuItems.count
     }
@@ -38,6 +44,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         var cell = tableView.dequeueReusableCellWithIdentifier("MenuCell") as MenuTableViewCell
         cell.textLabel.text = self.menuItems[indexPath.row]
         cell.backgroundColor = UIColor.clearColor()
+        println("234234")
+
         return cell
     }
     
@@ -48,11 +56,17 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         // dynamically so everything needs to start in a consistent state.
         self.slidingViewController().topViewController.view.layer.transform = CATransform3DMakeScale(1, 1, 1);
         
-        if self.menuItems[indexPath.row] == "Yue" {
+        let text = self.menuItems[indexPath.row]
+        
+        if text == "Yue" {
             
 //            self.slidingViewController().topViewController = self.transitionsNavigationController;
-        } else if self.menuItems[indexPath.row] == "Settings" {
+        } else if text == "Settings" {
             self.slidingViewController().topViewController = self.storyboard?.instantiateViewControllerWithIdentifier("circle_navigation_controller") as UIViewController
+        } else if text == "Logout" {
+            User.logOut()
+            let window = UIApplication.sharedApplication().windows.first as UIWindow
+            (window.rootViewController as UINavigationController).popToRootViewControllerAnimated(true)
         }
         
         

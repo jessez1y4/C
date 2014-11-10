@@ -226,6 +226,7 @@
 				0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */,
 				9AD09A2A1A08B4C60071566A /* ShareViewController.swift */,
 				9A9AAA371A09FB000097870C /* StartViewController.swift */,
+				0DD762681A0F545B00C455C0 /* MenuViewController.swift */,
 				9A641C6C1A0EEA93002F0C83 /* MessageViewController.swift */,
 			);
 			name = ViewControllers;

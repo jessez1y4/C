@@ -105,9 +105,6 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         pageViewController.items = self.items
         collectionView.setCurrentIndexPath(indexPath)
         
-//        // hide tabBarController before push
-        self.expand(false)
-        pageViewController.hidesBottomBarWhenPushed = true
         navigationController!.pushViewController(pageViewController, animated: true)
     }
     
@@ -154,27 +151,9 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         startContentOffset = scrollView.contentOffset.y
 
     }
-    
-    func expand(animated: Bool) {
-        let tbc = self.tabBarController as MyTabBarController
 
-        if hidden == true {
-            return
-        }
-        
-        hidden = true
-        tbc.setTabBarHidden(true, animated: animated)
-    }
-    
-    func contract() {
-        let tbc = self.tabBarController as MyTabBarController
-
-        if !hidden {
-            return
-        }
-    
-        hidden = false
-        tbc.setTabBarHidden(false, animated: true)
+    @IBAction func menuClicked(sender: AnyObject) {
+        self.slidingViewController().anchorTopViewToRightAnimated(true)
     }
 
     
@@ -187,16 +166,6 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         var differenceFromLast = lastContentOffset - currentOffset
         lastContentOffset = currentOffset
         let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
-        
-        if differenceFromStart < 0 {
-            // scroll up
-            expand(true)
-        }
-        else {
-            contract()
-        }
-        
-        // end
         
         
         
@@ -219,6 +188,7 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
             }
         }
     }
+
 
 }
 

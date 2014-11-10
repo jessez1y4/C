@@ -12,7 +12,7 @@ class Circle : PFObject, PFSubclassing {
         return "Circle"
     }
     
-    func getItems(page: Int, per: Int, callback: PFArrayResultBlock) -> Int {
+    func getItems(page: Int, per: Int, callback: ([Item]!, NSError!) -> Void) -> Int {
         let q = Item.query()
         
         q.whereKey("circle", equalTo: self)
@@ -20,7 +20,9 @@ class Circle : PFObject, PFSubclassing {
         q.limit = per
         q.skip = per * page
         
-        q.findObjectsInBackgroundWithBlock(callback)
+        q.findObjectsInBackgroundWithBlock { (results, error) -> Void in
+            callback(results as? [Item], error)
+        }
         
         return page + 1
     }
