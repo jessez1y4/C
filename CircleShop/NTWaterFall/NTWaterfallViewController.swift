@@ -23,7 +23,7 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
     let delegateHolder = NavigationControllerDelegate()
     
     // circle
-    var circle = User.currentUser().circle
+    var circle: Circle!
     var items: [Item] = []
     var page = 0
     let per = 10
@@ -46,6 +46,7 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         hidden = false
         
         // circle
+        self.circle = User.currentUser().circle
         var logoImage = UIImage(named: "bicon.png")
         var backCircleImage = UIImage(named: "light_circle.png")
         var frontCircleImage = UIImage(named: "dark_circle.png")
@@ -71,6 +72,12 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
                 self.collectionView.reloadData()
             }
         })
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController!.view.addGestureRecognizer(self.slidingViewController().panGesture)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize{
@@ -212,7 +219,6 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
             }
         }
     }
-
 
 }
 

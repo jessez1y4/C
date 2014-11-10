@@ -576,25 +576,67 @@
             </objects>
             <point key="canvasLocation" x="-1293" y="950"/>
         </scene>
-        <!--Post-->
-        <scene sceneID="yl2-sM-qoP">
+        <!--Menu View Controller-->
+        <scene sceneID="gsz-8p-cOS">
             <objects>
-                <tabBarController storyboardIdentifier="my_tab_bar_controller" title="Post" hidesBottomBarWhenPushed="YES" id="49e-Tb-3d3" customClass="MyTabBarController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
+                <viewController storyboardIdentifier="menuViewControllerId" id="5WG-ze-CC1" customClass="MenuViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VjL-fQ-EqO"/>
+                        <viewControllerLayoutGuide type="bottom" id="ap3-gk-mTZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JCM-Lx-Yb9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ApH-fY-Qob">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" id="l1X-Ty-fvk" customClass="MenuTableViewCell" customModule="CircleShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1X-Ty-fvk" id="dm7-xq-McV">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5WG-ze-CC1" id="3lZ-oV-R9F"/>
+                                    <outlet property="delegate" destination="5WG-ze-CC1" id="Vqy-n1-daP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <connections>
-                        <segue destination="VSq-g3-lVw" kind="relationship" relationship="viewControllers" id="l04-gH-20t"/>
-                        <segue destination="NgY-P5-gka" kind="relationship" relationship="viewControllers" id="w7g-0U-X0F"/>
-                        <segue destination="0YT-L3-QNV" kind="relationship" relationship="viewControllers" id="lrn-CU-Yoc"/>
+                        <outlet property="tableView" destination="ApH-fY-Qob" id="GJo-LD-si5"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZi-SO-wYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="909" y="210"/>
+            <point key="canvasLocation" x="-200" y="998"/>
+        </scene>
+        <!--Sliding View Controller-->
+        <scene sceneID="14z-8D-7mf">
+            <objects>
+                <viewController id="SDJ-iZ-4bm" customClass="ECSlidingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Czu-2G-t1E"/>
+                        <viewControllerLayoutGuide type="bottom" id="VDG-fg-zdc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nyb-Q9-I9F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="underLeftViewControllerStoryboardId" value="menuViewControllerId"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="topViewControllerStoryboardId" value="circleNavigationControllerId"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NVT-FN-b78" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-200" y="210"/>
         </scene>
         <!--Circle Collection View Controller-->
         <scene sceneID="KVE-gd-0An">
@@ -664,7 +706,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ja-xb-JLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1827" y="-571"/>
+            <point key="canvasLocation" x="903" y="-1255"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="KcR-Qv-7dr">
@@ -693,7 +735,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qj0-Gf-fiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2751" y="-571"/>
+            <point key="canvasLocation" x="1827" y="-1255"/>
         </scene>
         <!--Profile-->
         <scene sceneID="DhC-tK-Gg3">
@@ -718,7 +760,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lj4-N0-sFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2323" y="1160"/>
+            <point key="canvasLocation" x="1827" y="636"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="nw0-x0-a9X">
@@ -747,7 +789,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZq-et-6oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="955.5" y="-571"/>
+            <point key="canvasLocation" x="31" y="-1255"/>
         </scene>
         <!--Profile-->
         <scene sceneID="3nq-cz-T5r">
@@ -766,12 +808,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rkf-Nq-61q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="1160"/>
+            <point key="canvasLocation" x="951" y="636"/>
         </scene>
         <!--Circle-->
         <scene sceneID="D8F-tT-Suu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VSq-g3-lVw" customClass="NTNavigationController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="circleNavigationControllerId" automaticallyAdjustsScrollViewInsets="NO" id="VSq-g3-lVw" customClass="NTNavigationController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Circle" id="4ej-mD-cmL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gge-lO-rjp">
@@ -790,7 +832,7 @@
         <!--Waterfall View Controller-->
         <scene sceneID="e95-fR-bHj">
             <objects>
-                <collectionViewController id="C7u-Ys-lwS" customClass="NTWaterfallViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="water_fall_view_controller" id="C7u-Ys-lwS" customClass="NTWaterfallViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TZC-fl-Ew6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -817,7 +859,13 @@
                             <outlet property="delegate" destination="C7u-Ys-lwS" id="jXV-pi-rzd"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="SY3-oa-F9W"/>
+                    <navigationItem key="navigationItem" id="SY3-oa-F9W">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="Vyx-NG-RWg">
+                            <connections>
+                                <action selector="menuClicked:" destination="C7u-Ys-lwS" id="aiB-Bp-V0U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HwH-Bo-8JR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
