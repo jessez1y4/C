@@ -23,6 +23,9 @@ class NTTransition : NSObject , UIViewControllerAnimatedTransitioning{
         let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as UIViewController!
         let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as UIViewController!
         let containerView = transitionContext.containerView()
+        containerView.backgroundColor = UIColor.whiteColor()
+        
+//        println(containerView.frame)
 
         if presenting {
             let toView = toViewController.view

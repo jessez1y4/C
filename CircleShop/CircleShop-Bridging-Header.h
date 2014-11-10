@@ -18,6 +18,7 @@
 #import <Async.h>
 
 #import <BMYCircularProgressPullToRefresh.h>
+#import <JSQMessages.h>
 
 
 #endif

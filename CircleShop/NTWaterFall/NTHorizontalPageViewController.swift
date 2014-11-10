@@ -48,7 +48,8 @@ class NTHorizontalPageViewController : UICollectionViewController, NTTransitionP
         collectionCell.tappedAction = {}
         collectionCell.pullAction = { offset in
             self.pullOffset = offset
-            self.navigationController!.popViewControllerAnimated(true)
+            let collectionVC = self.navigationController!.popViewControllerAnimated(true) as? NTWaterfallViewController
+            collectionVC?.expand(false)
         }
         collectionCell.setNeedsLayout()
         return collectionCell

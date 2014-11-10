@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cJC-WX-Zgl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5TP-zu-YfJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -329,6 +329,52 @@
             </objects>
             <point key="canvasLocation" x="-1293" y="210"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="g5e-v1-3xS">
+            <objects>
+                <tableViewController id="FEh-IL-k4n" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zCd-KX-d8R">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Y0V-ma-mDV">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y0V-ma-mDV" id="Ykp-3D-4lK">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FEh-IL-k4n" id="80g-Nm-M9d"/>
+                            <outlet property="delegate" destination="FEh-IL-k4n" id="6ls-ae-MwO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="lEo-0q-2vY"/>
+                    <connections>
+                        <segue destination="k99-OH-WFY" kind="show" id="UFj-nU-Lv1"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sKz-Ky-pOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-741" y="-1338"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="4Lr-k6-eqH">
+            <objects>
+                <viewController id="k99-OH-WFY" customClass="MessageViewController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CTn-4V-tsH"/>
+                        <viewControllerLayoutGuide type="bottom" id="S1t-69-8Be"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vxJ-lT-ATM">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qss-qH-w9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78" y="-1354"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="98D-FS-rHc">
             <objects>
@@ -405,6 +451,7 @@
                         <viewControllerLayoutGuide type="bottom" id="I1e-Oy-DAh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BUK-64-IKh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scf-r8-Jvv">
@@ -420,8 +467,7 @@
                                         <exclude reference="VsC-ck-Ewm"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="179" y="289" width="42" height="21"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="VsC-ck-Ewm"/>
                                     </mask>
@@ -442,12 +488,12 @@
                                 <exclude reference="Scf-r8-Jvv"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="x74-er-HV7"/>
                                 <exclude reference="Mfh-iH-Ouq"/>
                                 <exclude reference="RFt-vl-nBT"/>
                                 <exclude reference="Tkp-xB-15o"/>
                                 <exclude reference="hd2-YX-lU0"/>
                                 <exclude reference="ypq-L5-XiC"/>
-                                <exclude reference="x74-er-HV7"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -455,12 +501,12 @@
                                 <include reference="Scf-r8-Jvv"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="x74-er-HV7"/>
                                 <exclude reference="Mfh-iH-Ouq"/>
                                 <include reference="RFt-vl-nBT"/>
                                 <include reference="Tkp-xB-15o"/>
                                 <exclude reference="hd2-YX-lU0"/>
                                 <exclude reference="ypq-L5-XiC"/>
-                                <exclude reference="x74-er-HV7"/>
                             </mask>
                         </variation>
                     </view>
@@ -580,7 +626,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Crm-wo-Ufq" customClass="PFImageView">
@@ -740,7 +785,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2BM-ta-S2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="955.5" y="-1307"/>
+            <point key="canvasLocation" x="1873.5" y="-1307"/>
         </scene>
         <!--Waterfall View Controller-->
         <scene sceneID="e95-fR-bHj">
@@ -776,7 +821,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HwH-Bo-8JR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1827" y="-1307"/>
+            <point key="canvasLocation" x="2745" y="-1307"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vab-hd-7if">
@@ -795,6 +840,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TnY-0Q-SH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2139" y="210"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ceb-5B-B2p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KMi-bg-XO9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uWv-wy-dXa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FEh-IL-k4n" kind="relationship" relationship="rootViewController" id="VFZ-gi-SQf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A0L-MW-eUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1659" y="-1338"/>
         </scene>
     </scenes>
 </document>

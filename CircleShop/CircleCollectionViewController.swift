@@ -22,12 +22,11 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         
         self.collectionView.setPullToRefreshWithHeight(10, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
 
-            self.page = self.circle.getItems(0, per: self.per, callback: { (results, error) -> Void in
+            self.page = self.circle.getItems(0, per: self.per, callback: { (items, error) -> Void in
                 if error == nil {
-                    let items = results as [Item]
                     if items.first?.objectId != self.items.first?.objectId {
-                        self.items = results as [Item]
-                    self.collectionView.reloadData()
+                        self.items = items
+                        self.collectionView.reloadData()
                     }
                 }
                 
@@ -38,9 +37,9 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         self.collectionView.pullToRefreshView.preserveContentInset = true
         self.collectionView.pullToRefreshView.setProgressView(progressView)
         
-        self.page = self.circle.getItems(0, per: self.per, callback: { (results, error) -> Void in
+        self.page = self.circle.getItems(0, per: self.per, callback: { (items, error) -> Void in
             if error == nil {
-                self.items = results as [Item]
+                self.items = items
                 self.collectionView.reloadData()
             }
         })
@@ -85,9 +84,9 @@ class CircleCollectionViewController: UIViewController, UICollectionViewDelegate
         for path in self.collectionView.indexPathsForVisibleItems() as [NSIndexPath] {
             if  path.row == self.items.count - 1 {
                 self.fetching = true
-                self.page = self.circle.getItems(self.page, per: self.per, callback: { (results, error) -> Void in
+                self.page = self.circle.getItems(self.page, per: self.per, callback: { (items, error) -> Void in
                     if error == nil {
-                        self.items = self.items + (results as [Item])
+                        self.items = self.items + items
                         self.collectionView.reloadData()
                         self.fetching = false
                     }

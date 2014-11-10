@@ -41,7 +41,7 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         self.view.backgroundColor = UIColor.yellowColor()
         collectionView.frame = screenBounds
         collectionView.setCollectionViewLayout(CHTCollectionViewWaterfallLayout(), animated: false)
-        collectionView.backgroundColor = UIColor.grayColor()
+        collectionView.backgroundColor = UIColor.whiteColor()
         collectionView.registerClass(NTWaterfallViewCell.self, forCellWithReuseIdentifier: waterfallViewCellIdentify)
         hidden = false
         
@@ -53,13 +53,10 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         
         self.collectionView.setPullToRefreshWithHeight(10, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
             
-            self.page = self.circle.getItems(0, per: self.per, callback: { (results, error) -> Void in
-                if error == nil {
-                    let items = results as [Item]
-                    if items.first?.objectId != self.items.first?.objectId {
-                        self.items = results as [Item]
-                        self.collectionView.reloadData()
-                    }
+            self.page = self.circle.getItems(0, per: self.per, callback: { (items, error) -> Void in
+                if error == nil && items.first?.objectId != self.items.first?.objectId {
+                    self.items = items
+                    self.collectionView.reloadData()
                 }
                 pullToRefreshView.stopAnimating()
             })
@@ -68,9 +65,9 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         collectionView.pullToRefreshView.preserveContentInset = true
         collectionView.pullToRefreshView.setProgressView(progressView)
     
-        self.page = self.circle.getItems(0, per: self.per, callback: { (results, error) -> Void in
+        self.page = self.circle.getItems(0, per: self.per, callback: { (items, error) -> Void in
             if error == nil {
-                self.items = results as [Item]
+                self.items = items
                 self.collectionView.reloadData()
             }
         })
@@ -102,7 +99,7 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         collectionView.setCurrentIndexPath(indexPath)
         
 //        // hide tabBarController before push
-//        expand()
+        self.expand(false)
         pageViewController.hidesBottomBarWhenPushed = true
         navigationController!.pushViewController(pageViewController, animated: true)
     }
@@ -151,7 +148,7 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
 
     }
     
-    func expand() {
+    func expand(animated: Bool) {
         let tbc = self.tabBarController as MyTabBarController
 
         if hidden == true {
@@ -159,7 +156,7 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         }
         
         hidden = true
-        tbc.setTabBarHidden(true, animated: true)
+        tbc.setTabBarHidden(true, animated: animated)
     }
     
     func contract() {
@@ -186,7 +183,7 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         
         if differenceFromStart < 0 {
             // scroll up
-            expand()
+            expand(true)
         }
         else {
             contract()
@@ -203,9 +200,9 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         for path in self.collectionView.indexPathsForVisibleItems() as [NSIndexPath] {
             if  path.row == self.items.count - 1 {
                 self.fetching = true
-                self.page = self.circle.getItems(self.page, per: self.per, callback: { (results, error) -> Void in
+                self.page = self.circle.getItems(self.page, per: self.per, callback: { (items, error) -> Void in
                     if error == nil {
-                        self.items = self.items + (results as [Item])
+                        self.items = self.items + items
                         self.collectionView.reloadData()
                         self.fetching = false
                     }
