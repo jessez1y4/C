@@ -77,6 +77,8 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.slidingViewController().topViewAnchoredGesture = ECSlidingViewControllerAnchoredGesture.Tapping | ECSlidingViewControllerAnchoredGesture.Panning
+        
         self.navigationController!.view.addGestureRecognizer(self.slidingViewController().panGesture)
     }
     
