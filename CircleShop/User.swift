@@ -23,25 +23,14 @@ class User : PFUser {
         }
     }
     
-    class func getConversations(callback: ([Conversation]!, NSError!) -> Void) {
-        let user = User.currentUser()
-        let querys = [Conversation.query(), Conversation.query()]
-        querys[0].whereKey("userA", equalTo: user)
-        querys[1].whereKey("userB", equalTo: user)
-        
-        Async.mapParallel(querys, mapFunction: { (qurey, success, fail) -> Void in
-            (qurey as PFQuery).findObjectsInBackgroundWithBlock({ (results, error) -> Void in
-                if let conversations = results {
-                    success(conversations)
-                } else {
-                    fail(error)
-                }
-            })
-            }, success: { (conversations) -> Void in
-                callback(conversations as [Conversation], nil)
-            }) { (error) -> Void in
+    func getConversations(callback: ([Conversation]!, NSError!) -> Void) {
+        PFCloud.callFunctionInBackground("fetchConversations", withParameters: [:]) { (results, error) -> Void in
+            println(results)
+            if let conversations = results as? [Conversation] {
+                callback(conversations, nil)
+            } else {
                 callback(nil, error)
+            }
         }
     }
-
 }

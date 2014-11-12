@@ -9,6 +9,7 @@
 import UIKit
 
 class MessageViewController: JSQMessagesViewController {
+    var conversation: Conversation!
     var messages: [Message] = []
     var outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleBlueColor())
     var incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleGreenColor())
@@ -16,25 +17,16 @@ class MessageViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.collectionView.collectionViewLayout.springinessEnabled = true
         self.senderId = User.currentUser().objectId
         self.senderDisplayName = User.currentUser().name
         
-        let q = User.query()
-        q.getFirstObjectInBackgroundWithBlock { (otherUser, err) -> Void in
-            let msg = Message()
-            let u = otherUser as User
-            msg.sender = User.currentUser()
-            msg.receiver = otherUser as User
-            msg.content = "this is a message"
-            let msg2 = Message()
-            msg2.sender = u
-            msg2.receiver = User.currentUser()
-            msg2.content = "this is a message"
-            self.messages = [msg,msg2]
-            self.title = u.name
-            self.collectionView.reloadData()
+        self.conversation.getMessages { (messages, error) -> Void in
+            if error == nil {
+                self.messages = messages
+                self.collectionView.reloadData()
+            }
         }
-        
         
         self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
         self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
@@ -60,6 +52,22 @@ class MessageViewController: JSQMessagesViewController {
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         return nil
+    }
+    
+    override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
+        let msg = Message()
+        
+        msg.conversation = self.conversation
+        msg.sender = User.currentUser()
+        msg.receiver = self.conversation.getOtherUser()
+        msg.content = text
+        
+        msg.saveInBackgroundWithBlock { (success, error) -> Void in
+            if success {
+                self.messages.append(msg)
+                self.finishSendingMessage()
+            }
+        }
     }
 }
 

@@ -12,8 +12,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     var transitionsNavigationController: UINavigationController!
-    var menuItems: [String] = ["Yue","Setting", "Logout"]
-    
+    var menuItems: [String] = ["Yue","Setting", "Logout", "Messages"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +43,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         var cell = tableView.dequeueReusableCellWithIdentifier("MenuCell") as MenuTableViewCell
         cell.textLabel.text = self.menuItems[indexPath.row]
         cell.backgroundColor = UIColor.clearColor()
-        println("234234")
 
         return cell
     }
@@ -56,17 +54,20 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         // dynamically so everything needs to start in a consistent state.
         self.slidingViewController().topViewController.view.layer.transform = CATransform3DMakeScale(1, 1, 1);
         
-        let text = self.menuItems[indexPath.row]
-        
-        if text == "Yue" {
-            
-//            self.slidingViewController().topViewController = self.transitionsNavigationController;
-        } else if text == "Settings" {
+        switch indexPath.row {
+        case 0:
+            break
+        case 1:
             self.slidingViewController().topViewController = self.storyboard?.instantiateViewControllerWithIdentifier("circle_navigation_controller") as UIViewController
-        } else if text == "Logout" {
+        case 2:
             User.logOut()
             let window = UIApplication.sharedApplication().windows.first as UIWindow
             (window.rootViewController as UINavigationController).popToRootViewControllerAnimated(true)
+        case 3:
+            self.slidingViewController().topViewController = self.storyboard?.instantiateViewControllerWithIdentifier("conversation_nav_controller") as UINavigationController
+            // message
+        default:
+            break
         }
         
         
