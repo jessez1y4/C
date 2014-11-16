@@ -8,7 +8,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         
-        Parse.setApplicationId("0ypgutxWtZSQUHtGz1hnx7v9fnQO9X1MDaN0zWMt", clientKey: "nfNfRQNQXQHveTVrvblFtw607Wvpmtbb8s5bD0Ww")
+       Parse.setApplicationId("0ypgutxWtZSQUHtGz1hnx7v9fnQO9X1MDaN0zWMt", clientKey: "nfNfRQNQXQHveTVrvblFtw607Wvpmtbb8s5bD0Ww")
+        
+        /* set up push notification */
+        if application.respondsToSelector("isRegisteredForRemoteNotifications") {
+            // iOS 8 Notifications
+            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: (.Badge | .Sound | .Alert), categories: nil))
+            application.registerForRemoteNotifications()
+        } else {
+            // iOS < 8 Notifications
+            application.registerForRemoteNotificationTypes(.Badge | .Sound | .Alert)
+        }
 
         /* go to home if logged in */
         if User.currentUser() != nil {
@@ -24,6 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pageControl.backgroundColor = UIColor.whiteColor();
         
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let currentInstallation = PFInstallation.currentInstallation()
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.channels = ["global"]
+        currentInstallation.saveInBackgroundWithBlock(nil)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
     }
     
     func applicationWillResignActive(application: UIApplication!) {
