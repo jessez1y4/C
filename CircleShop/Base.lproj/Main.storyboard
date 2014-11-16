@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cJC-WX-Zgl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cJC-WX-Zgl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -389,14 +390,14 @@
                                             <exclude reference="heT-8P-wnb"/>
                                         </mask>
                                         <mask key="constraints">
+                                            <exclude reference="FGJ-cj-II7"/>
+                                            <exclude reference="TvL-BO-mQ4"/>
+                                            <exclude reference="csn-TO-8sy"/>
                                             <exclude reference="2sM-QG-fOb"/>
                                             <exclude reference="3yV-4s-LVN"/>
                                             <exclude reference="ggr-M5-OIh"/>
                                             <exclude reference="p9w-DH-gaA"/>
                                             <exclude reference="uL4-KD-wGY"/>
-                                            <exclude reference="FGJ-cj-II7"/>
-                                            <exclude reference="TvL-BO-mQ4"/>
-                                            <exclude reference="csn-TO-8sy"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -405,14 +406,14 @@
                                             <exclude reference="heT-8P-wnb"/>
                                         </mask>
                                         <mask key="constraints">
+                                            <include reference="FGJ-cj-II7"/>
+                                            <include reference="TvL-BO-mQ4"/>
+                                            <include reference="csn-TO-8sy"/>
                                             <include reference="2sM-QG-fOb"/>
                                             <exclude reference="3yV-4s-LVN"/>
                                             <exclude reference="ggr-M5-OIh"/>
                                             <include reference="p9w-DH-gaA"/>
                                             <exclude reference="uL4-KD-wGY"/>
-                                            <include reference="FGJ-cj-II7"/>
-                                            <include reference="TvL-BO-mQ4"/>
-                                            <include reference="csn-TO-8sy"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -792,6 +793,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Crm-wo-Ufq" customClass="PFImageView">

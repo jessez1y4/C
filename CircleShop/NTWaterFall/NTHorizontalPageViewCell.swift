@@ -43,6 +43,8 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
         
         contentView.addSubview(tableView)
         tableView.registerClass(NTTableViewCell.self, forCellReuseIdentifier: cellIdentify)
+        tableView.registerClass(ScrollTableViewCell.self, forCellReuseIdentifier: "ScrollCell")
+
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -57,29 +59,36 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentify) as NTTableViewCell!
+//        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentify) as NTTableViewCell!
         if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentify) as NTTableViewCell!
             cell.imageView.image = self.placeholder
             cell.imageView.file = imageFile
             cell.imageView.loadInBackground(nil)
+            cell.setNeedsLayout()
+            return cell
         }else{
+            let cell = tableView.dequeueReusableCellWithIdentifier("ScrollCell") as ScrollTableViewCell!
             cell.textLabel.text = "try pull to pop view controller 😃"
+            cell.setNeedsLayout()
+            return cell
         }
-        cell.setNeedsLayout()
-        return cell
+//        cell.setNeedsLayout()
+//        return cell
     }
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
         var cellHeight : CGFloat = navigationHeight
-        if indexPath.row == 0{
+//        if indexPath.row == 0{
             cellHeight = screenWidth
-        }
+//        }
+
         return cellHeight
     }
     
