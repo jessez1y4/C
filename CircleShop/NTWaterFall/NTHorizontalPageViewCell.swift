@@ -42,7 +42,7 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
         backgroundColor = UIColor.lightGrayColor()
         
         contentView.addSubview(tableView)
-        tableView.registerClass(NTTableViewCell.self, forCellReuseIdentifier: cellIdentify)
+        tableView.registerClass(DetailTableViewCell.self, forCellReuseIdentifier: "DetailCell")
         tableView.registerClass(ScrollTableViewCell.self, forCellReuseIdentifier: "ScrollCell")
 
         tableView.delegate = self
@@ -66,14 +66,20 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
     {
 //        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentify) as NTTableViewCell!
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentify) as NTTableViewCell!
-            cell.imageView.image = self.placeholder
-            cell.imageView.file = imageFile
-            cell.imageView.loadInBackground(nil)
+            let cell = tableView.dequeueReusableCellWithIdentifier("ScrollCell") as ScrollTableViewCell!
+            
+            cell.imgView1.image = UIImage(named: "dark_circle.png")
+            cell.imgView2.image = UIImage(named: "bicon.png")
+            
+            
+            
+//            cell.imageView.image = self.placeholder
+//            cell.imageView.file = imageFile
+//            cell.imageView.loadInBackground(nil)
             cell.setNeedsLayout()
             return cell
         }else{
-            let cell = tableView.dequeueReusableCellWithIdentifier("ScrollCell") as ScrollTableViewCell!
+            let cell = tableView.dequeueReusableCellWithIdentifier("DetailCell") as DetailTableViewCell!
             cell.textLabel.text = "try pull to pop view controller 😃"
             cell.setNeedsLayout()
             return cell

@@ -11,7 +11,7 @@ target "CircleShop" do
     pod 'BMYCircularProgressPullToRefresh'
     pod 'JSQMessagesViewController'
     pod 'ECSlidingViewController', '~> 2.0.3'
-
+    pod 'PPImageScrollingTableViewCell', '~> 1.0.0'
 end
 
 target "CircleShopTests" do
