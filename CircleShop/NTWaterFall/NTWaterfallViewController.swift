@@ -18,7 +18,7 @@ class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate{
     }
 }
 
-class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDelegateWaterfallLayout, NTTransitionProtocol, NTWaterFallViewControllerProtocol{
+class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDelegateWaterfallLayout, NTTransitionProtocol, NTWaterFallViewControllerProtocol, DBCameraViewControllerDelegate {
 
     let delegateHolder = NavigationControllerDelegate()
     
@@ -153,11 +153,6 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         startContentOffset = scrollView.contentOffset.y
 
     }
-
-    @IBAction func menuClicked(sender: AnyObject) {
-        self.slidingViewController().anchorTopViewToRightAnimated(true)
-    }
-
     
     // circle
     override func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -191,6 +186,39 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         }
     }
 
+
+    @IBAction func menuClicked(sender: AnyObject) {
+        self.slidingViewController().anchorTopViewToRightAnimated(true)
+    }
+
+    
+    @IBAction func postClicked(sender: AnyObject) {
+        let cameraController = DBCameraViewController.initWithDelegate(self)
+        cameraController.setForceQuadCrop(true)
+        
+        let container = DBCameraContainerViewController(delegate: self)
+        container.setDBCameraViewController(cameraController)
+        
+        let nav = UINavigationController(rootViewController: container)
+        nav.setNavigationBarHidden(true, animated: true)
+        
+        self.presentViewController(nav, animated: true, completion: nil)
+    }
+    
+    func camera(cameraViewController: AnyObject!, didFinishWithImage image: UIImage!, withMetadata metadata: [NSObject : AnyObject]!) {
+        
+        let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostId") as PostViewController
+        
+        postViewController.image = image
+        
+        cameraViewController.restoreFullScreenMode
+        cameraViewController.navigationController!?.pushViewController(postViewController, animated: true)
+    }
+    
+    func dismissCamera(cameraViewController: AnyObject!) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 
 }
 

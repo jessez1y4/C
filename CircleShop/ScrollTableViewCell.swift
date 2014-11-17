@@ -9,11 +9,7 @@
 import UIKit
 
 class ScrollTableViewCell: PFTableViewCell {
-    var scrollView: UIScrollView!
-    var imgView1: UIImageView!
-    var imgView2: UIImageView!
-
-    
+//    var scrollView: UIScrollView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,19 +33,11 @@ class ScrollTableViewCell: PFTableViewCell {
     }
     
     func initialize() {
-        var frame = CGRectMake(0, 0, 320, 320)
-        scrollView = UIScrollView(frame: frame)
-        scrollView.backgroundColor = UIColor.clearColor()
-        scrollView.pagingEnabled = true
-        scrollView.contentSize = CGSizeMake(2 * scrollView.bounds.width, scrollView.bounds.height)
-        var viewSize = scrollView.bounds
-        imgView1 = UIImageView(frame: viewSize)
-        scrollView.addSubview(imgView1)
-        
-        viewSize = CGRectOffset(viewSize, scrollView.bounds.width, 0)
-        imgView2 = UIImageView(frame: viewSize)
-        scrollView.addSubview(imgView2)
-        self.contentView.addSubview(scrollView)
+//        var frame = CGRectMake(0, 0, 320, 320)
+//        scrollView = UIScrollView(frame: frame)
+//        scrollView.backgroundColor = UIColor.clearColor()
+//        scrollView.pagingEnabled = true
+//        self.contentView.addSubview(scrollView)
         
     }
 

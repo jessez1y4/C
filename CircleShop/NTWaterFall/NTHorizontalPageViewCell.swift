@@ -31,7 +31,7 @@ class NTTableViewCell : PFTableViewCell{
 }
 
 class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITableViewDataSource{
-    var imageFile : PFFile?
+    var imageFiles : [PFFile]?
     var pullAction : ((offset : CGPoint) -> Void)?
     var tappedAction : (() -> Void)?
     let tableView = UITableView(frame: screenBounds, style: UITableViewStyle.Plain)
@@ -64,18 +64,32 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-//        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentify) as NTTableViewCell!
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ScrollCell") as ScrollTableViewCell!
+            var imageCount = CGFloat(imageFiles!.count)
+            println(imageCount)
+
+            var frame = CGRectMake(0, 0, 320, 320)
+            var scrollView = UIScrollView(frame: frame)
+            scrollView.backgroundColor = UIColor.clearColor()
+            scrollView.pagingEnabled = true
+            scrollView.contentSize = CGSizeMake(imageCount * scrollView.bounds.width, scrollView.bounds.height)
+            var viewSize = scrollView.bounds
+            var imgView = PFImageView(frame: viewSize)
+            imgView.file = imageFiles![0]
+            scrollView.addSubview(imgView)
+            imgView.loadInBackground(nil)
             
-            cell.imgView1.image = UIImage(named: "dark_circle.png")
-            cell.imgView2.image = UIImage(named: "bicon.png")
-            
-            
-            
-//            cell.imageView.image = self.placeholder
-//            cell.imageView.file = imageFile
+            for(var i = 1; i < imageFiles!.count; i++){
+                viewSize = CGRectOffset(viewSize, scrollView.bounds.width, 0)
+                var imgView = PFImageView(frame: viewSize)
+                imgView.file = imageFiles![i]
+                scrollView.addSubview(imgView)
+                imgView.loadInBackground(nil)
+            }
+
 //            cell.imageView.loadInBackground(nil)
+            cell.contentView.addSubview(scrollView)
             cell.setNeedsLayout()
             return cell
         }else{
