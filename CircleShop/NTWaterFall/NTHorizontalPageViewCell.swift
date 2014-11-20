@@ -31,6 +31,7 @@ class NTTableViewCell : PFTableViewCell{
 }
 
 class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITableViewDataSource{
+    var scrollView: UIScrollView!
     var imageFiles : [PFFile]?
     var pullAction : ((offset : CGPoint) -> Void)?
     var tappedAction : (() -> Void)?
@@ -54,7 +55,15 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
     }
     
     override func layoutSubviews() {
+        
+        if scrollView == nil {
+            var frame = CGRectMake(0, 0, 320, 320)
+            scrollView = UIScrollView(frame: frame)
+            scrollView.backgroundColor = UIColor.clearColor()
+            scrollView.pagingEnabled = true
+        }
         super.layoutSubviews()
+        tableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated: false)
         tableView.reloadData()
     }
     
@@ -67,12 +76,8 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ScrollCell") as ScrollTableViewCell!
             var imageCount = CGFloat(imageFiles!.count)
-            println(imageCount)
 
-            var frame = CGRectMake(0, 0, 320, 320)
-            var scrollView = UIScrollView(frame: frame)
-            scrollView.backgroundColor = UIColor.clearColor()
-            scrollView.pagingEnabled = true
+
             scrollView.contentSize = CGSizeMake(imageCount * scrollView.bounds.width, scrollView.bounds.height)
             var viewSize = scrollView.bounds
             var imgView = PFImageView(frame: viewSize)
@@ -88,7 +93,6 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
                 imgView.loadInBackground(nil)
             }
 
-//            cell.imageView.loadInBackground(nil)
             cell.contentView.addSubview(scrollView)
             cell.setNeedsLayout()
             return cell
