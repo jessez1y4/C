@@ -102,8 +102,6 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
             cell.setNeedsLayout()
             return cell
         }
-//        cell.setNeedsLayout()
-//        return cell
     }
     
     
