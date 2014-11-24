@@ -31,18 +31,21 @@ class NTTableViewCell : PFTableViewCell{
 }
 
 class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITableViewDataSource{
-    var imageFile : PFFile?
+    var scrollView: UIScrollView!
+    var imageFiles : [PFFile]?
     var pullAction : ((offset : CGPoint) -> Void)?
     var tappedAction : (() -> Void)?
     let tableView = UITableView(frame: screenBounds, style: UITableViewStyle.Plain)
     var placeholder = UIImage(named: "bicon.png")
+    var detailCellNib: UINib!
+    var detailcell: DetailTableViewCell!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.lightGrayColor()
         
         contentView.addSubview(tableView)
-        tableView.registerClass(NTTableViewCell.self, forCellReuseIdentifier: cellIdentify)
+        tableView.registerClass(DetailTableViewCell.self, forCellReuseIdentifier: "DetailCell")
         tableView.registerClass(ScrollTableViewCell.self, forCellReuseIdentifier: "ScrollCell")
 
         tableView.delegate = self
@@ -54,7 +57,15 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
     }
     
     override func layoutSubviews() {
+        
+        if scrollView == nil {
+            var frame = CGRectMake(0, 0, 320, 320)
+            scrollView = UIScrollView(frame: frame)
+            scrollView.backgroundColor = UIColor.clearColor()
+            scrollView.pagingEnabled = true
+        }
         super.layoutSubviews()
+        tableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated: false)
         tableView.reloadData()
     }
     
@@ -64,22 +75,35 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-//        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentify) as NTTableViewCell!
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentify) as NTTableViewCell!
-            cell.imageView.image = self.placeholder
-            cell.imageView.file = imageFile
-            cell.imageView.loadInBackground(nil)
+            let cell = tableView.dequeueReusableCellWithIdentifier("ScrollCell") as ScrollTableViewCell!
+            var imageCount = CGFloat(imageFiles!.count)
+
+
+            scrollView.contentSize = CGSizeMake(imageCount * scrollView.bounds.width, scrollView.bounds.height)
+            var viewSize = scrollView.bounds
+            var imgView = PFImageView(frame: viewSize)
+            imgView.file = imageFiles![0]
+            scrollView.addSubview(imgView)
+            imgView.loadInBackground(nil)
+            
+            for(var i = 1; i < imageFiles!.count; i++){
+                viewSize = CGRectOffset(viewSize, scrollView.bounds.width, 0)
+                var imgView = PFImageView(frame: viewSize)
+                imgView.file = imageFiles![i]
+                scrollView.addSubview(imgView)
+                imgView.loadInBackground(nil)
+            }
+
+            cell.contentView.addSubview(scrollView)
             cell.setNeedsLayout()
             return cell
         }else{
-            let cell = tableView.dequeueReusableCellWithIdentifier("ScrollCell") as ScrollTableViewCell!
+            let cell = tableView.dequeueReusableCellWithIdentifier("DetailCell") as DetailTableViewCell!
             cell.textLabel.text = "try pull to pop view controller 😃"
             cell.setNeedsLayout()
             return cell
         }
-//        cell.setNeedsLayout()
-//        return cell
     }
     
     

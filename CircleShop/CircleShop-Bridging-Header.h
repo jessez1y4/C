@@ -20,6 +20,7 @@
 #import <BMYCircularProgressPullToRefresh.h>
 #import <UIViewController+ECSlidingViewController.h>
 #import <JSQMessages.h>
+#import <APAvatarImageView/APAvatarImageView.h>
 
 
 #endif

@@ -27,4 +27,8 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func menuClicked(sender: AnyObject) {
+        self.slidingViewController().anchorTopViewToRightAnimated(true)
+    }
 }

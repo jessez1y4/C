@@ -11,7 +11,8 @@ target "CircleShop" do
     pod 'BMYCircularProgressPullToRefresh'
     pod 'JSQMessagesViewController'
     pod 'ECSlidingViewController', '~> 2.0.3'
-
+    pod 'APAvatarImageView'
+    pod 'RKDropdownAlert'
 end
 
 target "CircleShopTests" do
