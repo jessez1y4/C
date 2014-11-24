@@ -3,6 +3,7 @@ import Foundation
 class Message : PFObject, PFSubclassing, JSQMessageData {
     
     @NSManaged var content: String
+    @NSManaged var unread: Bool
     @NSManaged var receiver: User
     @NSManaged var sender: User
     @NSManaged var conversation: Conversation

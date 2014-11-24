@@ -7,22 +7,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
+        println("executing didFinishLaunchingWithOptions")
+            
+        Parse.setApplicationId("0ypgutxWtZSQUHtGz1hnx7v9fnQO9X1MDaN0zWMt", clientKey: "nfNfRQNQXQHveTVrvblFtw607Wvpmtbb8s5bD0Ww")
         
-       Parse.setApplicationId("0ypgutxWtZSQUHtGz1hnx7v9fnQO9X1MDaN0zWMt", clientKey: "nfNfRQNQXQHveTVrvblFtw607Wvpmtbb8s5bD0Ww")
-        
-        /* set up push notification */
-        if application.respondsToSelector("isRegisteredForRemoteNotifications") {
-            // iOS 8 Notifications
-            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: (.Badge | .Sound | .Alert), categories: nil))
-            application.registerForRemoteNotifications()
-        } else {
-            // iOS < 8 Notifications
-            application.registerForRemoteNotificationTypes(.Badge | .Sound | .Alert)
-        }
-
         /* go to home if logged in */
+        var svc: ECSlidingViewController!
         if User.currentUser() != nil {
-            let svc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sliding_view_controller") as ECSlidingViewController
+            svc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sliding_view_controller") as ECSlidingViewController
 
             (self.window?.rootViewController as UINavigationController).pushViewController(svc, animated: false)
         }
@@ -33,18 +25,77 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
         pageControl.backgroundColor = UIColor.whiteColor();
         
+        if launchOptions != nil {
+            if let notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
+                if let type = notificationPayload.objectForKey("c") as? String {
+                    println("this is message")
+                    svc.topViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("conversation_nav_controller") as UINavigationController
+                }
+            }
+        }
+        
         return true
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let currentInstallation = PFInstallation.currentInstallation()
         currentInstallation.setDeviceTokenFromData(deviceToken)
-        currentInstallation.channels = ["global"]
-        currentInstallation.saveInBackgroundWithBlock(nil)
+        currentInstallation.channels = ["global", PFUser.currentUser().objectId]
+        currentInstallation.saveInBackgroundWithBlock { (success, error) -> Void in
+            if success {
+                println(currentInstallation.channels)
+            }
+        }
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        PFPush.handlePush(userInfo)
+        if let convId = userInfo["c"] as? String {
+            if application.applicationState == UIApplicationState.Active {
+                /* app already in foreground */
+                println("app was already in foreground")
+                // TODO update msg count on menu icon?
+                // vibrate? sound?
+                
+                let vc = (self.window?.rootViewController as UINavigationController).topViewController
+                if vc.isKindOfClass(ECSlidingViewController) {
+                    let nav = (vc as ECSlidingViewController).topViewController as UINavigationController
+                    if nav.topViewController.isKindOfClass(MessageViewController) {
+                        let mvc = nav.topViewController as MessageViewController
+                        let conv = mvc.conversation
+                        if conv.objectId == convId {
+                            // append msg
+                            mvc.reloadMessages()
+                            return
+                        }
+                    }
+                }
+                
+            } else {
+                println("app was in background")
+                let vc = (self.window?.rootViewController as UINavigationController).topViewController
+                if vc.isKindOfClass(ECSlidingViewController) {
+                    let nav = (vc as ECSlidingViewController).topViewController as UINavigationController
+                    if nav.topViewController.isKindOfClass(MessageViewController) {
+                        let mvc = nav.topViewController as MessageViewController
+                        let conv = mvc.conversation
+                        if conv.objectId == convId {
+                            // append msg
+                            mvc.reloadMessages()
+                            return
+                        }
+                    }
+                    
+                    let evc = vc as ECSlidingViewController
+                    evc.resetTopViewAnimated(false)
+                    evc.topViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("conversation_nav_controller") as UINavigationController
+                    return
+                }
+                
+                let svc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sliding_view_controller") as ECSlidingViewController
+                (self.window?.rootViewController as UINavigationController).pushViewController(svc, animated: false)
+                svc.topViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("conversation_nav_controller") as UINavigationController
+            }
+        }
     }
     
     func applicationWillResignActive(application: UIApplication!) {

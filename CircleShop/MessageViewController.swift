@@ -16,20 +16,14 @@ class MessageViewController: JSQMessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.collectionView.collectionViewLayout.springinessEnabled = true
+
         self.senderId = User.currentUser().objectId
         self.senderDisplayName = User.currentUser().name
         
-        self.conversation.getMessages { (messages, error) -> Void in
-            if error == nil {
-                self.messages = messages
-                self.collectionView.reloadData()
-            }
-        }
-        
         self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
         self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
+        
+        self.reloadMessages()
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
@@ -55,17 +49,31 @@ class MessageViewController: JSQMessagesViewController {
     }
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
+        self.view.endEditing(false)
+        
         let msg = Message()
         
         msg.conversation = self.conversation
         msg.sender = User.currentUser()
         msg.receiver = self.conversation.getOtherUser()
         msg.content = text
+        msg.unread = true
         
         msg.saveInBackgroundWithBlock { (success, error) -> Void in
             if success {
                 self.messages.append(msg)
                 self.finishSendingMessage()
+            }
+        }
+    }
+    
+    func reloadMessages() {
+        self.conversation.getMessages { (messages, error) -> Void in
+            if error == nil {
+                self.messages = messages
+                self.collectionView.reloadData()
+                self.scrollToBottomAnimated(false)
+                
             }
         }
     }

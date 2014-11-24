@@ -17,5 +17,14 @@ class ProfileViewController: UIViewController {
         
 //        [self.navigationController popToViewController:[array objectAtIndex:2] animated:YES];
         self.tabBarController?.navigationController?.popToRootViewControllerAnimated(true)
+        
+        /* update channels if a different user logs in */
+        let currentInstallation = PFInstallation.currentInstallation()
+        currentInstallation.channels = ["global"]
+        currentInstallation.saveInBackgroundWithBlock { (success, error) -> Void in
+            if success {
+                println(currentInstallation.channels)
+            }
+        }
     }
 }
