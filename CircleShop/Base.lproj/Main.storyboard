@@ -877,6 +877,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Bz-Zr-Ahe">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="H6s-xB-HUh">
+                            <connections>
+                                <action selector="menuClicked:" destination="U9I-E9-luw" id="HVw-83-Fsj"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="uw8-37-qQG">
                             <connections>
                                 <action selector="Logout:" destination="U9I-E9-luw" id="hb0-x2-jbN"/>
@@ -920,7 +925,7 @@
         <!--Profile-->
         <scene sceneID="3nq-cz-T5r">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0YT-L3-QNV" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="profile_nav_controller" automaticallyAdjustsScrollViewInsets="NO" id="0YT-L3-QNV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" id="vck-uu-p1k"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qib-8P-Xeu">

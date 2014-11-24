@@ -12,7 +12,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     var transitionsNavigationController: UINavigationController!
-    var menuItems: [String] = ["Yue","Setting", "Logout", "Messages"]
+    var menuItems: [String] = ["Yue","Setting", "Logout", "Messages","Profile"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +66,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         case 3:
             self.slidingViewController().topViewController = self.storyboard?.instantiateViewControllerWithIdentifier("conversation_nav_controller") as UINavigationController
             // message
+        case 4:
+            self.slidingViewController().topViewController =
+                self.storyboard?.instantiateViewControllerWithIdentifier("profile_nav_controller") as UINavigationController
         default:
             break
         }

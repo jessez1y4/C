@@ -6,14 +6,28 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="210" id="KGk-i7-Jjw" customClass="DetailTableViewCell" customModule="CircleShop" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="337" height="210"/>
+        <tableViewCell tag="100" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="55" id="KGk-i7-Jjw" customClass="DetailTableViewCell" customModule="CircleShop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="325" height="55"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bicon.png" translatesAutoresizingMaskIntoConstraints="NO" id="tE7-ue-qor" customClass="APAvatarImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="58" height="54.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1231232" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPo-9t-PUD">
+                        <rect key="frame" x="97" y="17" width="75" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="257.5" y="215"/>
+            <point key="canvasLocation" x="234.5" y="164.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="bicon.png" width="25" height="25"/>
+    </resources>
 </document>

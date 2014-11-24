@@ -18,4 +18,8 @@ class ProfileViewController: UIViewController {
 //        [self.navigationController popToViewController:[array objectAtIndex:2] animated:YES];
         self.tabBarController?.navigationController?.popToRootViewControllerAnimated(true)
     }
+    
+    @IBAction func menuClicked(sender: AnyObject) {
+        self.slidingViewController().anchorTopViewToRightAnimated(true)
+    }
 }

@@ -40,9 +40,8 @@
 		0DD762691A0F545B00C455C0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD762681A0F545B00C455C0 /* MenuViewController.swift */; };
 		0DD7626B1A0F57E300C455C0 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7626A1A0F57E300C455C0 /* MenuTableViewCell.swift */; };
 		0DD7626E1A15C2EF00C455C0 /* ScrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7626C1A15C2EF00C455C0 /* ScrollTableViewCell.swift */; };
-		0DD7626F1A15C2EF00C455C0 /* ScrollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD7626D1A15C2EF00C455C0 /* ScrollTableViewCell.xib */; };
-		0DD762741A15C78C00C455C0 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD762721A15C78C00C455C0 /* DetailTableViewCell.swift */; };
-		0DD762751A15C78C00C455C0 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD762731A15C78C00C455C0 /* DetailTableViewCell.xib */; };
+		0DD762781A22AF6D00C455C0 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD762761A22AF6D00C455C0 /* DetailTableViewCell.swift */; };
+		0DD762791A22AF6D00C455C0 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD762771A22AF6D00C455C0 /* DetailTableViewCell.xib */; };
 		6CA76AEB8DF5445BA0200F7B /* libPods-CircleShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */; };
 		9A5CE3151A11D967000BB209 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE3141A11D967000BB209 /* ConversationCell.swift */; };
 		9A641C6B1A0EE1CF002F0C83 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A641C6A1A0EE1CF002F0C83 /* Message.swift */; };
@@ -104,9 +103,8 @@
 		0DD762681A0F545B00C455C0 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0DD7626A1A0F57E300C455C0 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		0DD7626C1A15C2EF00C455C0 /* ScrollTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTableViewCell.swift; sourceTree = "<group>"; };
-		0DD7626D1A15C2EF00C455C0 /* ScrollTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollTableViewCell.xib; sourceTree = "<group>"; };
-		0DD762721A15C78C00C455C0 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
-		0DD762731A15C78C00C455C0 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
+		0DD762761A22AF6D00C455C0 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		0DD762771A22AF6D00C455C0 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		2B94032BB896863497770A54 /* Pods-CircleShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-CircleShop/Pods-CircleShop.release.xcconfig"; sourceTree = "<group>"; };
 		9A5CE3141A11D967000BB209 /* ConversationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		9A641C6A1A0EE1CF002F0C83 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -258,15 +256,14 @@
 		0DB16E641A05FA440039ED7D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0DD762761A22AF6D00C455C0 /* DetailTableViewCell.swift */,
+				0DD762771A22AF6D00C455C0 /* DetailTableViewCell.xib */,
 				0DD762401A086CB200C455C0 /* NTWaterfallViewCell.swift */,
 				0DD7623B1A086CB200C455C0 /* NTHorizontalPageViewCell.swift */,
 				0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */,
 				0DD7626A1A0F57E300C455C0 /* MenuTableViewCell.swift */,
 				9A5CE3141A11D967000BB209 /* ConversationCell.swift */,
 				0DD7626C1A15C2EF00C455C0 /* ScrollTableViewCell.swift */,
-				0DD7626D1A15C2EF00C455C0 /* ScrollTableViewCell.xib */,
-				0DD762721A15C78C00C455C0 /* DetailTableViewCell.swift */,
-				0DD762731A15C78C00C455C0 /* DetailTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -394,12 +391,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DD7626F1A15C2EF00C455C0 /* ScrollTableViewCell.xib in Resources */,
 				0D5583F019B426CA001AF800 /* Main.storyboard in Resources */,
 				0D6CEFCD1A0212B3002E51CC /* dark_circle.png in Resources */,
 				0D5583F219B426CA001AF800 /* Images.xcassets in Resources */,
 				0D6CEFCC1A0212B3002E51CC /* bicon.png in Resources */,
-				0DD762751A15C78C00C455C0 /* DetailTableViewCell.xib in Resources */,
+				0DD762791A22AF6D00C455C0 /* DetailTableViewCell.xib in Resources */,
 				0D6CEFCE1A0212B3002E51CC /* light_circle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,7 +470,7 @@
 				0DD762421A086CB200C455C0 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				0D5583E919B426CA001AF800 /* AppDelegate.swift in Sources */,
 				9A641C6F1A0F5D74002F0C83 /* Conversation.swift in Sources */,
-				0DD762741A15C78C00C455C0 /* DetailTableViewCell.swift in Sources */,
+				0DD762781A22AF6D00C455C0 /* DetailTableViewCell.swift in Sources */,
 				0D00771D19C94B50006EEAE7 /* SignUpViewController.swift in Sources */,
 				9A5CE3151A11D967000BB209 /* ConversationCell.swift in Sources */,
 				0DD762481A086CB200C455C0 /* NTTransition.swift in Sources */,

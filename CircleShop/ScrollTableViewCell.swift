@@ -13,12 +13,10 @@ class ScrollTableViewCell: PFTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        initialize()
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initialize()
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -31,15 +29,5 @@ class ScrollTableViewCell: PFTableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func initialize() {
-//        var frame = CGRectMake(0, 0, 320, 320)
-//        scrollView = UIScrollView(frame: frame)
-//        scrollView.backgroundColor = UIColor.clearColor()
-//        scrollView.pagingEnabled = true
-//        self.contentView.addSubview(scrollView)
-        
-    }
-
     
 }

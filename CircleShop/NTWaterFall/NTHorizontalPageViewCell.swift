@@ -37,6 +37,8 @@ class NTHorizontalPageViewCell : UICollectionViewCell, UITableViewDelegate, UITa
     var tappedAction : (() -> Void)?
     let tableView = UITableView(frame: screenBounds, style: UITableViewStyle.Plain)
     var placeholder = UIImage(named: "bicon.png")
+    var detailCellNib: UINib!
+    var detailcell: DetailTableViewCell!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
