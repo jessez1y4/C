@@ -58,11 +58,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         case 0:
             break
         case 1:
-            self.slidingViewController().topViewController = self.storyboard?.instantiateViewControllerWithIdentifier("circle_navigation_controller") as UIViewController
+            self.slidingViewController().topViewController = self.storyboard?.instantiateViewControllerWithIdentifier("circle_nav_controller") as UIViewController
         case 2:
             User.logOut()
             let window = UIApplication.sharedApplication().windows.first as UIWindow
             (window.rootViewController as UINavigationController).popToRootViewControllerAnimated(true)
+//            self.storyboard?.instantiateViewControllerWithIdentifier("circle_navigation_controller") as UIViewController
         case 3:
             self.slidingViewController().topViewController = self.storyboard?.instantiateViewControllerWithIdentifier("conversation_nav_controller") as UINavigationController
             // message

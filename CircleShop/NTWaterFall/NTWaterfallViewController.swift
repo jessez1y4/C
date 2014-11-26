@@ -99,11 +99,14 @@ class NTWaterfallViewController:UICollectionViewController,CHTCollectionViewDele
         /* update channels if a different user logs in */
         let currentInstallation = PFInstallation.currentInstallation()
         let id = PFUser.currentUser().objectId
-        if currentInstallation.channels.filter({ el in el as NSString == id }).count > 0 {
-            currentInstallation.channels = ["global", id]
-            currentInstallation.saveInBackgroundWithBlock { (success, error) -> Void in
-                if success {
-                    println(currentInstallation.channels)
+        
+        if let channels = currentInstallation.channels {
+            if channels.filter({ el in el as NSString == id }).count > 0 {
+                currentInstallation.channels = ["global", id]
+                currentInstallation.saveInBackgroundWithBlock { (success, error) -> Void in
+                    if success {
+                        println(currentInstallation.channels)
+                    }
                 }
             }
         }
