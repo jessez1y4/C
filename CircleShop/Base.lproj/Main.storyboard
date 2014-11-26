@@ -756,7 +756,7 @@
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="underLeftViewControllerStoryboardId" value="menuViewControllerId"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="topViewControllerStoryboardId" value="circleNavigationControllerId"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="topViewControllerStoryboardId" value="circle_nav_controller"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVT-FN-b78" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -944,7 +944,7 @@
         <!--Circle-->
         <scene sceneID="D8F-tT-Suu">
             <objects>
-                <navigationController storyboardIdentifier="circleNavigationControllerId" automaticallyAdjustsScrollViewInsets="NO" id="VSq-g3-lVw" customClass="NTNavigationController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="circle_nav_controller" automaticallyAdjustsScrollViewInsets="NO" id="VSq-g3-lVw" customClass="NTNavigationController" customModule="CircleShop" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Circle" id="4ej-mD-cmL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gge-lO-rjp">
