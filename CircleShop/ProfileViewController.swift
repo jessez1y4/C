@@ -13,12 +13,10 @@ class ProfileViewController: UIViewController {
     @IBAction func Logout(sender: AnyObject) {
         User.logOut()
         
-//        NSArray *array = [self.navigationController viewControllers];
+        let window = UIApplication.sharedApplication().windows.first as UIWindow
+        (window.rootViewController as UINavigationController).popToRootViewControllerAnimated(true)
         
-//        [self.navigationController popToViewController:[array objectAtIndex:2] animated:YES];
-        self.tabBarController?.navigationController?.popToRootViewControllerAnimated(true)
-        
-        /* update channels if a different user logs in */
+        /* update channels as user logs out */
         let currentInstallation = PFInstallation.currentInstallation()
         currentInstallation.channels = ["global"]
         currentInstallation.saveInBackgroundWithBlock { (success, error) -> Void in

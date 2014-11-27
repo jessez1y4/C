@@ -12,7 +12,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     var transitionsNavigationController: UINavigationController!
-    var menuItems: [String] = ["Yue","Setting", "Logout", "Messages","Profile"]
+    var menuItems: [String] = ["Yue","Home", "Messages","Profile"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,20 +54,16 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         // dynamically so everything needs to start in a consistent state.
         self.slidingViewController().topViewController.view.layer.transform = CATransform3DMakeScale(1, 1, 1);
         
+        /* save references to these for reusing? */
         switch indexPath.row {
         case 0:
             break
         case 1:
             self.slidingViewController().topViewController = self.storyboard?.instantiateViewControllerWithIdentifier("circle_nav_controller") as UIViewController
         case 2:
-            User.logOut()
-            let window = UIApplication.sharedApplication().windows.first as UIWindow
-            (window.rootViewController as UINavigationController).popToRootViewControllerAnimated(true)
-//            self.storyboard?.instantiateViewControllerWithIdentifier("circle_navigation_controller") as UIViewController
-        case 3:
             self.slidingViewController().topViewController = self.storyboard?.instantiateViewControllerWithIdentifier("conversation_nav_controller") as UINavigationController
             // message
-        case 4:
+        case 3:
             self.slidingViewController().topViewController =
                 self.storyboard?.instantiateViewControllerWithIdentifier("profile_nav_controller") as UINavigationController
         default:
