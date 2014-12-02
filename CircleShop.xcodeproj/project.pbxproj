@@ -39,7 +39,6 @@
 		0DD7624B1A086CB200C455C0 /* NTWaterfallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD762411A086CB200C455C0 /* NTWaterfallViewController.swift */; };
 		0DD762691A0F545B00C455C0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD762681A0F545B00C455C0 /* MenuViewController.swift */; };
 		0DD7626B1A0F57E300C455C0 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7626A1A0F57E300C455C0 /* MenuTableViewCell.swift */; };
-		0DD7626E1A15C2EF00C455C0 /* ScrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7626C1A15C2EF00C455C0 /* ScrollTableViewCell.swift */; };
 		0DD762781A22AF6D00C455C0 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD762761A22AF6D00C455C0 /* DetailTableViewCell.swift */; };
 		0DD762791A22AF6D00C455C0 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD762771A22AF6D00C455C0 /* DetailTableViewCell.xib */; };
 		6CA76AEB8DF5445BA0200F7B /* libPods-CircleShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE4280D054349A4AB8E14D7 /* libPods-CircleShop.a */; };
@@ -102,7 +101,6 @@
 		0DD762411A086CB200C455C0 /* NTWaterfallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTWaterfallViewController.swift; path = NTWaterFall/NTWaterfallViewController.swift; sourceTree = "<group>"; };
 		0DD762681A0F545B00C455C0 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0DD7626A1A0F57E300C455C0 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
-		0DD7626C1A15C2EF00C455C0 /* ScrollTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTableViewCell.swift; sourceTree = "<group>"; };
 		0DD762761A22AF6D00C455C0 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		0DD762771A22AF6D00C455C0 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		2B94032BB896863497770A54 /* Pods-CircleShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-CircleShop/Pods-CircleShop.release.xcconfig"; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 				0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */,
 				0DD7626A1A0F57E300C455C0 /* MenuTableViewCell.swift */,
 				9A5CE3141A11D967000BB209 /* ConversationCell.swift */,
-				0DD7626C1A15C2EF00C455C0 /* ScrollTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -451,7 +448,6 @@
 				9A9AAA381A09FB000097870C /* StartViewController.swift in Sources */,
 				9AC78BD319D8B6B800B294DC /* Item.swift in Sources */,
 				0DD762691A0F545B00C455C0 /* MenuViewController.swift in Sources */,
-				0DD7626E1A15C2EF00C455C0 /* ScrollTableViewCell.swift in Sources */,
 				0D942CB019F614D300E230EE /* CircleCollectionViewCell.swift in Sources */,
 				0DD7624A1A086CB200C455C0 /* NTWaterfallViewCell.swift in Sources */,
 				0DD762461A086CB200C455C0 /* NTHorizontalPageViewController.swift in Sources */,
