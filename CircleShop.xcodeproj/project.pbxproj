@@ -20,6 +20,7 @@
 		0D55DC5119C68B9B005C86BE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55DC5019C68B9B005C86BE /* DetailViewController.swift */; };
 		0D56D6E71A061BA100D65394 /* IntroContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D56D6E61A061BA100D65394 /* IntroContentViewController.swift */; };
 		0D601DB119C433CA00BA9E17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */; };
+		0D69EF901A2D969D00A468DE /* ScrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D69EF8F1A2D969D00A468DE /* ScrollTableViewCell.swift */; };
 		0D6CEFCC1A0212B3002E51CC /* bicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CEFC91A0212B3002E51CC /* bicon.png */; };
 		0D6CEFCD1A0212B3002E51CC /* dark_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CEFCA1A0212B3002E51CC /* dark_circle.png */; };
 		0D6CEFCE1A0212B3002E51CC /* light_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CEFCB1A0212B3002E51CC /* light_circle.png */; };
@@ -82,6 +83,7 @@
 		0D55DC5019C68B9B005C86BE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0D56D6E61A061BA100D65394 /* IntroContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroContentViewController.swift; sourceTree = "<group>"; };
 		0D601DB019C433CA00BA9E17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0D69EF8F1A2D969D00A468DE /* ScrollTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTableViewCell.swift; sourceTree = "<group>"; };
 		0D6CEFC91A0212B3002E51CC /* bicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bicon.png; path = image/bicon.png; sourceTree = "<group>"; };
 		0D6CEFCA1A0212B3002E51CC /* dark_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dark_circle.png; path = image/dark_circle.png; sourceTree = "<group>"; };
 		0D6CEFCB1A0212B3002E51CC /* light_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = light_circle.png; path = image/light_circle.png; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				0D942CAF19F614D300E230EE /* CircleCollectionViewCell.swift */,
 				0DD7626A1A0F57E300C455C0 /* MenuTableViewCell.swift */,
 				9A5CE3141A11D967000BB209 /* ConversationCell.swift */,
+				0D69EF8F1A2D969D00A468DE /* ScrollTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				9A641C6F1A0F5D74002F0C83 /* Conversation.swift in Sources */,
 				0DD762781A22AF6D00C455C0 /* DetailTableViewCell.swift in Sources */,
 				0D00771D19C94B50006EEAE7 /* SignUpViewController.swift in Sources */,
+				0D69EF901A2D969D00A468DE /* ScrollTableViewCell.swift in Sources */,
 				9A5CE3151A11D967000BB209 /* ConversationCell.swift in Sources */,
 				0DD762481A086CB200C455C0 /* NTTransition.swift in Sources */,
 				0DD762431A086CB200C455C0 /* Extension.swift in Sources */,
