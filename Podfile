@@ -6,7 +6,8 @@ target "CircleShop" do
 
     pod 'AFNetworking'
     pod 'DBCamera', '~> 2.3'
-    pod 'Parse', '~> 1.4.2'
+    pod 'Parse'
+    pod 'ParseUI'
     pod 'Async'
     pod 'BMYCircularProgressPullToRefresh'
     pod 'JSQMessagesViewController', '~> 6.0.0'

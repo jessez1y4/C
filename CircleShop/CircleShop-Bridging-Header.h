@@ -15,6 +15,7 @@
 #import <DBCameraContainerViewController.h>
 
 #import <Parse.h>
+#import <ParseUI.h>
 #import <Async.h>
 
 #import <BMYCircularProgressPullToRefresh.h>
