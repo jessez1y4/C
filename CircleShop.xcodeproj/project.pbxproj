@@ -593,7 +593,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "41559220-176e-4ebc-9689-81249f270250";
+				PROVISIONING_PROFILE = "2d919e38-d8a7-45d3-b453-35225219b070";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -621,13 +621,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: yu jiang (39GSQRR9DL)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yu jiang (39GSQRR9DL)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: yu jiang (W7659XWS22)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yu jiang (W7659XWS22)";
 				INFOPLIST_FILE = CircleShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8d49fe69-c427-40bf-937d-4f837e4caced";
+				PROVISIONING_PROFILE = "2d919e38-d8a7-45d3-b453-35225219b070";
 				SWIFT_OBJC_BRIDGING_HEADER = "CircleShop/CircleShop-Bridging-Header.h";
 			};
 			name = Release;
