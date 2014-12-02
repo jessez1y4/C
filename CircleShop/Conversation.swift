@@ -4,6 +4,7 @@ class Conversation : PFObject, PFSubclassing {
     
     @NSManaged var user1: User
     @NSManaged var user2: User
+    @NSManaged var unread: Int
     
     override class func load() {
         self.registerSubclass()

@@ -87,7 +87,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     let evc = vc as ECSlidingViewController
                     evc.resetTopViewAnimated(false)
-                    evc.topViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("conversation_nav_controller") as UINavigationController
+                    if !evc.topViewController.isKindOfClass(ConversationViewController) {
+                        evc.topViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("conversation_nav_controller") as UINavigationController
+                    }
                     return
                 }
                 
