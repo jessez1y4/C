@@ -6,10 +6,10 @@ target "CircleShop" do
 
     pod 'AFNetworking'
     pod 'DBCamera', '~> 2.3'
-    pod 'Parse'
+    pod 'Parse', '~> 1.4.2'
     pod 'Async'
     pod 'BMYCircularProgressPullToRefresh'
-    pod 'JSQMessagesViewController'
+    pod 'JSQMessagesViewController', '~> 6.0.0'
     pod 'ECSlidingViewController', '~> 2.0.3'
     pod 'APAvatarImageView'
 end
